@@ -1,0 +1,182 @@
+root {
+	display: block;
+}
+
+body {
+	font-family: arial;
+	font-size: 11px;
+	margin-top: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.clear {
+	clear: both
+}
+
+#nav {
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	background: white;
+	vertical-align: top;
+}
+
+#home {
+	list-style-image: url(../Images/Preview/MainIcon/home.png);
+	list-style-image:20px 20px;
+}
+
+#edit {
+	list-style-image: url(../Images/Preview/MainIcon/edit.png);
+	list-style-image:20px 20px;
+}
+
+#delete {
+	list-style-image: url(../Images/Preview/MainIcon/delete.png);
+	list-style-image:20px 20px;
+}
+
+/* make the LI display inline * /
+    /* it's position relative so that position absolute */
+/* can be used in submenu */
+#nav li {
+	float: left;
+	width: 200px;
+	background: #808080;
+	position: relative;
+	z-index: 500;
+	margin: 0 1px;
+}
+
+/* this is the parent menu */
+#nav li a {
+	display: block;
+	padding: 3px 8px 8px 8px;
+	font-weight: 700;
+	height: 23px;
+	color: #fff;
+	text-align: center;
+	vertical-align: middle;
+	color: white;
+	font-size: 120%;
+	font-family: "Eurostile"
+}
+
+}
+#nav li a:hover {
+	color: #FEF0C9;
+}
+
+#nav a.selected {
+	color: #f00;
+}
+
+/* submenu, it's hidden by default */
+#nav ul {
+	position: absolute;
+	left: 0;
+	display: none;
+	margin: 0 0 0 -1px;
+	padding: 0;
+}
+
+#nav ul li {
+	width: 200px;
+	float: left;
+	border-top: 1px solid #fff;
+}
+
+#nav ul a {
+	display: block;
+	height: 15px;
+	padding: 11px 11px;
+	color: white;
+}
+
+#nav ul a:hover {
+	text-decoration: underline;
+}
+
+* html #nav ul {
+	margin: 0 0 0 -2px;
+}
+
+p:hover {
+	background-color: #FAF8CC;
+	cursor: move;
+}
+
+img:hover {
+	cursor: pointer;
+	cursor: hand;
+}
+
+.textarea {
+	resize: both;
+}
+
+div.fullscreen {
+	display: block;
+	/*set the div in the top right corner*/
+	position: absolute;
+	top: 0;
+	right: 0;
+	/*give it some background and border*/
+	background: #eee;
+	border: 1px solid #ddd;
+	font-size: 150%;
+}
+
+#div1 {
+	width: 350px;
+	height: 70px;
+	padding: 10px;
+	border: 1px solid #aaaaaa;
+}
+
+#drag {
+	position: relative;
+	display: block;
+}
+
+#headerblock {
+	width: 18em;
+	background-color: black;
+	color: blue;
+}
+
+#wrapper {
+	width: 18em;
+	height: auto;
+	background-color: grey;
+	color: blue;
+}
+
+#version {
+	background-color: #F0AB00;
+	font-weight: bold;
+	color: white;
+}
+
+p.flip {
+	margin: 0px;
+	padding: 5px;
+	text-align: center;
+	background: #F2F2F2;
+	border: solid 1px #c3c3c3;
+}
+
+div.panel {
+	height: 120px;
+	display: none;
+	background: white;
+}
+
+table.tab {
+	background: white;
+}
+
+table.tab.active {
+	background: blue;
+}
