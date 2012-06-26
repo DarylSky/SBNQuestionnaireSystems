@@ -58,8 +58,8 @@ $(document).ready(function(){
                      var element = $("<tr width=\"965\" id=\"tableslide\"/>");
                      var tabledata = $("<td/>");
                      var form = $("<form method=get action=MainPageServlet />");
-                     var div = $("<div class=\"demo\" id= '"+sortableDiv+"'> </div>");
-                     var button = $("<input type=submit value=Submit></input>");
+                     var div = $("<div class=\"demo\" id= '"+sortableDiv+"' />");
+                     var button = $("<input type=submit value=Preview class=\"preview\"></input>");
 
                      question.append(test);
                      test.append(table);
@@ -73,33 +73,14 @@ $(document).ready(function(){
                      tabledata.append(form);
                      form.append(div);
                      form.append(button);
-              /*var table2= $("<table class=\"abc\" id='"+questionPanel+ "' border=0 onclick=\"\">" +
-              "<tr><th width=\"965\"><p class=\"flip\" contentEditable=\"true\">Question </p></th>" +
-              "<th><span><img src=\"Images/MainPage/minimize.gif\" href=\"#\" class=\"plusBtn\" id='"+plusBtn+"' value=\"-\" /><img src=Images/MainPage/TextAnswerField/delete_icon.png height=15px width=15px class=\"remove\" id=\"remove\"/></span></th></tr>" +
-              "<tr width=\"965\" id=\"tableslide\"><td></td></tr></table>");
-              var div = $("<div class=\"demo\" id= '"+sortableDiv+"'></div>");
-
-              $("#"+questionPanel).live("click", function(e) {
-
-                    var x = $(div).attr("id");
-                     temp = x;
-
-                     textField.disabled=false;
-                     fieldsInTextField.disabled=false;
-                     answerField.disabled=false;
-                     attachment.disabled=false;
-
-                     $("#" + temp).sortable();
-              });
-
-              question.append(test);
-              test.append(table2);
-              test.append(div);*/
 
                      $("#"+questionPanel).live("click", function(e) {
 
                     var x = $(div).attr("id");
                     temp = x;
+
+                    var y = $(table).attr("id");
+                    atemp = y;
 
                     textField.disabled=false;
                     fieldsInTextField.disabled=false;
@@ -107,6 +88,7 @@ $(document).ready(function(){
                     attachment.disabled=false;
 
                     $("#" + temp).sortable();
+
              });
 
               $(document).ready(function(){
@@ -114,14 +96,15 @@ $(document).ready(function(){
                            $("#"+temp).slideToggle("slow");
                      });
 
+                     $('.remove').click(function() {
+
+                         $("#" + atemp).remove();
+                     });
+
                 $('.flip').click(function() {
                        $('.flip').removeClass('highlight');
                        $(this).addClass('highlight').siblings().removeClass('highlight');
 
-                   });
-
-                $('.remove').click(function() {
-                       $(this).parent().remove();
                    });
 
               });
@@ -544,7 +527,7 @@ $(document).ready(function(){
               second.click(function() {
                      $(this).parent().remove();
               });
-              var third = $("<img src=Images/MainPage/TextAnswerField/plus_icon.png height=20px width=20px/>");
+              var third = $("<img src=Images/MainPage/TextAnswerField/plus_icon.png height=15px width=15px/>");
               third.click(function() {
                       var id = $(input).attr("id");
                      fieldWrapper.append("<br/>");
@@ -553,7 +536,7 @@ $(document).ready(function(){
 
               });
 
-              var fourth = $("<img src=Images/MainPage/TextAnswerField/minus_icon.png height=20px width=20px/>");
+              var fourth = $("<img src=Images/MainPage/TextAnswerField/minus_icon.png height=15px width=15px/>");
               fourth.click(function(e) {
 
                      $(second).next('br').remove('br');
@@ -792,7 +775,7 @@ $(document).ready(function(){
               second.click(function() {
                      $(this).parent().remove();
               });
-              var third = $("<img src=Images/MainPage/TextAnswerField/plus_icon.png height=20px width=20px />");
+              var third = $("<img src=Images/MainPage/TextAnswerField/plus_icon.png height=15px width=15px />");
               third.click(function() {
                    var id = $(input).attr("id");
                      fieldWrapper.append("<br/>");
@@ -801,7 +784,7 @@ $(document).ready(function(){
 
               });
 
-              var fourth = $("<img src=Images/MainPage/TextAnswerField/minus_icon.png height=20px width=20px/>");
+              var fourth = $("<img src=Images/MainPage/TextAnswerField/minus_icon.png height=15px width=15px/>");
               fourth.click(function(e) {
 
                      $(second).next('br').remove('br');
@@ -1055,7 +1038,7 @@ $(document).ready(function(){
                      $(this).parent().remove();
               });
 
-              foo.append(fieldWrapper);
+             foo.append(fieldWrapper);
               fieldWrapper.append(first);
               fieldWrapper.append(second);
               fieldWrapper.append(third);
@@ -1231,6 +1214,7 @@ $(document).ready(function(){
 
 
 });
+
 
 
 

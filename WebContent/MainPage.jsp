@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Questionnaire System</title>
+<title>Create Questionnaire</title>
 
 <link rel="stylesheet" type="text/css" href="CSS/MainPage.css" />
 <link rel="stylesheet" type="text/css" href="CSS/JqueryCSS/jquery.ui.all.css" />
@@ -120,7 +120,7 @@ div#users-contain table td,div#users-contain table th {
   <div id="mainPanel" width="1000" style="background-color: white;">
 
     <div id="hello">
-      <img src="Images/MainPage/MainPageBanner.png" width="1010" height="60" style="position: fixed" /><br /> <br /> <br /> <br />
+      <img src="Images/MainPage/MainPageBanner.png" width="1010" height="53" style="position: fixed" /><br /> <br /> <br /> <br />
     </div>
 
     <ul id="nav" style="vertical-align: middle;">
@@ -153,10 +153,11 @@ div#users-contain table td,div#users-contain table th {
 
     </ul>
 
-    <br /> <br />
+    <br /> <br /><br/>
+    <img src="Images/MainPage/InfoBanner.png" width="1010" height="185" />
     <div class="clear"></div>
-    <br />
     <div id="questionnairediv">
+    <b>Questionnaire Title: </b>
       <%String title=request.getParameter("title");out.println(title);%>
     </div>
 
@@ -177,3 +178,4 @@ div#users-contain table td,div#users-contain table th {
 
 </body>
 </html>
+

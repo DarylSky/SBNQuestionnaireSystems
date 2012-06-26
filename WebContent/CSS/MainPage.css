@@ -49,7 +49,7 @@ body {
 #nav li {
     float: left;
     width: 200px;
-    background: #808080;
+    background: #E9AB17;
     position: relative;
     z-index: 500;
     margin: 0 1px;
@@ -71,8 +71,10 @@ body {
 
 }
 #nav li a:hover {
+    background-color: #736F6E;
     color: #FEF0C9;
 }
+
 #nav a.selected {
     color: #f00;
 }
@@ -101,6 +103,7 @@ body {
 
 #nav ul a:hover {
     text-decoration: underline;
+    background-color: #736F6E;
 }
 
 * html #nav ul {
@@ -166,11 +169,10 @@ div.fullscreen {
 
 #questionnairediv {
     border: 2px #ddd;
-    background-color: white;
-    text-align: center;
     font-size: 20px;
     font-style: bold;
-    color: #F0AB00;
+    color: white;
+    background-color: Gray;
 }
 
 p.flip {
@@ -179,7 +181,6 @@ p.flip {
     text-align: center;
     background: #F2F2F2;
     border: solid 1px #c3c3c3;
-    cursor: move;
 }
 
 p.flip:hover {
@@ -188,14 +189,16 @@ p.flip:hover {
     text-align: center;
     background: #FCFCFC;
     border: solid 1px #c3c3c3;
-}
-p.flip.highlight {
-	margin: 0px;
-    padding: 5px;
-    text-align: center;
-    background: #FFAF0A;
+    cursor: move;
 }
 
+p.flip.highlight {
+    margin: 0px;
+    padding: 5px;
+    text-align: center;
+    background: #EEA508;
+    color: white;
+}
 
 div.panel {
     height: 120px;
@@ -211,10 +214,21 @@ table.tab.active {
     background: blue;
 }
 
-.main{
-    width:325px;
+.main {
+    width: 325px;
 }
 
+.preview {
+    border: 1px solid #006;
+    background: whiteSmoke;
+}
 
+.clearall {
+    
+    border: 1px solid #006;
+    background: whiteSmoke;
+}
 
-
+input.preview {
+    cursor: hand;
+}
