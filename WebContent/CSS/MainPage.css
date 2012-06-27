@@ -13,7 +13,6 @@
 /* make the LI display inline * /
     /* it's position relative so that position absolute */
 /* can be used in submenu */
-
 p:hover {
     background-color: #FAF8CC;
     cursor: move;
@@ -92,7 +91,7 @@ p.flip:hover {
     margin: 0px;
     padding: 5px;
     text-align: center;
-    background: #FBB117;
+    background: #EAEDF0;
     border: solid 1px #c3c3c3;
     cursor: move;
 }
@@ -101,7 +100,7 @@ p.flip.highlight {
     margin: 0px;
     padding: 5px;
     text-align: center;
-    background: #FBB117;
+    background: #F0AB00;
 }
 
 div.panel {
@@ -189,12 +188,11 @@ input.preview {
 }
 
 /* toolbox css */
-
 div.menuAcdn { /* Note about height: Change it to "height:auto;" if flexible height is prefered. 
     It is recommended to specify a fixed height as it is more user-friendly. 
     If the height specified is insufficient than needed, it will be automatically converted to "height:auto". */
     height: 360px;
-    width: 240px;
+    width: 180px;
     position: absolute;
 }
 
@@ -350,15 +348,23 @@ div.menuAcdn div.arrowImage {
 }
 
 .questionnaire_tools_div {
-    
     position: fixed;
-    top: 166px;
-    
+    top: 173px;
 }
 
-.toolbox_title{
-    
-    background-color: #EAEDF0;
-    height: 20px;
+.toolbox_title {
+    background-color: #F0AB00;
+    height: 18px;
+    width: 180px;
+    color: white;
 }
 /* end of toolbox kit */
+.mainNav {
+    font-size: 16px;
+    color: black;
+    text-decoration: none;
+    padding: 14px;
+    left: 5px;
+    padding-top: 70px;
+    font-family: Arial, Helvetica, sans-serif;
+}

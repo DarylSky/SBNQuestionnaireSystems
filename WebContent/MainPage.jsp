@@ -121,9 +121,26 @@ div#users-contain table td,div#users-contain table th {
 
   <br />
   <div id="mainPanel" class="mainPanel" style="background-color: white; width: 1010px;">
-    <div class="logo" style="background-color: white; width: 1010px;">
-      <img src="Images/HomePage/logo.jpg" alt="">
-    </div>
+
+    <table>
+      <tr>
+        <td>
+          <div class="logo" style="background-color: white; width: 400px;">
+            <img src="Images/HomePage/logo.jpg" alt="">
+          </div>
+        </td>
+        <td>
+          <div class="mainNav">
+            <a href="HomePage.jsp" class="mainNav"><b>Home</b></a>
+            <a href="#" class="mainNav"><b>About Us</b></a>
+            <a href="#" class="mainNav"><b>Preview</b></a>
+            <a href="#" class="mainNav"><b>Clients</b></a>
+            <a href="#" class="mainNav"><b>FAQ</b></a>
+            <a href="#" class="mainNav"><b>Contacts</b></a>
+          </div>
+        </td>
+      </tr>
+    </table>
     <table>
       <tr>
         <td>
@@ -146,7 +163,7 @@ div#users-contain table td,div#users-contain table th {
           <br />
           <div id="question1">
             <p class="question_description">
-              <b>My Question Panel</b>
+              <b>Insert objects here</b>
             </p>
           </div>
 
@@ -163,16 +180,19 @@ div#users-contain table td,div#users-contain table th {
           </div>
         </td>
         <td class="questionnaire_tools_div">
-          <div class="toolbox_title"><b>ToolBox:</b></div>
+          <div class="toolbox_title">
+            <b>ToolBox:</b>
+          </div>
           <div class="menuAcdn" animation="true" expand="single">
-            <ul id="nav" style="vertical-align: middle;">
-              <li id="question"><a href="#" style="text-decoration: none">Question</a></li>
-              <li id="textField"><a href="#" style="text-decoration: none">Question Field</a>
+            <ul>
+              <li id="question"><a href="#" style="text-decoration: none">Create Question</a></li>
+              <li id="textField">Question Field
                 <ul id="fieldsInTextField" style="list-style: none;">
                   <li id="shorttext"><a href="#" style="text-decoration: none">Short Field</a></li>
                   <li id="longtext"><a href="#" style="text-decoration: none">Long Field</a></li>
-                </ul></li>
-              <li id="answerField"><a href="#" style="text-decoration: none">Answer Field</a>
+                </ul>
+              </li>
+              <li id="answerField">Answer Field
                 <ul style="list-style: none;">
                   <li id="text"><a href="#" style="text-decoration: none">Text</a></li>
                   <li id="textunit"><a href="#" style="text-decoration: none">Text With Unit</a></li>
@@ -181,17 +201,20 @@ div#users-contain table td,div#users-contain table th {
                   <li id="dropdown"><a href="#" style="text-decoration: none">Drop Down List</a></li>
                   <li id="radio"><a href="#" style="text-decoration: none">Radio Button</a></li>
                   <li id="datepicker"><a href="#" style="text-decoration: none">Date Time</a></li>
-                </ul></li>
-              <li id="guidance"><a href="#" style="text-decoration: none">Guidance</a>
+                </ul>
+              </li>
+              <li id="guidance">Guidance
                 <ul style="list-style: none;">
                   <li id="guidanceAdd"><a href="#" style="text-decoration: none">Add</a></li>
                   <li id="guidanceRemove"><a href="#" style="text-decoration: none">Remove</a></li>
-                </ul></li>
-              <li id="attachment"><a href="#" style="text-decoration: none">Attachment</a>
+                </ul>
+              </li>
+              <li id="attachment">Attachment
                 <ul style="list-style: none;">
                   <li id="attachmentCreator"><a href="#" style="text-decoration: none">For Questionnaire Creator</a></li>
                   <li id="attachmentUser"><a href="#" style="text-decoration: none">For Questionnaire User</a></li>
-                </ul></li>
+                </ul>
+              </li>
 
             </ul>
           </div>

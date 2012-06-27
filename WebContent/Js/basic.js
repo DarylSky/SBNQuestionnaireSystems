@@ -52,7 +52,7 @@ $(document).ready(function(){
 
                      var row = $("<tr/>");
                      var header =$("<th width=960/>");
-                     var input = $("<p class=flip contentEditable=true>Question</p>");
+                     var input = $("<p class=flip>Question "+intquestionPanel+"</p>");
                      var header2 = $("<th>");
                      var collapse = $("<img src=\"Images/MainPage/minimize.gif\" href=\"#\" class=\"plusBtn\" id='"+plusBtn+"' value=\"-\" /><img src=Images/MainPage/TextAnswerField/delete_icon.png height=15px width=15px class=\"remove\" id=\"remove\"/>");
                      var element = $("<tr width=\"960\" id=\"tableslide\"/>");
@@ -76,7 +76,20 @@ $(document).ready(function(){
 
                      $('.question_description').remove();
 
-                     $("#"+questionPanel).live("click", function(e) {
+                     var x = $(div).attr("id");
+                     temp = x;
+
+                     var y = $(table).attr("id");
+                     atemp = y;
+
+                     textField.disabled=false;
+                     fieldsInTextField.disabled=false;
+                     answerField.disabled=false;
+                     attachment.disabled=false;
+
+                     $("#" + temp).sortable();
+
+                     $("#"+questionPanel).click(function() {
 
                     var x = $(div).attr("id");
                     temp = x;
@@ -93,47 +106,27 @@ $(document).ready(function(){
 
              });
 
-              $(document).ready(function(){
-                     $("#"+plusBtn).click(function(){
-                           $("#"+temp).slideToggle("slow");
-                     });
 
-                     $('.remove').click(function() {
+              $("#"+plusBtn).click(function(){
+                       $("#"+temp).slideToggle("slow");
+               });
 
-                         $("#" + atemp).remove();
-                     });
+               $('.remove').click(function() {
+
+                       $("#" + atemp).remove();
+                });
 
                 $('.flip').click(function() {
                        $('.flip').removeClass('highlight');
                        $(this).addClass('highlight').siblings().removeClass('highlight');
 
-                   });
+                });
 
-              });
+
 
        });
 
 
-       $('#subquestion').click(function() {
-              type="text";
-              inttext++;
-              imagetextnumber ="imagetextnumber"+inttext;
-              textnumber="text" + inttext;
-
-              var alphabet = myArray[intsubquestion];
-              var foo = $("#"+temp );
-              var fieldWrapper = $("<p/>");
-              var first =$("<span class=\"ui-icon ui-icon-arrowthick-2-n-s\">" +
-                           "<input type=text size="+3+" value=\"("+alphabet+")\" id="+  textnumber+"/>");
-              var second = $("<img src=Images/MainPage/TextAnswerField/delete_icon.png height=10px width=10px id="+ imagetextnumber +"/>");
-              second.click(function() {
-                     $(this).parent().remove();
-              });
-              foo.append(fieldWrapper);
-              fieldWrapper.append(first);
-              fieldWrapper.append(second);
-              intsubquestion++;
-       });
 
 
        $('#questionnumber').click(function() {
@@ -144,7 +137,7 @@ $(document).ready(function(){
 
               var foo = $("#"+temp);
               var fieldWrapper = $("<p/>");
-              var first =$("<span class=\"ui-icon ui-icon-arrowthick-2-n-s\"><b>Question #:</b><input type=text size=5 id="+ questionname +"maxlength=5/>");
+              var first =$("<span><b>Question #:</b><input type=text size=5 id="+ questionname +"maxlength=5/>");
               var second = $("<img src= Images/MainPage/TextAnswerField/delete_icon.png height=10px width=10px id="+imagenumber +"/>");
               second.click(function() {
                      $(this).parent().remove();
@@ -759,8 +752,8 @@ $(document).ready(function(){
 
               var foo = $("#"+temp);
               var fieldWrapper = $("<p id='"+p+"'/>");
-              var input = $(" <input name="+checktextbox+" type=text id="+checktextbox+" />");
-                var first =$("<input type=checkbox  id="+  checkbuttonbox+" value="+$(input).val()+"/>");
+              var input = $(" <input name="+checktextbox+ " type=text id="+checktextbox+" />");
+              var first =$("<input type=checkbox  id="+  checkbuttonbox+" value="+$(input).val()+"/>");
               var second = $("<img src=Images/MainPage/TextAnswerField/delete_icon.png height=10px width=10px id="+ imagecheckbox +"/>");
               second.click(function() {
                      $(this).parent().remove();
