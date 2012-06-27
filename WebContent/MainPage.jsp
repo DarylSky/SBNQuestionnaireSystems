@@ -163,8 +163,8 @@ div#users-contain table td,div#users-contain table th {
           </div>
         </td>
         <td class="questionnaire_tools_div">
-
-          <div class="menuAcdn" animation="true" expand="multiple">
+          <div class="toolbox_title"><b>ToolBox:</b></div>
+          <div class="menuAcdn" animation="true" expand="single">
             <ul id="nav" style="vertical-align: middle;">
               <li id="question"><a href="#" style="text-decoration: none">Question</a></li>
               <li id="textField"><a href="#" style="text-decoration: none">Question Field</a>

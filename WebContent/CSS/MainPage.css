@@ -10,47 +10,6 @@
     clear: both
 }
 
-#question {
-    list-style-image: url(../Images/MainPage/MenuIcon/QuestionHeader.gif);
-    vertical-align: middle;
-}
-
-#question:hover {
-    background-color: #FFC52B;
-}
-
-#textField {
-    list-style-image: url(../Images/MainPage/MenuIcon/TextFieldHeader.png);
-}
-
-#textField:hover {
-    background-color: #FFC52B;
-}
-
-#answerField {
-    list-style-image: url(../Images/MainPage/MenuIcon/AnswerFieldHeader.png);
-}
-
-#answerField:hover {
-    background-color: #FFC52B;
-}
-
-#guidance {
-    list-style-image: url(../Images/MainPage/MenuIcon/GuidanceHeader.gif);
-}
-
-#guidance:hover {
-    background-color: #FFC52B;
-}
-
-#attachment {
-    list-style-image: url(../Images/MainPage/MenuIcon/AttchmentHeader.gif);
-}
-
-#attachment:hover {
-    background-color: #FFC52B;
-}
-
 /* make the LI display inline * /
     /* it's position relative so that position absolute */
 /* can be used in submenu */
@@ -236,6 +195,7 @@ div.menuAcdn { /* Note about height: Change it to "height:auto;" if flexible hei
     If the height specified is insufficient than needed, it will be automatically converted to "height:auto". */
     height: 360px;
     width: 240px;
+    position: absolute;
 }
 
 div.menuAcdn ul.top {
@@ -255,7 +215,7 @@ div.menuAcdn div.heading,div.menuAcdn a.link {
     outline: none;
 }
 
-div.menuAcdn div.current,div.menuAcdn div:hover,div.menuAcdn a.link:hover,div.menuAcdn div.current a.link {
+div.menuAcdn div.current,div.menuAcdn,div.menuAcdn a.link:hover,div.menuAcdn div.current a.link {
     color: #333;
     font-weight: normal;
     text-decoration: none;
@@ -268,7 +228,7 @@ div.menuAcdn div.arrowImage {
     height: 12px;
     top: 9px;
     right: 2px; /* Changing it to "left:2px;" will position the arrow image to the left */
-    background-image: url(arrows.gif);
+    background-image: url(../Images/MainPage/arrows.gif);
     background-position: 0 0;
 }
 
@@ -339,6 +299,7 @@ div.menuAcdn,div.menuAcdn ul {
     display: block;
     font-size: 0px;
     line-height: 0px;
+    bottom: 0px;
 }
 
 div.menuAcdn li {
@@ -388,4 +349,16 @@ div.menuAcdn div.arrowImage {
     overflow: hidden;
 }
 
+.questionnaire_tools_div {
+    
+    position: fixed;
+    top: 166px;
+    
+}
+
+.toolbox_title{
+    
+    background-color: #EAEDF0;
+    height: 20px;
+}
 /* end of toolbox kit */
