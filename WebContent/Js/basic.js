@@ -51,11 +51,11 @@ $(document).ready(function(){
               //<tr><th width=\"965\"></th><th><button type=\"button\" href=\"#\" class=\"plusBtn\" id=\"PlusBtn\" value=\"-\">-</button></tr><tr width=\"965\" id=\"tableslide\"></tr></th></table>/
 
                      var row = $("<tr/>");
-                     var header =$("<th width=965/>");
+                     var header =$("<th width=960/>");
                      var input = $("<p class=flip contentEditable=true>Question</p>");
                      var header2 = $("<th>");
                      var collapse = $("<img src=\"Images/MainPage/minimize.gif\" href=\"#\" class=\"plusBtn\" id='"+plusBtn+"' value=\"-\" /><img src=Images/MainPage/TextAnswerField/delete_icon.png height=15px width=15px class=\"remove\" id=\"remove\"/>");
-                     var element = $("<tr width=\"965\" id=\"tableslide\"/>");
+                     var element = $("<tr width=\"960\" id=\"tableslide\"/>");
                      var tabledata = $("<td/>");
                      var form = $("<form method=get action=MainPageServlet />");
                      var div = $("<div class=\"demo\" id= '"+sortableDiv+"' />");
@@ -73,6 +73,8 @@ $(document).ready(function(){
                      tabledata.append(form);
                      form.append(div);
                      form.append(button);
+
+                     $('.question_description').remove();
 
                      $("#"+questionPanel).live("click", function(e) {
 

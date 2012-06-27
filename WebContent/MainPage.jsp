@@ -35,10 +35,6 @@
     background: silver;
 }
 
-body {
-    font-size: 62.5%;
-}
-
 input.text {
     margin-bottom: 12px;
     width: 95%;
@@ -116,65 +112,98 @@ div#users-contain table td,div#users-contain table th {
 </script>
 
 </head>
-<body style="border: 2px double #003366; width: 1010px; background-image: -ms-radial-gradient(left top, circle farthest-corner, #7D7D7D 0%, #001A26 100%);">
-  <div id="mainPanel" width="1000" style="background-color: white;">
 
-    <div id="hello">
-      <img src="Images/MainPage/MainPageBanner.png" width="1010" height="53" style="position: fixed" /><br /> <br /> <br /> <br />
-    </div>
+<body>
 
-    <ul id="nav" style="vertical-align: middle;">
-      <li id="question"><a href="#">Question</a></li>
-      <li id="textField"><a href="#">Text Field</a>
-        <ul id="fieldsInTextField" style="list-style: none;">
-          <li id="shorttext"><a href="#">Short Field</a></li>
-          <li id="longtext"><a href="#">Long Field</a></li>
-        </ul></li>
-      <li id="answerField"><a href="#">Answer Field</a>
-        <ul style="list-style: none;">
-          <li id="text"><a href="#">Text</a></li>
-          <li id="textunit"><a href="#">Text With Unit</a></li>
-          <li id="paragraph"><a href="#">Paragraph Text</a></li>
-          <li id="checkbox"><a href="#">Check Box</a></li>
-          <li id="dropdown"><a href="#">Drop Down List</a></li>
-          <li id="radio"><a href="#">Radio Button</a></li>
-          <li id="datepicker"><a href="#">Date Time</a></li>
-        </ul></li>
-      <li id="guidance"><a href="#">Guidance</a>
-        <ul style="list-style: none;">
-          <li id="guidanceAdd"><a href="#">Add</a></li>
-          <li id="guidanceRemove"><a href="#">Remove</a></li>
-        </ul></li>
-      <li id="attachment"><a href="#">Attachment</a>
-        <ul style="list-style: none;">
-          <li id="attachmentCreator"><a href="#">For Questionnaire Creator</a></li>
-          <li id="attachmentUser"><a href="#">For Questionnaire User</a></li>
-        </ul></li>
-
-    </ul>
-
-    <br /> <br /><br/>
-    <img src="Images/MainPage/InfoBanner.png" width="1010" height="185" />
-    <div class="clear"></div>
-    <div id="questionnairediv">
-    <b>Questionnaire Title: </b>
-      <%String title=request.getParameter("title");out.println(title);%>
-    </div>
-
-    <br />
-    <div id="question1"></div>
-
+  <div class="top_decoration_line">
+    <img src="Images/MainPage/topdecorationline.png" height="10px" width="1579px" />
   </div>
 
-  <center>
-    <div id="version">
-      <img src="Images/MainPage/MainPageFooter.png" width="1010" height="23" /><br />
+  <br />
+  <div id="mainPanel" class="mainPanel" style="background-color: white; width: 1010px;">
+    <div class="logo" style="background-color: white; width: 1010px;">
+      <img src="Images/HomePage/logo.jpg" alt="">
     </div>
+    <table>
+      <tr>
+        <td>
+          <img src="Images/MainPage/InfoBanner.png" width="1010" height="185" /> <br /> <br />
+          <div class="clear"></div>
+          <div id="questionnairediv">
+            <b>Questionnaire Title: </b>
+            <%
+                String title = request.getParameter("title");
+                out.println(title);
+            %>
+            &nbsp; &nbsp; &nbsp;<b>Category: </b>
+            <%
+                String category = request.getParameter("category");
+                out.println(category);
+            %>
 
-    <div id="dialog-form" title="Guidance"></div>
+          </div>
 
-  </center>
+          <br />
+          <div id="question1">
+            <p class="question_description">
+              <b>My Question Panel</b>
+            </p>
+          </div>
 
+          <div id="sap_reasearch_icon">
+            <div style="width: 950px;">
+              <br /> <br />
+              <p class="sap_research_icon2">
+                <b>RESEARCH</b>
+              </p>
+              <p class="sap_research_icon1">
+                <b>SAP</b>
+              </p>
+            </div>
+          </div>
+        </td>
+        <td class="questionnaire_tools_div">
+        
+          <div class="questionnaire_tools">
+            <b>Tools: </b>
+          <br/>
+          <ul id="nav" style="vertical-align: middle;">
+          <li id="question"><a href="#" style="text-decoration: none">Question</a></li>
+            <li id="textField"><a href="#" style="text-decoration: none">Question Field</a>
+              <ul id="fieldsInTextField" style="list-style: none;">
+                <li id="shorttext"><a href="#" style="text-decoration: none">Short Field</a></li>
+                <li id="longtext"><a href="#" style="text-decoration: none">Long Field</a></li>
+              </ul></li>
+            <li id="answerField"><a href="#" style="text-decoration: none">Answer Field</a>
+              <ul style="list-style: none;">
+                <li id="text"><a href="#" style="text-decoration: none">Text</a></li>
+                <li id="textunit"><a href="#" style="text-decoration: none">Text With Unit</a></li>
+                <li id="paragraph"><a href="#" style="text-decoration: none">Paragraph Text</a></li>
+                <li id="checkbox"><a href="#" style="text-decoration: none">Check Box</a></li>
+                <li id="dropdown"><a href="#" style="text-decoration: none">Drop Down List</a></li>
+                <li id="radio"><a href="#" style="text-decoration: none">Radio Button</a></li>
+                <li id="datepicker"><a href="#" style="text-decoration: none">Date Time</a></li>
+              </ul></li>
+            <li id="guidance"><a href="#" style="text-decoration: none">Guidance</a>
+              <ul style="list-style: none;">
+                <li id="guidanceAdd"><a href="#" style="text-decoration: none">Add</a></li>
+                <li id="guidanceRemove"><a href="#" style="text-decoration: none">Remove</a></li>
+              </ul></li>
+            <li id="attachment"><a href="#" style="text-decoration: none">Attachment</a>
+              <ul style="list-style: none;">
+                <li id="attachmentCreator"><a href="#" style="text-decoration: none">For Questionnaire Creator</a></li>
+                <li id="attachmentUser"><a href="#" style="text-decoration: none">For Questionnaire User</a></li>
+              </ul></li>
+
+          </ul>
+          
+          </div>
+        </td>
+      </tr>
+    </table>
+
+  </div>
+  <div id="dialog-form" title="Guidance"></div>
 
 </body>
 </html>

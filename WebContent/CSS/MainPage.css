@@ -1,8 +1,4 @@
-root {
-    display: block;
-}
-
-body {
+.mainPanel {
     font-family: arial;
     font-size: 11px;
     margin-top: 0;
@@ -17,9 +13,8 @@ body {
 #nav {
     margin: 0;
     padding: 0;
-    position: fixed;
-    background: white;
-    vertical-align: top;
+    padding-left:40px;
+    background-color: white;
 }
 
 #question {
@@ -27,51 +22,64 @@ body {
     vertical-align: middle;
 }
 
+#question:hover {
+    background-color: #FFC52B;
+}
+
 #textField {
     list-style-image: url(../Images/MainPage/MenuIcon/TextFieldHeader.png);
+}
+
+#textField:hover {
+    background-color: #FFC52B;
 }
 
 #answerField {
     list-style-image: url(../Images/MainPage/MenuIcon/AnswerFieldHeader.png);
 }
 
+#answerField:hover {
+    background-color: #FFC52B;
+}
+
 #guidance {
     list-style-image: url(../Images/MainPage/MenuIcon/GuidanceHeader.gif);
+}
+
+#guidance:hover {
+    background-color: #FFC52B;
 }
 
 #attachment {
     list-style-image: url(../Images/MainPage/MenuIcon/AttchmentHeader.gif);
 }
 
+#attachment:hover {
+    background-color: #FFC52B;
+}
+
 /* make the LI display inline * /
     /* it's position relative so that position absolute */
 /* can be used in submenu */
 #nav li {
-    float: left;
-    width: 200px;
-    background: #E9AB17;
     position: relative;
     z-index: 500;
-    margin: 0 1px;
+    margin: 0 5px;
 }
 
 /* this is the parent menu */
 #nav li a {
-    display: block;
-    padding: 3px 8px 8px 8px;
-    font-weight: 700;
     height: 23px;
-    color: #fff;
     text-align: center;
     vertical-align: middle;
-    color: white;
+    color: black;
     font-size: 120%;
     font-family: "Eurostile"
 }
 
 }
 #nav li a:hover {
-    background-color: #736F6E;
+    background-color: #FFC52B;
     color: #FEF0C9;
 }
 
@@ -82,10 +90,9 @@ body {
 /* submenu, it's hidden by default */
 #nav ul {
     position: absolute;
-    left: 0;
+    left: 80px;
     display: none;
-    margin: 0 0 0 -1px;
-    padding: 0;
+
 }
 
 #nav ul li {
@@ -98,12 +105,11 @@ body {
     display: block;
     height: 15px;
     padding: 11px 11px;
-    color: white;
+    color: black;
 }
 
 #nav ul a:hover {
-    text-decoration: underline;
-    background-color: #736F6E;
+    background-color: #FFC52B;
 }
 
 * html #nav ul {
@@ -169,17 +175,18 @@ div.fullscreen {
 
 #questionnairediv {
     border: 2px #ddd;
-    font-size: 20px;
+    font-size: 16px;
     font-style: bold;
-    color: white;
-    background-color: Gray;
+    color: #504A4B;
+    background-color: #EAEDF0;
+    border: 2px solid #C4C4C3;
 }
 
 p.flip {
     margin: 0px;
     padding: 5px;
     text-align: center;
-    background: #F2F2F2;
+    background: white;
     border: solid 1px #c3c3c3;
 }
 
@@ -187,7 +194,7 @@ p.flip:hover {
     margin: 0px;
     padding: 5px;
     text-align: center;
-    background: #FCFCFC;
+    background: #FBB117;
     border: solid 1px #c3c3c3;
     cursor: move;
 }
@@ -196,8 +203,7 @@ p.flip.highlight {
     margin: 0px;
     padding: 5px;
     text-align: center;
-    background: #EEA508;
-    color: white;
+    background: #FBB117;
 }
 
 div.panel {
@@ -224,7 +230,6 @@ table.tab.active {
 }
 
 .clearall {
-    
     border: 1px solid #006;
     background: whiteSmoke;
 }
@@ -232,3 +237,56 @@ table.tab.active {
 input.preview {
     cursor: hand;
 }
+
+#question1 {
+    background-color: #EAEDF0;
+    border: 2px solid #C4C4C3;
+}
+
+.question_description {
+    text-align: center;
+    color: #504A4B;
+}
+
+.question_description:hover {
+    background-color: #EAEDF0;
+}
+
+.class {
+    color: black;
+    font-size: 20px;
+}
+
+.top_decoration_line {
+    background-color: white;
+}
+
+.questionnaire_tools {
+    background-color: #EAEDF0;
+    font-size: 12px;
+    width: 200px;
+    bottom: 392px;
+    position: fixed;
+}
+
+#sap_reasearch_icon {
+    width: 1010px;
+    height: 60px;
+    text-align: right;
+    background-color: #F8F8F8;
+}
+
+.sap_research_icon1 {
+    color: orange;
+    float: right;
+}
+
+.sap_research_icon2 {
+    color: black;
+    float: right;
+}
+
+.footer_hyperlink {
+    color: blue;
+}
+
