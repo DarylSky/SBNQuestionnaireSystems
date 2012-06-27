@@ -10,7 +10,7 @@
 <script src="Js/jquery-1.7.2.js"></script>
 <script src="Js/jquery-ui-1.8.20.custom.js"></script>
 <script src="Js/basic.js"></script>
-
+<script src="Js/menuAccordion.js"></script>
 <script src="Js/datetimepicker.js"></script>
 <script src="Js/jquery.bgiframe-2.1.2.js"></script>
 <script src="Js/JqueryUI/jquery.ui.core.js"></script>
@@ -163,40 +163,37 @@ div#users-contain table td,div#users-contain table th {
           </div>
         </td>
         <td class="questionnaire_tools_div">
-        
-          <div class="questionnaire_tools">
-            <b>Tools: </b>
-          <br/>
-          <ul id="nav" style="vertical-align: middle;">
-          <li id="question"><a href="#" style="text-decoration: none">Question</a></li>
-            <li id="textField"><a href="#" style="text-decoration: none">Question Field</a>
-              <ul id="fieldsInTextField" style="list-style: none;">
-                <li id="shorttext"><a href="#" style="text-decoration: none">Short Field</a></li>
-                <li id="longtext"><a href="#" style="text-decoration: none">Long Field</a></li>
-              </ul></li>
-            <li id="answerField"><a href="#" style="text-decoration: none">Answer Field</a>
-              <ul style="list-style: none;">
-                <li id="text"><a href="#" style="text-decoration: none">Text</a></li>
-                <li id="textunit"><a href="#" style="text-decoration: none">Text With Unit</a></li>
-                <li id="paragraph"><a href="#" style="text-decoration: none">Paragraph Text</a></li>
-                <li id="checkbox"><a href="#" style="text-decoration: none">Check Box</a></li>
-                <li id="dropdown"><a href="#" style="text-decoration: none">Drop Down List</a></li>
-                <li id="radio"><a href="#" style="text-decoration: none">Radio Button</a></li>
-                <li id="datepicker"><a href="#" style="text-decoration: none">Date Time</a></li>
-              </ul></li>
-            <li id="guidance"><a href="#" style="text-decoration: none">Guidance</a>
-              <ul style="list-style: none;">
-                <li id="guidanceAdd"><a href="#" style="text-decoration: none">Add</a></li>
-                <li id="guidanceRemove"><a href="#" style="text-decoration: none">Remove</a></li>
-              </ul></li>
-            <li id="attachment"><a href="#" style="text-decoration: none">Attachment</a>
-              <ul style="list-style: none;">
-                <li id="attachmentCreator"><a href="#" style="text-decoration: none">For Questionnaire Creator</a></li>
-                <li id="attachmentUser"><a href="#" style="text-decoration: none">For Questionnaire User</a></li>
-              </ul></li>
 
-          </ul>
-          
+          <div class="menuAcdn" animation="true" expand="multiple">
+            <ul id="nav" style="vertical-align: middle;">
+              <li id="question"><a href="#" style="text-decoration: none">Question</a></li>
+              <li id="textField"><a href="#" style="text-decoration: none">Question Field</a>
+                <ul id="fieldsInTextField" style="list-style: none;">
+                  <li id="shorttext"><a href="#" style="text-decoration: none">Short Field</a></li>
+                  <li id="longtext"><a href="#" style="text-decoration: none">Long Field</a></li>
+                </ul></li>
+              <li id="answerField"><a href="#" style="text-decoration: none">Answer Field</a>
+                <ul style="list-style: none;">
+                  <li id="text"><a href="#" style="text-decoration: none">Text</a></li>
+                  <li id="textunit"><a href="#" style="text-decoration: none">Text With Unit</a></li>
+                  <li id="paragraph"><a href="#" style="text-decoration: none">Paragraph Text</a></li>
+                  <li id="checkbox"><a href="#" style="text-decoration: none">Check Box</a></li>
+                  <li id="dropdown"><a href="#" style="text-decoration: none">Drop Down List</a></li>
+                  <li id="radio"><a href="#" style="text-decoration: none">Radio Button</a></li>
+                  <li id="datepicker"><a href="#" style="text-decoration: none">Date Time</a></li>
+                </ul></li>
+              <li id="guidance"><a href="#" style="text-decoration: none">Guidance</a>
+                <ul style="list-style: none;">
+                  <li id="guidanceAdd"><a href="#" style="text-decoration: none">Add</a></li>
+                  <li id="guidanceRemove"><a href="#" style="text-decoration: none">Remove</a></li>
+                </ul></li>
+              <li id="attachment"><a href="#" style="text-decoration: none">Attachment</a>
+                <ul style="list-style: none;">
+                  <li id="attachmentCreator"><a href="#" style="text-decoration: none">For Questionnaire Creator</a></li>
+                  <li id="attachmentUser"><a href="#" style="text-decoration: none">For Questionnaire User</a></li>
+                </ul></li>
+
+            </ul>
           </div>
         </td>
       </tr>

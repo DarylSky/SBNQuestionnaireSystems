@@ -10,13 +10,6 @@
     clear: both
 }
 
-#nav {
-    margin: 0;
-    padding: 0;
-    padding-left:40px;
-    background-color: white;
-}
-
 #question {
     list-style-image: url(../Images/MainPage/MenuIcon/QuestionHeader.gif);
     vertical-align: middle;
@@ -61,60 +54,6 @@
 /* make the LI display inline * /
     /* it's position relative so that position absolute */
 /* can be used in submenu */
-#nav li {
-    position: relative;
-    z-index: 500;
-    margin: 0 5px;
-}
-
-/* this is the parent menu */
-#nav li a {
-    height: 23px;
-    text-align: center;
-    vertical-align: middle;
-    color: black;
-    font-size: 120%;
-    font-family: "Eurostile"
-}
-
-}
-#nav li a:hover {
-    background-color: #FFC52B;
-    color: #FEF0C9;
-}
-
-#nav a.selected {
-    color: #f00;
-}
-
-/* submenu, it's hidden by default */
-#nav ul {
-    position: absolute;
-    left: 80px;
-    display: none;
-
-}
-
-#nav ul li {
-    width: 200px;
-    float: left;
-    border-top: 1px solid #fff;
-}
-
-#nav ul a {
-    display: block;
-    height: 15px;
-    padding: 11px 11px;
-    color: black;
-}
-
-#nav ul a:hover {
-    background-color: #FFC52B;
-}
-
-* html #nav ul {
-    margin: 0 0 0 -2px;
-}
 
 p:hover {
     background-color: #FAF8CC;
@@ -290,3 +229,163 @@ input.preview {
     color: blue;
 }
 
+/* toolbox css */
+
+div.menuAcdn { /* Note about height: Change it to "height:auto;" if flexible height is prefered. 
+    It is recommended to specify a fixed height as it is more user-friendly. 
+    If the height specified is insufficient than needed, it will be automatically converted to "height:auto". */
+    height: 360px;
+    width: 240px;
+}
+
+div.menuAcdn ul.top {
+    padding-left: 0;
+    background: white;
+    border: 1px solid #D2D8DE; /*1*/
+}
+
+div.menuAcdn div.heading,div.menuAcdn a.link {
+    padding: 8px;
+    padding-left: 18px;
+    text-align: left;
+    font: normal 12px Verdana;
+    color: Black;
+    background: #EEE url(bg.gif) repeat-x 0 0;
+    text-decoration: none;
+    outline: none;
+}
+
+div.menuAcdn div.current,div.menuAcdn div:hover,div.menuAcdn a.link:hover,div.menuAcdn div.current a.link {
+    color: #333;
+    font-weight: normal;
+    text-decoration: none;
+    background-position: 0 -64px;
+}
+
+/* arrow image for the top headings */
+div.menuAcdn div.arrowImage {
+    width: 12px;
+    height: 12px;
+    top: 9px;
+    right: 2px; /* Changing it to "left:2px;" will position the arrow image to the left */
+    background-image: url(arrows.gif);
+    background-position: 0 0;
+}
+
+div.menuAcdn div.current div.arrowImage {
+    background-position: 0 -12px;
+}
+
+div.menuAcdn div.separator {
+    border-top: 1px solid #D2D8DE; /*1*/
+    border-bottom: none;
+}
+
+/* ##### Sub level items #####*/
+div.menuAcdn ul.sub {
+    padding-left: 14px; /*This determines the hierarchical offset*/
+}
+
+div.menuAcdn ul.sub div.heading {
+    text-align: left;
+    font: normal 12px Arial;
+    padding: 5px;
+    padding-left: 20px;
+    color: Black;
+    background: none;
+}
+
+div.menuAcdn ul.sub div.heading a {
+    color: Black;
+}
+
+div.menuAcdn ul.sub div.current {
+    color: Black;
+    background: none;
+}
+
+div.menuAcdn ul.sub a.link {
+    font: normal 11px Arial;
+    color: #333;
+    padding: 5px;
+    padding-left: 20px;
+    text-decoration: none;
+    background: none;
+}
+
+div.menuAcdn ul.sub a.link:hover,div.menuAcdn ul.sub a.current,div.menuAcdn ul.sub div.heading a:hover,div.menuAcdn ul.sub div.heading a.current
+    {
+    color: #09F;
+    text-decoration: underline;
+    background: none;
+}
+
+div.menuAcdn ul.sub div.arrowImage {
+    width: 12px;
+    height: 12px;
+    top: 6px;
+    left: 4px;
+    background-image: url(arrows.gif);
+    background-position: 0 -24px;
+}
+
+div.menuAcdn ul.sub div.current div.arrowImage {
+    background-position: 0 -36px;
+}
+
+/* ##### Followings usually don't need modification ###### */
+/*Hack the font-size:0 bug for IE6 */
+div.menuAcdn,div.menuAcdn ul {
+    display: block;
+    font-size: 0px;
+    line-height: 0px;
+}
+
+div.menuAcdn li {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+div.menuAcdn:after {
+    content: '.';
+    height: 0;
+    clear: both;
+    display: block;
+    visibility: hidden;
+}
+
+/*Hack for IE6 again*/
+div.menuAcdn ul,div.menuAcdn li,div.menuAcdn div.heading,div.menuAcdn a.smLink,div.menuAcdn div.description {
+    _zoom: 1;
+}
+
+div.menuAcdn li {
+    _float: left;
+    _width: 100%;
+}
+
+div.menuAcdn ul {
+    position: relative; /*!*/
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    padding-left: 10px;
+}
+
+div.menuAcdn li {
+    padding: 0;
+    margin: 0;
+}
+
+div.menuAcdn div.heading,div.menuAcdn div.current {
+    position: relative;
+    cursor: pointer;
+}
+
+div.menuAcdn div.arrowImage {
+    position: absolute;
+    overflow: hidden;
+}
+
+/* end of toolbox kit */
