@@ -88,31 +88,10 @@ div#users-contain table td,div#users-contain table th {
             $("#question1").sortable();
         });
 
-        $("a").click(function(event) { 
-            event.preventDefault(); 
-        
-            return false;
+        $(function() {
+            $("#datepicker").datepicker();
+        });
     });
-
-    $(function() {
-        $("#datepicker").datepicker();
-    });
-
-    function getParams() {
-        var idx = document.URL.indexOf('?');
-        var params = new Array();
-        if (idx != -1) {
-            var pairs = document.URL.substring(idx + 1, document.URL.length).split('&');
-            for ( var i = 0; i < pairs.length; i++) {
-                nameVal = pairs[i].split('=');
-                params[nameVal[0]] = nameVal[1];
-            }
-        }
-        return params;
-    }
-
-    params = getParams();
-    title = unescape(params["title"]);
 </script>
 
 </head>
@@ -135,12 +114,24 @@ div#users-contain table td,div#users-contain table th {
         </td>
         <td>
           <div class="mainNav">
-            <a href="HomePage.jsp" class="mainNav"><b>Home</b></a>
-            <a href="#" class="mainNav"><b>About Us</b></a>
-            <a href="#" class="mainNav"><b>Preview</b></a>
-            <a href="#" class="mainNav"><b>Clients</b></a>
-            <a href="#" class="mainNav"><b>FAQ</b></a>
-            <a href="#" class="mainNav"><b>Contacts</b></a>
+            <a href="HomePage.jsp" class="mainNav">
+              <b>Home</b>
+            </a>
+            <a href="#" class="mainNav">
+              <b>About Us</b>
+            </a>
+            <a href="#" class="mainNav">
+              <b>Preview</b>
+            </a>
+            <a href="#" class="mainNav">
+              <b>Clients</b>
+            </a>
+            <a href="#" class="mainNav">
+              <b>FAQ</b>
+            </a>
+            <a href="#" class="mainNav">
+              <b>Contacts</b>
+            </a>
           </div>
         </td>
       </tr>
@@ -148,7 +139,7 @@ div#users-contain table td,div#users-contain table th {
     <table>
       <tr>
         <td>
-          <img src="Images/MainPage/InfoBanner.png" width="1010" height="185" /> <br /> <br />
+          <img src="Images/MainPage/InfoBanner.jpg" width="1010" height="185" /> <br /> <br />
           <div class="clear"></div>
           <div id="questionnairediv">
             <b>Questionnaire Title: </b>
@@ -167,7 +158,7 @@ div#users-contain table td,div#users-contain table th {
           <br />
           <div id="question1">
             <p class="question_description">
-              <b>Insert objects here</b>
+              <b>Objects will be inserted here</b>
             </p>
           </div>
 
@@ -228,6 +219,14 @@ div#users-contain table td,div#users-contain table th {
 
   </div>
   <div id="dialog-form" title="Guidance"></div>
+
+  <script> 
+$(".menuAcdn").click(function(event) { 
+  event.preventDefault(); 
+}); 
+
+</script>
+
 
 </body>
 </html>

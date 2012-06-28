@@ -44,6 +44,7 @@ $(document).ready(function(){
               sortableDiv= "sortable"+intquestionPanel;
               mainDiv= "mainDiv"+intquestionPanel;
               plusBtn= "plusBtn"+intquestionPanel;
+              flip= "flip" + intquestionPanel;
 
               var question = $('#question1');
               var test = $("<div id='"+mainDiv+"'></div>");
@@ -52,14 +53,21 @@ $(document).ready(function(){
 
                      var row = $("<tr/>");
                      var header =$("<th width=960/>");
-                     var input = $("<p class=flip>Question "+intquestionPanel+"</p>");
+                     var input = $("<p class=flip id= '"+flip+"'>Question "+intquestionPanel+"</p>");
                      var header2 = $("<th>");
                      var collapse = $("<img src=\"Images/MainPage/minimize.gif\" href=\"#\" class=\"plusBtn\" id='"+plusBtn+"' value=\"-\" /><img src=Images/MainPage/TextAnswerField/delete_icon.png height=15px width=15px class=\"remove\" id=\"remove\"/>");
                      var element = $("<tr width=\"960\" id=\"tableslide\"/>");
                      var tabledata = $("<td/>");
-                     var form = $("<form method=get action=MainPageServlet />");
+                     var form = $("<form method=\"get\" action=\"MainPageServlet\" target=\"_blank\"/>");
                      var div = $("<div class=\"demo\" id= '"+sortableDiv+"' />");
                      var button = $("<input type=submit value=Preview  class=\"preview\"></input>");
+                     var newURL = window.location.search.split( '=' );
+                     var url1=newURL[1];
+                     var titleArray= url1.split('&');
+                     var title= titleArray[0];
+                     var url2=newURL[2];
+                     var hidden1 = $("<input type=hidden name=title value="+title+" />");
+                     var hidden2 = $("<input type=hidden name=category value="+url2+" />");
 
                      question.append(test);
                      test.append(table);
@@ -72,7 +80,13 @@ $(document).ready(function(){
                      element.append(tabledata);
                      tabledata.append(form);
                      form.append(div);
+                     form.append(hidden1);
+                     form.append(hidden2);
                      form.append(button);
+
+                     $('.flip').removeClass('highlight');
+                     $("#" + flip).addClass('highlight');
+
 
                      $('.question_description').remove();
 
@@ -114,6 +128,7 @@ $(document).ready(function(){
                $('.remove').click(function() {
 
                        $("#" + atemp).remove();
+
                 });
 
                 $('.flip').click(function() {
@@ -885,7 +900,7 @@ $(document).ready(function(){
                      var y =$(select).attr("value");
                      $("#" + x +" option[value='"+y+"']").remove();
               });
-              var fourth = $("<img src=Images/MainPage/TextAnswerField/delete_icon.png height=10px width=10px/>");
+             var fourth = $("<img src=Images/MainPage/TextAnswerField/delete_icon.png height=10px width=10px/>");
               fourth.click(function() {
                      $(this).parent().remove();
               });
@@ -1057,7 +1072,8 @@ $(document).ready(function(){
               var fieldWrapper = $("<p id='"+p+"'/>");
               var first =$("<span class=\"ui-icon ui-icon-arrowthick-2-n-s\">");
               var second = $("<img src=Images/MainPage/TextAnswerField/plus_icon.png height=15px width=15px/>");
-              var select = $("<b>Answer: </b><select style=width:100px id="+  dropdownid+"/>");
+              var answer = $("<b>Answer: </b>");
+              var select = $("<select style=width:100px id=\"ddlList\"/>");
               var text=$("<input type=text/>");
 
 
@@ -1147,6 +1163,7 @@ $(document).ready(function(){
 
               foo.append(fieldWrapper);
               fieldWrapper.append(first);
+              fieldWrapper.append(answer);
               fieldWrapper.append(select);
               fieldWrapper.append(text);
               fieldWrapper.append(second);
@@ -1176,6 +1193,7 @@ $(document).ready(function(){
 
 
 });
+
 
 
 

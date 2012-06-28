@@ -218,7 +218,12 @@ public class MainPageServlet extends HttpServlet {
             session.setAttribute("checkBoxValue", checkBoxArray);
             session.setAttribute("radioValue", radioArray);
 
-            response.sendRedirect("Preview.jsp");
+            final String title = request.getParameter("title");
+            final String category = request.getParameter("category");
+            out.println(title);
+            out.println(category);
+
+            response.sendRedirect("Preview.jsp?title=" + title + "&category=" + category);
 
         } finally {
             out.close();

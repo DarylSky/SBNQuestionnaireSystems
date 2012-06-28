@@ -65,7 +65,7 @@
                 </p>
 
                 <p>
-                  <span style="font-size: 13pt; font-weight: bolder;"> Amount of Computer sold in Year 2011/2012</span>
+                  <span style="font-size: 13pt; font-weight: bolder;"> Amount of Computers sold in Year 2011/2012</span>
                   <br /> Date Created: 03-06-2012 || Last Modified By Dustin Pang on 05062012
                 </p>
 
@@ -73,6 +73,16 @@
                   <span style="font-size: 13pt; font-weight: bolder;"> Number of Laundry Detergents sold for July 2012</span>
                   <br /> Date Created: 03-06-2012 || Last Modified By John Lim on 05062012
                 </p>
+                <p>
+                  <span style="font-size: 13pt; font-weight: bolder;"> Number of Toilet Tissues sold for December 2012</span>
+                  <br /> Date Created: 03-12-2012 || Last Modified By Mah Li'en on 05062012
+                </p>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
               </div>
             </div>
           </div>
@@ -175,13 +185,13 @@
     </div>
   </footer>
   <script type="text/javascript">
-              Cufon.now();
+            Cufon.now();
 
-              function hello() {
-                     var title = document.title.value;
-                     alert(title);
-              }
-       </script>
+            function hello() {
+                var title = document.title.value;
+                alert(title);
+            }
+        </script>
 </body>
 </html>
 
