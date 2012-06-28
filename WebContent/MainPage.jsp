@@ -88,6 +88,10 @@ div#users-contain table td,div#users-contain table th {
             $("#question1").sortable();
         });
 
+        $("a").click(function(event) { 
+            event.preventDefault(); 
+        
+            return false;
     });
 
     $(function() {

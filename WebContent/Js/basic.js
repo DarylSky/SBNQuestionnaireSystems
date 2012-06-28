@@ -59,7 +59,7 @@ $(document).ready(function(){
                      var tabledata = $("<td/>");
                      var form = $("<form method=get action=MainPageServlet />");
                      var div = $("<div class=\"demo\" id= '"+sortableDiv+"' />");
-                     var button = $("<input type=submit value=Preview class=\"preview\"></input>");
+                     var button = $("<input type=submit value=Preview  class=\"preview\"></input>");
 
                      question.append(test);
                      test.append(table);
@@ -126,27 +126,6 @@ $(document).ready(function(){
 
        });
 
-
-
-
-       $('#questionnumber').click(function() {
-              type="text";
-              intquestion++;
-              imagenumber ="imagenumber"+intquestion;
-              questionname="questionnumber" + intquestion;
-
-              var foo = $("#"+temp);
-              var fieldWrapper = $("<p/>");
-              var first =$("<span><b>Question #:</b><input type=text size=5 id="+ questionname +"maxlength=5/>");
-              var second = $("<img src= Images/MainPage/TextAnswerField/delete_icon.png height=10px width=10px id="+imagenumber +"/>");
-              second.click(function() {
-                     $(this).parent().remove();
-              });
-              foo.append(fieldWrapper);
-              fieldWrapper.append(first);
-              fieldWrapper.append(second);
-
-       });
 
        $('#shorttext').click(function() {
 
@@ -505,7 +484,7 @@ $(document).ready(function(){
               var fieldWrapper = $("<p id='"+p+"'/>");
               //var first =$("<span class=\"ui-icon ui-icon-arrowthick-2-n-s\"/>");
               var input = $(" <input name="+radiotextnumber+" type=text id="+radiotextnumber+" />");
-                var radio =$("<input type=radio id="+radiobuttonnumber+" value="+$(input).val()+"/>");
+                var radio =$("<b>Answer: </b><input type=radio id="+radiobuttonnumber+" value="+$(input).val()+"/>");
               var second = $("<img src=Images/MainPage/TextAnswerField/delete_icon.png height=10px width=10px id="+ imageradionumber +"/>");
               second.click(function() {
                      $(this).parent().remove();
@@ -753,7 +732,7 @@ $(document).ready(function(){
               var foo = $("#"+temp);
               var fieldWrapper = $("<p id='"+p+"'/>");
               var input = $(" <input name="+checktextbox+ " type=text id="+checktextbox+" />");
-              var first =$("<input type=checkbox  id="+  checkbuttonbox+" value="+$(input).val()+"/>");
+              var first =$(" <b>Answer: </b><input type=checkbox  id="+  checkbuttonbox+" value="+$(input).val()+"/>");
               var second = $("<img src=Images/MainPage/TextAnswerField/delete_icon.png height=10px width=10px id="+ imagecheckbox +"/>");
               second.click(function() {
                      $(this).parent().remove();
@@ -1078,7 +1057,7 @@ $(document).ready(function(){
               var fieldWrapper = $("<p id='"+p+"'/>");
               var first =$("<span class=\"ui-icon ui-icon-arrowthick-2-n-s\">");
               var second = $("<img src=Images/MainPage/TextAnswerField/plus_icon.png height=15px width=15px/>");
-              var select = $("<select style=width:100px id="+  dropdownid+"/>");
+              var select = $("<b>Answer: </b><select style=width:100px id="+  dropdownid+"/>");
               var text=$("<input type=text/>");
 
 

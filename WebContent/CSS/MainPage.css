@@ -14,7 +14,7 @@
     /* it's position relative so that position absolute */
 /* can be used in submenu */
 p:hover {
-    background-color: #FAF8CC;
+    background-color: white;
     cursor: move;
 }
 
@@ -91,7 +91,7 @@ p.flip:hover {
     margin: 0px;
     padding: 5px;
     text-align: center;
-    background: #EAEDF0;
+    background: #FAFFFF;
     border: solid 1px #c3c3c3;
     cursor: move;
 }
@@ -101,6 +101,7 @@ p.flip.highlight {
     padding: 5px;
     text-align: center;
     background: #F0AB00;
+    color: white;
 }
 
 div.panel {
