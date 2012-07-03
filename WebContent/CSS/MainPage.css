@@ -369,3 +369,15 @@ div.menuAcdn div.arrowImage {
     padding-top: 70px;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.padditional {
+    font-size: 12px;
+    background-color: white;
+    color: black;
+    border: 1px solid #aaaaaa;
+    font-family: arial;
+}
+
+.padditional:hover {
+    background-color: white;
+}

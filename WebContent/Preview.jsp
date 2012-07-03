@@ -44,7 +44,7 @@
     <table class="questionDisplay" border="0">
       <tr />
       <th style="width: 900px;" />
-      <p class=flip>Question 1</p>
+      <p class=flip>Question Preview</p>
       <th>
       <th />
       <%
@@ -83,7 +83,7 @@
 
               for (int i = 0; i < numTextBox; i++) {
           %>
-          <input type="text" name="textBox<%out.println(i);%>" /> <br />
+          Answer: <input type="text" size="60" name="textBox<%out.println(i);%>" /> <br />
 
           <%
               }
