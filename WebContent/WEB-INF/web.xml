@@ -19,4 +19,24 @@
     <servlet-name>MainPageServlet</servlet-name>
     <url-pattern>/MainPageServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Questionnaire</display-name>
+    <servlet-name>Questionnaire</servlet-name>
+    <servlet-class>entity.Questionnaire</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Questionnaire</servlet-name>
+    <url-pattern>/Questionnaire</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DatabaseManager</display-name>
+    <servlet-name>DatabaseManager</servlet-name>
+    <servlet-class>com.mycompany.servlet.DatabaseManager</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DatabaseManager</servlet-name>
+    <url-pattern>/DatabaseManager</url-pattern>
+  </servlet-mapping>
 </web-app>
