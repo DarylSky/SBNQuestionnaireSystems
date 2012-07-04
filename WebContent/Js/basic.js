@@ -55,7 +55,7 @@ $(document).ready(function(){
         questionPanel ="questionPanel"+intquestionPanel;
         sortableDiv= "sortable"+intquestionPanel;
         sortableDiv2= "sortable2"+intquestionPanel;
-        mainDiv= "mainDiv"+intquestionPanel;
+        mainDiv= "Question"+intquestionPanel;
         plusBtn= "plusBtn"+intquestionPanel;
         flip= "flip" + intquestionPanel;
         mainQuestionid = "mainQuestionid" + intquestionPanel;
@@ -134,8 +134,35 @@ $(document).ready(function(){
 
         }
 
-        $("#" + temp).sortable();
-        $("#" + ztemp).sortable();
+        //When question created track position
+
+        $("#" + temp).sortable({
+            stop: function(event, ui) {
+            },
+
+            update: function(event, ui) {
+                var componentOrder1 = $(this).sortable('toArray').toString();
+
+                alert(componentOrder1);
+
+
+            }
+        });
+
+
+        $("#" + ztemp).sortable({
+            stop: function(event, ui) {
+
+            },
+
+            update: function(event, ui) {
+                var componentOrder2 = $(this).sortable('toArray').toString();
+
+                alert(componentOrder2);
+
+
+            }
+        }); //end here
 
         $("#"+questionPanel).click(function() {
 
@@ -162,9 +189,37 @@ $(document).ready(function(){
 
             }
 
-            $("#" + temp).sortable();
-            $("#" + ztemp).sortable();
+            //After clicking questional panel, track position
 
+            $("#" + temp).sortable({
+                stop: function(event, ui) {
+                },
+
+                update: function(event, ui) {
+                    var componentOrder1 = $(this).sortable('toArray').toString();
+
+                    alert(componentOrder1);
+
+
+                }
+            });
+
+
+            $("#" + ztemp).sortable({
+                stop: function(event, ui) {
+
+                },
+
+                update: function(event, ui) {
+                    var componentOrder2 = $(this).sortable('toArray').toString();
+
+                    alert(componentOrder2);
+
+
+                }
+            });
+
+           //end here
 
 
         });
@@ -316,8 +371,6 @@ $(document).ready(function(){
         fieldWrapper.append(first);
         fieldWrapper.append(hidden);
         fieldWrapper.append(second);
-
-        alert(count);
 
         $("#"+p).live("click", function(e) {
 
@@ -480,7 +533,7 @@ $(document).ready(function(){
 
         $("#"+p).live("click", function(e) {
 
-            /*var x = $(fieldWrapper).attr("id");
+           /*var x = $(fieldWrapper).attr("id");
             shorttexttemp = x;
 
             alert(atemp);*/
@@ -866,7 +919,7 @@ $(document).ready(function(){
                     }, 500);
                 }
 
-                function checkLength(o, n, min, max) {
+               function checkLength(o, n, min, max) {
                     if (o.val().length > max || o.val().length < min) {
                         o.addClass("ui-state-error");
                         updateTips("Length of " + n + " must be between " + min + " and " + max + ".");
@@ -927,7 +980,7 @@ $(document).ready(function(){
         fieldWrapper.append(third);
         fieldWrapper.append(fourth);
 
-        $("#"+p).live("click", function(e) {
+       $("#"+p).live("click", function(e) {
 
             /*var x = $(fieldWrapper).attr("id");
             shorttexttemp = x;
@@ -1191,7 +1244,7 @@ $(document).ready(function(){
         longimagenumber ="longimagenumber"+intlong;
         longbox="longtext" + intlong;
         guidanceHeader="guidanceHeaderlongtext"+ intlong;
-        p="plongtext" + intlong;
+        p="padditonalquestion" + intlong;
         span="spanlongtext" + intlong;
         guidanceid="guidanceidlongtext" + intlong;
 
@@ -1304,7 +1357,7 @@ $(document).ready(function(){
         imagetextnumber ="additional_text_image"+inttext;
         textnumber="additional_text" + inttext;
         guidanceHeader="guidance_additional_text_image"+ inttext;
-        p="padditional_text_image" + inttext;
+        p="padditionaltext" + inttext;
         guidanceid="guidance_additional_text_image" + inttext;
         hiddentextnumber="hidden_additional_text_image" + inttext;
 
@@ -1870,7 +1923,7 @@ $(document).ready(function(){
                             autoOpen : false,
                             height : 300,
                             width : 350,
-                            modal : true,
+                           modal : true,
                             buttons : {
                                 "Save" : function() {
 
@@ -1905,7 +1958,7 @@ $(document).ready(function(){
         fieldWrapper.append(third);
         fieldWrapper.append(fourth);
 
-        $("#"+p).live("click", function(e) {
+       $("#"+p).live("click", function(e) {
 
             /*var x = $(fieldWrapper).attr("id");
             shorttexttemp = x;
@@ -2017,7 +2070,7 @@ $(document).ready(function(){
                             autoOpen : false,
                             height : 300,
                             width : 350,
-                            modal : true,
+                           modal : true,
                             buttons : {
                                 "Save" : function() {
 

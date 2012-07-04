@@ -84,9 +84,30 @@ div#users-contain table td,div#users-contain table th {
     $(document).ready(function() {
 
         $(function() {
+            
+            $("#question1").sortable({
+                stop : function(event, ui) {
+                    
+                    alert(ui.item.index() + 1); 
 
-            $("#question1").sortable();
+                },
+            
+            update: function(event, ui) {
+                var questionOrder = $(this).sortable('toArray').toString();
+                
+                alert(questionOrder);
+
+            
+            }
+
+            });
+
         });
+        
+        $("#question1 > *").click(function()
+            { 
+            alert($(this).index()); 
+            });
 
         $(function() {
             $("#datepicker").datepicker();
