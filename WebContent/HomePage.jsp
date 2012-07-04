@@ -107,25 +107,36 @@
 											<li><a href="#!" title="content_2" class="tab">Categories</a></li>
 											<li><a href="#!" title="content_3" class="tab">Recently
 													edited</a></li>
-											<li><a href="#!" title="content_3" class="tab">Recycle
+											<li><a href="#!" title="content_4" class="tab">Recycle
 													Bin</a></li>
 
 										</ul>
 
 										<div id="content_1" class="content">
 											<ul>
-												<li><a href="">HTML Techniques <small>4
-															Posts</small></a></li>
-												<li><a href="">CSS Styling <small>32 Posts</small></a></li>
-												<li><a href="">Flash Tutorials <small>2
-															Posts</small></a></li>
-												<li><a href="">Web Miscellanea <small>19
-															Posts</small></a></li>
-												<li><a href="">Site News <small>6 Posts</small></a></li>
-												<li><a href="">Web Development <small>8
-															Posts</small></a></li>
+												<li><a href="">Energy Consumption for Year
+														2011/2012 <br /> <small>Date Created: 03-06-2012
+															<br /> Last Modified By Frankie Goh on 05062012
+													</small>
+												</a></li>
+												<li><a href="">Amount of Computers sold in Year
+														2011/2012 <br /> <small>Date Created: 04-06-2012
+															<br /> Last Modified By Dustin Pang on 08062012
+													</small>
+												</a></li>
+												<li><a href="">Number of Laundry Detergents sold
+														for July 2012 <br /> <small>Date Created:
+															05-06-2012 <br /> Last Modified By John Lim on 11062012
+													</small>
+												</a></li>
+												<li><a href="">Number of Toilet Tissues sold for
+														December <small> <br /> Date Created: 06-12-2012
+															<br /> Last Modified By Mah Li'en on 15062012
+													</small>
+												</a></li>
 											</ul>
 										</div>
+
 										<div id="content_2" class="content">
 											<ul>
 												<li><a href="">December 2008 <small>6 Posts</small></a></li>
@@ -137,14 +148,58 @@
 												<li><a href="">July 2008 <small>1 Posts</small></a></li>
 											</ul>
 										</div>
+
 										<div id="content_3" class="content">
 											<ul>
-												<li><a href="">Home</a></li>
-												<li><a href="">About</a></li>
-												<li><a href="">Contribute</a></li>
-												<li><a href="">Contact</a></li>
+												<li><a href="">Energy Consumption for Year
+														2011/2012 <br /> <small>Date Created: 03-06-2012
+															<br /> Last Modified By Frankie Goh on 05062012
+													</small>
+												</a></li>
+												<li><a href="">Amount of Computers sold in Year
+														2011/2012 <br /> <small>Date Created: 04-06-2012
+															<br /> Last Modified By Dustin Pang on 08062012
+													</small>
+												</a></li>
+												<li><a href="">Number of Laundry Detergents sold
+														for July 2012 <br /> <small>Date Created:
+															05-06-2012 <br /> Last Modified By John Lim on 11062012
+													</small>
+												</a></li>
+												<li><a href="">Number of Toilet Tissues sold for
+														December <small> <br /> Date Created: 06-12-2012
+															<br /> Last Modified By Mah Li'en on 15062012
+													</small>
+												</a></li>
 											</ul>
 										</div>
+
+										<div id="content_4" class="content">
+											 <ul>
+												<li><a href="">Energy Consumption for Year
+														2011/2012 <br /> <small>Date Created: 03-06-2012
+															<br /> Deleted By Frankie Goh on 05062012
+													</small>
+												</a></li>
+												<li><a href="">Amount of Computers sold in Year
+														2011/2012 <br /> <small>Date Created: 04-06-2012
+															<br /> Deleted By Dustin Pang on 08062012
+													</small>
+												</a></li>
+												<li><a href="">Number of Laundry Detergents sold
+														for July 2012 <br /> <small>Date Created:
+															05-06-2012 <br /> Deleted By John Lim on 11062012
+													</small>
+												</a></li>
+												<li><a href="">Number of Toilet Tissues sold for
+														December <small> <br /> Date Created: 06-12-2012
+															<br /> Deleted By Mah Li'en on 15062012
+													</small>
+												</a></li>
+											</ul> 
+										</div>
+
+
 
 									</div>
 
@@ -208,11 +263,6 @@
 
 											<div class="wrapper">
 
-
-												<!--   <a href="#" class="button" style="background: url(Images/HomePage/button.png) no-repeat 0 0;" onclick="javascript:hello();"> Clear</a>
-
-                        <a href="#" class="button" input type="submit" style="background: url(Images/HomePage/button.png) no-repeat 0 0;" onclick="javascript: directToQuestionnairePage();">
-                          Not</a> -->
 
 												<input type="submit" value="Create" class="button"
 													onclick="javascript: directToQuestionnairePage();"

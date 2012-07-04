@@ -145,12 +145,12 @@ div#users-contain table td,div#users-contain table th {
             <b>Questionnaire Title: </b>
             <%
                 String title = request.getParameter("title");
-                out.println(title);
+                           out.println(title);
             %>
             &nbsp; &nbsp; &nbsp;<b>Category: </b>
             <%
                 String category = request.getParameter("category");
-                out.println(category);
+                           out.println(category);
             %>
 
           </div>
@@ -181,21 +181,27 @@ div#users-contain table td,div#users-contain table th {
           <div class="menuAcdn" animation="true" expand="single">
             <ul>
               <li id="question"><a href="#" style="text-decoration: none">Create Question</a></li>
-              <li id="textField">Question Field
-                <ul id="fieldsInTextField" style="list-style: none;">
-                  <li id="shorttext"><a href="#" style="text-decoration: none">Short Field</a></li>
-                  <li id="longtext"><a href="#" style="text-decoration: none">Long Field</a></li>
-                </ul>
-              </li>
-              <li id="answerField">Answer Field
+              <li id="answerField" title="Maximum of two answer fields allowed only">Answer Field
                 <ul style="list-style: none;">
-                  <li id="text"><a href="#" style="text-decoration: none">Text</a></li>
+                  <li id="text"><a href="#" style="text-decoration: none" id="textbox">Text</a></li>
                   <li id="textunit"><a href="#" style="text-decoration: none">Text With Unit</a></li>
                   <li id="paragraph"><a href="#" style="text-decoration: none">Paragraph Text</a></li>
                   <li id="checkbox"><a href="#" style="text-decoration: none">Check Box</a></li>
                   <li id="dropdown"><a href="#" style="text-decoration: none">Drop Down List</a></li>
                   <li id="radio"><a href="#" style="text-decoration: none">Radio Button</a></li>
                   <li id="datepicker"><a href="#" style="text-decoration: none">Date Time</a></li>
+                </ul>
+              </li>
+              <li id="additional">Additional Information
+                <ul style="list-style: none;">
+                  <li id="additional_Question"><a href="#" style="text-decoration: none">Question</a></li>
+                  <li id="additional_text"><a href="#" style="text-decoration: none" id="textbox">Text</a></li>
+                  <li id="additional_textunit"><a href="#" style="text-decoration: none">Text With Unit</a></li>
+                  <li id="additional_paragraph"><a href="#" style="text-decoration: none">Paragraph Text</a></li>
+                  <li id="additional_checkbox"><a href="#" style="text-decoration: none">Check Box</a></li>
+                  <li id="additional_dropdown"><a href="#" style="text-decoration: none">Drop Down List</a></li>
+                  <li id="additional_radio"><a href="#" style="text-decoration: none">Radio Button</a></li>
+                  <li id="additional_datepicker"><a href="#" style="text-decoration: none">Date Time</a></li>
                 </ul>
               </li>
               <li id="guidance">Guidance
@@ -220,14 +226,14 @@ div#users-contain table td,div#users-contain table th {
   </div>
   <div id="dialog-form" title="Guidance"></div>
 
-  <script> 
-$(".menuAcdn").click(function(event) { 
-  event.preventDefault(); 
-}); 
-
-</script>
+  <script>
+            $(".menuAcdn").click(function(event) {
+                event.preventDefault();
+            });
+        </script>
 
 
 </body>
 </html>
+
 
