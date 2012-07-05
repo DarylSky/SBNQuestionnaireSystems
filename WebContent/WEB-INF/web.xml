@@ -39,4 +39,14 @@
     <servlet-name>DatabaseManager</servlet-name>
     <url-pattern>/DatabaseManager</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>QuestionnaireController</display-name>
+    <servlet-name>QuestionnaireController</servlet-name>
+    <servlet-class>com.mycompany.servlet.QuestionnaireController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>QuestionnaireController</servlet-name>
+    <url-pattern>/QuestionnaireController</url-pattern>
+  </servlet-mapping>
 </web-app>

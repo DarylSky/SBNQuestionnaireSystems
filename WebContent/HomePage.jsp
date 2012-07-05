@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ page import="java.util.* , entity.*, dataManager.*, com.mycompany.servlet.*" %>
 <html lang="en">
 <head>
 <title>SBN Questionnaire</title>
@@ -114,7 +115,14 @@
 
 										<div id="content_1" class="content">
 											<ul>
-												<li><a href="">Energy Consumption for Year
+												<li><a href=""><% ArrayList<Questionnaire> qs =QuestionnaireController.getQuestionnaire();
+                                                                out.println(qs.get(0).getTitle());
+                                                                for(int i=0;i<qs.size();i++){
+                                                                    Questionnaire q=qs.get(i);
+                                                                    out.println(q.getCategory());
+                                                                    out.println(q.getTitle());
+                                                                }
+                                                                %>
 														2011/2012 <br /> <small>Date Created: 03-06-2012
 															<br /> Last Modified By Frankie Goh on 05062012
 													</small>

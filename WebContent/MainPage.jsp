@@ -84,31 +84,10 @@ div#users-contain table td,div#users-contain table th {
     $(document).ready(function() {
 
         $(function() {
-            
-            $("#question1").sortable({
-                stop : function(event, ui) {
-                    
-                    alert(ui.item.index() + 1); 
 
-                },
-            
-            update: function(event, ui) {
-                var questionOrder = $(this).sortable('toArray').toString();
-                
-                
-                alert(questionOrder);
-
-            
-            }
-
-            });
+            $("#questionDiv").sortable();
 
         });
-        
-        $("#question1 > *").click(function()
-            { 
-            alert($(this).index()); 
-            });
 
         $(function() {
             $("#datepicker").datepicker();
@@ -167,21 +146,25 @@ div#users-contain table td,div#users-contain table th {
             <b>Questionnaire Title: </b>
             <%
                 String title = request.getParameter("title");
-                           out.println(title);
+            			out.println(title);
             %>
             &nbsp; &nbsp; &nbsp;<b>Category: </b>
             <%
                 String category = request.getParameter("category");
-                           out.println(category);
+            			out.println(category);
             %>
 
           </div>
 
           <br />
-          <div id="question1">
-            <p class="question_description">
-              <b>Objects will be inserted here</b>
-            </p>
+          <div id="outerQuestionDiv">
+            <input type="text" name="questionorder" id="questionorder" size="90" /> <input type="text" name="main_order" id="main_order" size="90" /> <input type="text" name="add_order"
+              id="add_order" size="90" />
+            <div id="questionDiv">
+              <p class="question_description">
+                <b>Objects will be inserted here</b>
+              </p>
+            </div>
           </div>
 
           <div id="sap_reasearch_icon">
@@ -240,9 +223,11 @@ div#users-contain table td,div#users-contain table th {
               </li>
 
             </ul>
+          <button id="submit" style="height: 20px;">Submit</button>
           </div>
         </td>
       </tr>
+
     </table>
 
   </div>

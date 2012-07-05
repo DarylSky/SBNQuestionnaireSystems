@@ -136,7 +136,7 @@ input.preview {
     cursor: hand;
 }
 
-#question1 {
+#questionDiv {
     background-color: #EAEDF0;
     border: 2px solid #C4C4C3;
 }
@@ -380,4 +380,16 @@ div.menuAcdn div.arrowImage {
 
 .padditional:hover {
     background-color: white;
+}
+
+#submit {
+    height: 200px;
+    width: 180px;
+    background-color: #EEE;
+    border: 1px solid #C4C4C3;
+}
+
+#submit:hover {
+    
+    cursor: hand;
 }
