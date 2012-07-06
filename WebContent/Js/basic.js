@@ -129,11 +129,11 @@ $(document).ready(function(){
         questionnaire.id = 0;
 
         var myJSONText = JSON.stringify(questionnaire);
-        console.log(myJSONText);
 
+        alert(myJSONText);
         ////////////////////////////////////////////////////////////////////
-        strElements = "";
-        str2Elements = "";
+       var strElements = "";
+        var str2Elements = "";
         intCount = 0;
 
         for(var k=0; k<order.length; k++){
@@ -145,7 +145,6 @@ $(document).ready(function(){
         $("#questionorder").val($("#questionDiv").sortable('toArray'));
         $("#main_order").val(strElements);
         $("#add_order").val(str2Elements);
-
 
 
 
