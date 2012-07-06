@@ -34,6 +34,9 @@ $(document).ready(function(){
     atemp="";
     shorttexttemp="";
     plusbtn="";
+    mainQuestionTesting="";
+    // New global var
+    mainRadioTesting="";
 
 
 
@@ -42,48 +45,37 @@ $(document).ready(function(){
 
     $("#submit").click(function() {
 
-
-/*        questionnaire = new Object();
-        questionArray = new Array();
-
-
-
-        questionObj =new Object();
-        questionObj.element = new Array();
-        questionObj.displayOrder = 0;
-
-        mainElementArray = new Array();
-        addElementArray = new Array();
-
-        elementObj = new Object();
-        elementObj.type = "Dropdown";
-        elementObj.value = "123";
-
-        mainElementArray.push(elementObj);
-
-        elementObj = new Object();
-        elementObj.type = "TextBox";
-        elementObj.value = "asd";
-
-        mainElementArray.push(elementObj);
-        questionObj.element = mainElementArray;
-
-        questionArray.push(questionObj);
-
-        questionnaire.questions = questionArray;
-        questionnaire.id = 0;*/
-
-
         ////////////////////////
         var order = new Array();
         strQuestions = $("#questionDiv").sortable('toArray');
 
-        alert(strQuestions);
-
-
         intQCount = 0;
+        intQCountQuestion = 0;
+        intQCountRadio = 1;
         questionnaire = new Object();
         questionArray = new Array();
+        mainQuestionArray = new Array();
+        mainRadioArray = new Array();
+        
+        // get the values of the radio buttons
+        while($("#radiotextnumber"+intQCountRadio).val()!=null){
+            var mainRadio =  $("#radiotextnumber"+intQCountRadio).val();
+            var innermainRadio = $("#innerradiotextnumber"+intQCountRadio).val();
+            mainRadioArray.push(mainRadio);
+            mainRadioArray.push(innermainRadio);
+            intQCountRadio++;
+        }
+        for(var i=0; i<mainRadioArray.length;i++){
+        	alert(mainRadioArray[i]);
+        }
+        
+       //get the values of the question itself
+        while(intQCountQuestion < strQuestions.length){
+        	intQCountQuestion++;
+            var mainQuestion = $("#mainQuestionid"+intQCountQuestion).val();
+            mainQuestionArray.push(mainQuestion);
+            
+        }
 
         while(intQCount < strQuestions.length){
             var question = strQuestions[intQCount];
@@ -91,22 +83,27 @@ $(document).ready(function(){
             order.push(qNum);
 
             questionObj = new Object();
+            questionObj.questionTitle = mainQuestionArray[intQCount];
             questionObj.mainElement = new Array();
             questionObj.addElement = new Array();
             questionObj.displayOrder = intQCount;
-            questionObj.questionNumber = qNum;
+            questionObj.questionID = qNum;
+            
 
             mainElementArray = new Array();
             addElementArray = new Array();
 
             var mainElement = $("#" + "sortable"+qNum).sortable('toArray');
             var addElement = $("#" + "sortable2"+qNum).sortable('toArray');
+            
+
+            
 
 
             for(var i=0; i<mainElement.length; i++){
                 elementObj = new Object();
                 elementObj.type = mainElement[i];
-                //element.Obj.value = "testValue";
+                elementObj.value = "null";
                 mainElementArray.push(elementObj);
             }
             for(var i=0; i<addElement.length; i++){
@@ -129,8 +126,10 @@ $(document).ready(function(){
         questionnaire.id = 0;
 
         var myJSONText = JSON.stringify(questionnaire);
+        console.log(myJSONText);
 
         alert(myJSONText);
+        
         ////////////////////////////////////////////////////////////////////
        var strElements = "";
         var str2Elements = "";
@@ -161,6 +160,7 @@ $(document).ready(function(){
         flip= "flip" + intquestionPanel;
         mainQuestionid = "mainQuestionid" + intquestionPanel;
 
+
         var question = $('#questionDiv');
         var test = $("<div id='"+mainDiv+"' class=\"order\"></div>");
         var table= $("<table class=\"abc\" id='"+questionPanel+ "' border=\"0\"/>");
@@ -178,7 +178,7 @@ $(document).ready(function(){
         var div = $("<div class=\"demo\" id= '"+sortableDiv+"' />");
         var div2 = $("<div class=\"additional_info\" id= '"+sortableDiv2+"' />");
         var padditional = $("<p class=\"padditional\"><b>Additional Information: </b></p>");
-        var mainQuestion = $("<b>Main Question: </b><input name="+ mainQuestionid +" type=text size=100 id="+ mainQuestionid+"/>");
+        var mainQuestion = $("<b>Main Question: </b><input name="+ mainQuestionid +" type=text size=100 id="+ mainQuestionid+" />");
         var br = $("<br/>");
         var button = $("<input type=submit value=Preview  class=\"preview\"></input>");
         var newURL = window.location.search.split( '=' );
@@ -215,12 +215,16 @@ $(document).ready(function(){
 
         var x = $(div).attr("id");
         temp = x;
+        
 
         var y = $(table).attr("id");
         atemp = y;
 
         var z = $(div2).attr("id");
         ztemp = z;
+        
+        var a = $(mainQuestion).attr("id");
+        mainQuestionTesting = a;
 
         var count = $("#" + temp).children(".object").length;
         if (count < 2){
@@ -494,9 +498,14 @@ $(document).ready(function(){
         });
         var third = $("<img src=Images/MainPage/TextAnswerField/plus_icon.png height=15px width=15px/>");
         third.click(function() {
-            var id = $(input).attr("id");
+        	
+            intradio++;
+            innerradiotextnumber = "innerradiotextnumber" + intradio;
+            
             fieldWrapper.append("<br/>");
-            fieldWrapper.append("<input type=radio disabled=disabled id="+  radiobuttonnumber+"/> <input name="+id+" type=text id="+  radiotextnumber+"/>");
+            fieldWrapper.append("<input type=radio disabled=disabled id="+  innerradiotextnumber+"/> <input name="+innerradiotextnumber+" type=text id="+  innerradiotextnumber+"/>");
+            
+           
 
 
         });
@@ -585,6 +594,9 @@ $(document).ready(function(){
         fieldWrapper.append(third);
         fieldWrapper.append(fourth);
         fieldWrapper.append(second);
+        
+        var x = $(input).attr("id");
+        mainRadioTesting = x;
 
         $("#"+p).live("click", function(e) {
 
