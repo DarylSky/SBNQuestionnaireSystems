@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="CSS/HomePage/reset.css" type="text/css" media="all">
 <link rel="stylesheet" href="CSS/HomePage/grid.css" type="text/css" media="all">
 <link rel="stylesheet" href="CSS/HomePage/homePageStyle.css" type="text/css" media="all">
+<link rel="stylesheet" href="CSS/HomePage/QuestionnaireCreatedTabs.css" type="text/css" media="all">
 
 <script type="text/javascript" src="Js/HomePage/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="Js/HomePage/cufon-yui.js"></script>
@@ -15,7 +16,34 @@
 <script type="text/javascript" src="http://info.template-help.com/files/ie6_warning/ie6_script_other.js"></script>
 <script type="text/javascript" src="Js/HomePage/html5.js"></script>
 <script type="text/javascript" src="Js/HomePage/HomePage.js"></script>
+<script type="text/javascript" src="Js/HomePage/jquery-1.2.3.min.js"></script>
+<link rel="stylesheet" href="CSS/HomePage/QuestionnaireCreatedTabs.css" type="text/css" media="all">
 
+<script type="text/javascript" src="Js/HomePage/jquery-1.2.3.min.js"></script>
+<script>
+       // When the document loads do everything inside here ...
+       $(document).ready(function() {
+
+              // When a link is clicked
+              $("a.tab").click(function() {
+
+                     // switch all tabs off
+                     $(".active").removeClass("active");
+
+                     // switch this tab on
+                     $(this).addClass("active");
+
+                     /* // slide all content up
+                     $(".content").slideUp(); */
+
+                     // slide this content up
+                     var content_show = $(this).attr("title");
+                     $("#" + content_show).slideDown();
+
+              });
+
+       });
+</script>
 </head>
 
 <body>
@@ -58,31 +86,111 @@
             <div class="box">
               <h2>Questionnaire Created</h2>
               <div class="wrapper">
+                <div id="tabbed_box_1" class="tabbed_box">
 
-                <p>
-                  <span style="font-size: 13pt; font-weight: bolder;"> Energy Consumption for Year 2011/2012</span>
-                  <br /> Date Created: 03-06-2012 || Last Modified By Frankie Goh on 05062012
-                </p>
+                  <div class="tabbed_area">
 
-                <p>
-                  <span style="font-size: 13pt; font-weight: bolder;"> Amount of Computers sold in Year 2011/2012</span>
-                  <br /> Date Created: 03-06-2012 || Last Modified By Dustin Pang on 05062012
-                </p>
 
-                <p>
-                  <span style="font-size: 13pt; font-weight: bolder;"> Number of Laundry Detergents sold for July 2012</span>
-                  <br /> Date Created: 03-06-2012 || Last Modified By John Lim on 05062012
-                </p>
-                <p>
-                  <span style="font-size: 13pt; font-weight: bolder;"> Number of Toilet Tissues sold for December 2012</span>
-                  <br /> Date Created: 03-12-2012 || Last Modified By Mah Li'en on 05062012
-                </p>
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
+                    <ul class="tabs">
+                      <li><a href="#!" title="content_1" class="tab active">Latest</a></li>
+                      <li><a href="#!" title="content_2" class="tab">Categories</a></li>
+                      <li><a href="#!" title="content_3" class="tab">Recently edited</a></li>
+                      <li><a href="#!" title="content_4" class="tab">Recycle Bin</a></li>
+
+                    </ul>
+
+                    <div id="content_1" class="content">
+                      <ul>
+                        <li><a href="">
+                            Energy Consumption for Year 2011/2012 <br /> <small>Date Created: 03-06-2012 <br /> Last Modified By Frankie Goh on 05062012
+                            </small>
+                          </a></li>
+                        <li><a href="">
+                            Amount of Computers sold in Year 2011/2012 <br /> <small>Date Created: 04-06-2012 <br /> Last Modified By Dustin Pang on 08062012
+                            </small>
+                          </a></li>
+                        <li><a href="">
+                            Number of Laundry Detergents sold for July 2012 <br /> <small>Date Created: 05-06-2012 <br /> Last Modified By John Lim on 11062012
+                            </small>
+                          </a></li>
+                        <li><a href="">
+                            Number of Toilet Tissues sold for December <small> <br /> Date Created: 06-12-2012 <br /> Last Modified By Mah Li'en on 15062012
+                            </small>
+                          </a></li>
+                      </ul>
+                    </div>
+
+                    <div id="content_2" class="content">
+                      <ul>
+                        <li><a href="">
+                            December 2008 <small>6 Posts</small>
+                          </a></li>
+                        <li><a href="">
+                            November 2008 <small>4 Posts</small>
+                          </a></li>
+                        <li><a href="">
+                            October 2008 <small>22 Posts</small>
+                          </a></li>
+                        <li><a href="">
+                            September 2008 <small>12 Posts</small>
+                          </a></li>
+                        <li><a href="">
+                            August 2008 <small>3 Posts</small>
+                          </a></li>
+                        <li><a href="">
+                            July 2008 <small>1 Posts</small>
+                          </a></li>
+                      </ul>
+                    </div>
+
+                    <div id="content_3" class="content">
+                      <ul>
+                        <li><a href="">
+                            Energy Consumption for Year 2011/2012 <br /> <small>Date Created: 03-06-2012 <br /> Last Modified By Frankie Goh on 05062012
+                            </small>
+                          </a></li>
+                        <li><a href="">
+                            Amount of Computers sold in Year 2011/2012 <br /> <small>Date Created: 04-06-2012 <br /> Last Modified By Dustin Pang on 08062012
+                            </small>
+                          </a></li>
+                        <li><a href="">
+                            Number of Laundry Detergents sold for July 2012 <br /> <small>Date Created: 05-06-2012 <br /> Last Modified By John Lim on 11062012
+                            </small>
+                          </a></li>
+                        <li><a href="">
+                            Number of Toilet Tissues sold for December <small> <br /> Date Created: 06-12-2012 <br /> Last Modified By Mah Li'en on 15062012
+                            </small>
+                          </a></li>
+                      </ul>
+                    </div>
+
+                    <div id="content_4" class="content">
+                      <ul>
+                        <li><a href="">
+                            Energy Consumption for Year 2011/2012 <br /> <small>Date Created: 03-06-2012 <br /> Deleted By Frankie Goh on 05062012
+                            </small>
+                          </a></li>
+                        <li><a href="">
+                            Amount of Computers sold in Year 2011/2012 <br /> <small>Date Created: 04-06-2012 <br /> Deleted By Dustin Pang on 08062012
+                            </small>
+                          </a></li>
+                        <li><a href="">
+                            Number of Laundry Detergents sold for July 2012 <br /> <small>Date Created: 05-06-2012 <br /> Deleted By John Lim on 11062012
+                            </small>
+                          </a></li>
+                        <li><a href="">
+                            Number of Toilet Tissues sold for December <small> <br /> Date Created: 06-12-2012 <br /> Deleted By Mah Li'en on 15062012
+                            </small>
+                          </a></li>
+                      </ul>
+                    </div>
+
+
+
+                  </div>
+
+                </div>
+
               </div>
             </div>
           </div>
@@ -107,6 +215,7 @@
                       <label>Enter Questionnaire Title:<br /> <input type="text" value="" name="title" id="title" />
 
                       </label> <label>Select Your Category:<br /> <select STYLE="width: 177px; height: 23px; font-size: 20;" name="category" id="category">
+                          <option>Sustainability Issue</option>
                           <option>Community</option>
                           <option>Customer Feedback</option>
                           <option>Demographics</option>
@@ -134,11 +243,6 @@
 
                       <div class="wrapper">
 
-
-                        <!--   <a href="#" class="button" style="background: url(Images/HomePage/button.png) no-repeat 0 0;" onclick="javascript:hello();"> Clear</a>
-
-                        <a href="#" class="button" input type="submit" style="background: url(Images/HomePage/button.png) no-repeat 0 0;" onclick="javascript: directToQuestionnairePage();">
-                          Not</a> -->
 
                         <input type="submit" value="Create" class="button" onclick="javascript: directToQuestionnairePage();"
                           style="display: inline-block; width: 81px; height: 35px; line-height: 37px; font-size: 16px; background: url(Images/HomePage/button.png) no-repeat 0 0; color: #fff; text-decoration: none;" />
@@ -185,15 +289,11 @@
     </div>
   </footer>
   <script type="text/javascript">
-            Cufon.now();
-
-            function hello() {
-                var title = document.title.value;
-                alert(title);
-            }
-        </script>
+              Cufon.now();
+       </script>
 </body>
 </html>
+
 
 
 

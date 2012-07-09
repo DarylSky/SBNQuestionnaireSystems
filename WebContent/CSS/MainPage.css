@@ -1,383 +1,404 @@
 .mainPanel {
-    font-family: arial;
-    font-size: 11px;
-    margin-top: 0;
-    margin-left: auto;
-    margin-right: auto;
+       font-family: arial;
+       font-size: 11px;
+       margin-top: 0;
+       margin-left: auto;
+       margin-right: auto;
 }
 
 .clear {
-    clear: both
+       clear: both
 }
 
 /* make the LI display inline * /
     /* it's position relative so that position absolute */
 /* can be used in submenu */
 p:hover {
-    background-color: white;
-    cursor: move;
+       background-color: white;
+       cursor: move;
 }
 
 img:hover {
-    cursor: pointer;
-    cursor: hand;
+       cursor: pointer;
+       cursor: hand;
 }
 
 .textarea {
-    resize: both;
+       resize: both;
 }
 
 div.fullscreen {
-    display: block;
-    /*set the div in the top right corner*/
-    position: absolute;
-    top: 0;
-    right: 0;
-    /*give it some background and border*/
-    background: #eee;
-    border: 1px solid #ddd;
-    font-size: 150%;
+       display: block;
+       /*set the div in the top right corner*/
+       position: absolute;
+       top: 0;
+       right: 0;
+       /*give it some background and border*/
+       background: #eee;
+       border: 1px solid #ddd;
+       font-size: 150%;
 }
 
 #div1 {
-    width: 350px;
-    height: 70px;
-    padding: 10px;
-    border: 1px solid #aaaaaa;
+       width: 350px;
+       height: 70px;
+       padding: 10px;
+       border: 1px solid #aaaaaa;
 }
 
 #drag {
-    position: relative;
-    display: block;
+       position: relative;
+       display: block;
 }
 
 #headerblock {
-    width: 18em;
-    background-color: black;
-    color: blue;
+       width: 18em;
+       background-color: black;
+       color: blue;
 }
 
 #wrapper {
-    width: 18em;
-    height: auto;
-    background-color: grey;
-    color: blue;
+       width: 18em;
+       height: auto;
+       background-color: grey;
+       color: blue;
 }
 
 #version {
-    background-color: #F0AB00;
-    font-weight: bold;
-    color: white;
+       background-color: #F0AB00;
+       font-weight: bold;
+       color: white;
 }
 
 #questionnairediv {
-    border: 2px #ddd;
-    font-size: 16px;
-    font-style: bold;
-    color: #504A4B;
-    background-color: #EAEDF0;
-    border: 2px solid #C4C4C3;
+       border: 2px #ddd;
+       font-size: 16px;
+       font-style: bold;
+       color: #504A4B;
+       background-color: #EAEDF0;
+       border: 2px solid #C4C4C3;
 }
 
 p.flip {
-    margin: 0px;
-    padding: 5px;
-    text-align: center;
-    background: white;
-    border: solid 1px #c3c3c3;
+       margin: 0px;
+       padding: 5px;
+       text-align: center;
+       background: white;
+       border: solid 1px #c3c3c3;
 }
 
 p.flip:hover {
-    margin: 0px;
-    padding: 5px;
-    text-align: center;
-    background: #FAFFFF;
-    border: solid 1px #c3c3c3;
-    cursor: move;
+       margin: 0px;
+       padding: 5px;
+       text-align: center;
+       background: #FAFFFF;
+       border: solid 1px #c3c3c3;
+       cursor: move;
 }
 
 p.flip.highlight {
-    margin: 0px;
-    padding: 5px;
-    text-align: center;
-    background: #F0AB00;
-    color: white;
+       margin: 0px;
+       padding: 5px;
+       text-align: center;
+       background: #F0AB00;
+       color: white;
 }
 
 div.panel {
-    height: 120px;
-    display: none;
-    background: white;
+       height: 120px;
+       display: none;
+       background: white;
 }
 
 table.tab {
-    background: white;
+       background: white;
 }
 
 table.tab.active {
-    background: blue;
+       background: blue;
 }
 
 .main {
-    width: 325px;
+       width: 325px;
 }
 
 .preview {
-    border: 1px solid #006;
-    background: whiteSmoke;
+       border: 1px solid #006;
+       background: whiteSmoke;
 }
 
 .clearall {
-    border: 1px solid #006;
-    background: whiteSmoke;
+       border: 1px solid #006;
+       background: whiteSmoke;
 }
 
 input.preview {
-    cursor: hand;
+       cursor: hand;
 }
 
-#question1 {
-    background-color: #EAEDF0;
-    border: 2px solid #C4C4C3;
+#questionDiv {
+       background-color: #EAEDF0;
+       border: 2px solid #C4C4C3;
 }
 
 .question_description {
-    text-align: center;
-    color: #504A4B;
+       text-align: center;
+       color: #504A4B;
 }
 
 .question_description:hover {
-    background-color: #EAEDF0;
+       background-color: #EAEDF0;
 }
 
 .class {
-    color: black;
-    font-size: 20px;
+       color: black;
+       font-size: 20px;
 }
 
 .top_decoration_line {
-    background-color: white;
+       background-color: white;
 }
 
 .questionnaire_tools {
-    background-color: #EAEDF0;
-    font-size: 12px;
-    width: 200px;
-    bottom: 392px;
-    position: fixed;
+       background-color: #EAEDF0;
+       font-size: 12px;
+       width: 200px;
+       bottom: 392px;
+       position: fixed;
 }
 
 #sap_reasearch_icon {
-    width: 1010px;
-    height: 60px;
-    text-align: right;
-    background-color: #F8F8F8;
+       width: 1010px;
+       height: 60px;
+       text-align: right;
+       background-color: #F8F8F8;
 }
 
 .sap_research_icon1 {
-    color: orange;
-    float: right;
+       color: orange;
+       float: right;
 }
 
 .sap_research_icon2 {
-    color: black;
-    float: right;
+       color: black;
+       float: right;
 }
 
 .footer_hyperlink {
-    color: blue;
+       color: blue;
 }
 
 /* toolbox css */
-div.menuAcdn { /* Note about height: Change it to "height:auto;" if flexible height is prefered. 
+div.menuAcdn {
+       /* Note about height: Change it to "height:auto;" if flexible height is prefered. 
     It is recommended to specify a fixed height as it is more user-friendly. 
     If the height specified is insufficient than needed, it will be automatically converted to "height:auto". */
-    height: 360px;
-    width: 180px;
-    position: absolute;
+       height: 360px;
+       width: 180px;
+       position: absolute;
 }
 
 div.menuAcdn ul.top {
-    padding-left: 0;
-    background: white;
-    border: 1px solid #D2D8DE; /*1*/
+       padding-left: 0;
+       background: white;
+       border: 1px solid #D2D8DE; /*1*/
 }
 
 div.menuAcdn div.heading,div.menuAcdn a.link {
-    padding: 8px;
-    padding-left: 18px;
-    text-align: left;
-    font: normal 12px Verdana;
-    color: Black;
-    background: #EEE url(bg.gif) repeat-x 0 0;
-    text-decoration: none;
-    outline: none;
+       padding: 8px;
+       padding-left: 18px;
+       text-align: left;
+       font: normal 12px Verdana;
+       color: Black;
+       background: #EEE url(bg.gif) repeat-x 0 0;
+       text-decoration: none;
+       outline: none;
 }
 
-div.menuAcdn div.current,div.menuAcdn,div.menuAcdn a.link:hover,div.menuAcdn div.current a.link {
-    color: #333;
-    font-weight: normal;
-    text-decoration: none;
-    background-position: 0 -64px;
+div.menuAcdn div.current,div.menuAcdn,div.menuAcdn a.link:hover,div.menuAcdn div.current a.link
+       {
+       color: #333;
+       font-weight: normal;
+       text-decoration: none;
+       background-position: 0 -64px;
 }
 
 /* arrow image for the top headings */
 div.menuAcdn div.arrowImage {
-    width: 12px;
-    height: 12px;
-    top: 9px;
-    right: 2px; /* Changing it to "left:2px;" will position the arrow image to the left */
-    background-image: url(../Images/MainPage/arrows.gif);
-    background-position: 0 0;
+       width: 12px;
+       height: 12px;
+       top: 9px;
+       right: 2px;
+       /* Changing it to "left:2px;" will position the arrow image to the left */
+       background-image: url(../Images/MainPage/arrows.gif);
+       background-position: 0 0;
 }
 
 div.menuAcdn div.current div.arrowImage {
-    background-position: 0 -12px;
+       background-position: 0 -12px;
 }
 
 div.menuAcdn div.separator {
-    border-top: 1px solid #D2D8DE; /*1*/
-    border-bottom: none;
+       border-top: 1px solid #D2D8DE; /*1*/
+       border-bottom: none;
 }
 
 /* ##### Sub level items #####*/
 div.menuAcdn ul.sub {
-    padding-left: 14px; /*This determines the hierarchical offset*/
+       padding-left: 14px; /*This determines the hierarchical offset*/
 }
 
 div.menuAcdn ul.sub div.heading {
-    text-align: left;
-    font: normal 12px Arial;
-    padding: 5px;
-    padding-left: 20px;
-    color: Black;
-    background: none;
+       text-align: left;
+       font: normal 12px Arial;
+       padding: 5px;
+       padding-left: 20px;
+       color: Black;
+       background: none;
 }
 
 div.menuAcdn ul.sub div.heading a {
-    color: Black;
+       color: Black;
 }
 
 div.menuAcdn ul.sub div.current {
-    color: Black;
-    background: none;
+       color: Black;
+       background: none;
 }
 
 div.menuAcdn ul.sub a.link {
-    font: normal 11px Arial;
-    color: #333;
-    padding: 5px;
-    padding-left: 20px;
-    text-decoration: none;
-    background: none;
+       font: normal 11px Arial;
+       color: #333;
+       padding: 5px;
+       padding-left: 20px;
+       text-decoration: none;
+       background: none;
 }
 
 div.menuAcdn ul.sub a.link:hover,div.menuAcdn ul.sub a.current,div.menuAcdn ul.sub div.heading a:hover,div.menuAcdn ul.sub div.heading a.current
-    {
-    color: #09F;
-    text-decoration: underline;
-    background: none;
+       {
+       color: #09F;
+       text-decoration: underline;
+       background: none;
 }
 
 div.menuAcdn ul.sub div.arrowImage {
-    width: 12px;
-    height: 12px;
-    top: 6px;
-    left: 4px;
-    background-image: url(arrows.gif);
-    background-position: 0 -24px;
+       width: 12px;
+       height: 12px;
+       top: 6px;
+       left: 4px;
+       background-image: url(arrows.gif);
+       background-position: 0 -24px;
 }
 
 div.menuAcdn ul.sub div.current div.arrowImage {
-    background-position: 0 -36px;
+       background-position: 0 -36px;
 }
 
 /* ##### Followings usually don't need modification ###### */
 /*Hack the font-size:0 bug for IE6 */
 div.menuAcdn,div.menuAcdn ul {
-    display: block;
-    font-size: 0px;
-    line-height: 0px;
-    bottom: 0px;
+       display: block;
+       font-size: 0px;
+       line-height: 0px;
+       bottom: 0px;
 }
 
 div.menuAcdn li {
-    font-size: 12px;
-    line-height: 16px;
+       font-size: 12px;
+       line-height: 16px;
 }
 
 div.menuAcdn:after {
-    content: '.';
-    height: 0;
-    clear: both;
-    display: block;
-    visibility: hidden;
+       content: '.';
+       height: 0;
+       clear: both;
+       display: block;
+       visibility: hidden;
 }
 
 /*Hack for IE6 again*/
-div.menuAcdn ul,div.menuAcdn li,div.menuAcdn div.heading,div.menuAcdn a.smLink,div.menuAcdn div.description {
-    _zoom: 1;
+div.menuAcdn ul,div.menuAcdn li,div.menuAcdn div.heading,div.menuAcdn a.smLink,div.menuAcdn div.description
+       {
+       _zoom: 1;
 }
 
 div.menuAcdn li {
-    _float: left;
-    _width: 100%;
+       _float: left;
+       _width: 100%;
 }
 
 div.menuAcdn ul {
-    position: relative; /*!*/
-    overflow: hidden;
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-    padding-left: 10px;
+       position: relative; /*!*/
+       overflow: hidden;
+       padding: 0;
+       margin: 0;
+       list-style-type: none;
+       padding-left: 10px;
 }
 
 div.menuAcdn li {
-    padding: 0;
-    margin: 0;
+       padding: 0;
+       margin: 0;
 }
 
 div.menuAcdn div.heading,div.menuAcdn div.current {
-    position: relative;
-    cursor: pointer;
+       position: relative;
+       cursor: pointer;
 }
 
 div.menuAcdn div.arrowImage {
-    position: absolute;
-    overflow: hidden;
+       position: absolute;
+       overflow: hidden;
 }
 
 .questionnaire_tools_div {
-    position: fixed;
-    top: 173px;
+       position: fixed;
+       top: 173px;
+}
+
+.questionnaire_tools_div2 {
+       position: fixed;
+       top: 162px;
+       padding-left: 182px;
 }
 
 .toolbox_title {
-    background-color: #F0AB00;
-    height: 18px;
-    width: 180px;
-    color: white;
+       background-color: #F0AB00;
+       height: 18px;
+       width: 180px;
+       color: white;
 }
 /* end of toolbox kit */
 .mainNav {
-    font-size: 16px;
-    color: black;
-    text-decoration: none;
-    padding: 14px;
-    left: 5px;
-    padding-top: 70px;
-    font-family: Arial, Helvetica, sans-serif;
+       font-size: 16px;
+       color: black;
+       text-decoration: none;
+       padding: 14px;
+       left: 5px;
+       padding-top: 70px;
+       font-family: Arial, Helvetica, sans-serif;
 }
 
 .padditional {
-    font-size: 12px;
-    background-color: white;
-    color: black;
-    border: 1px solid #aaaaaa;
-    font-family: arial;
+       font-size: 12px;
+       background-color: white;
+       color: black;
+       border: 1px solid #aaaaaa;
+       font-family: arial;
 }
 
 .padditional:hover {
-    background-color: white;
+       background-color: white;
+}
+
+.toolbox_button {
+       height: 200px;
+       width: 180px;
+       background-color: #EEE;
+       border: 1px solid #C4C4C3;
+}
+
+.toolbox_button:hover {
+       cursor: hand;
 }
