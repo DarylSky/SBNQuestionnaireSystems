@@ -46,15 +46,15 @@ public class MainPageServlet extends HttpServlet {
              */
             // String x=request.getParameter("shorttext");
 
-            final ArrayList<String> shortTextBoxArray = new ArrayList<String>();
+            final ArrayList shortTextBoxArray = new ArrayList();
             int numShortTextBox = 1;
-            String shortTextBox = request.getParameter("mainQuestionid" + numShortTextBox);
+            String shortTextBox = request.getParameter("shorttextbox" + numShortTextBox);
             if (shortTextBox != null) {
                 shortTextBoxArray.add(shortTextBox);
             }
             while (shortTextBox != null) {
                 numShortTextBox++;
-                shortTextBox = request.getParameter("mainQuestionid" + numShortTextBox);
+                shortTextBox = request.getParameter("shorttextbox" + numShortTextBox);
 
                 // do something with nextBox
                 if (shortTextBox != null) {
@@ -68,6 +68,22 @@ public class MainPageServlet extends HttpServlet {
              * !=shortTextBoxArray.size()-1){ shortText+=shortValue + ",";
              * }else{ shortText+=shortValue; } }
              */
+
+            final ArrayList longTextBoxArray = new ArrayList();
+            int numLongTextBox = 1;
+            String longTextBox = request.getParameter("longtext" + numLongTextBox);
+            if (longTextBox != null) {
+                longTextBoxArray.add(longTextBox);
+            }
+            while (longTextBox != null) {
+                numLongTextBox++;
+                longTextBox = request.getParameter("longtext" + numLongTextBox);
+
+                // do something with nextBox
+                if (longTextBox != null) {
+                    longTextBoxArray.add(longTextBox);
+                }
+            }
 
             int numTextBox = 1;
             String textBox = request.getParameter("hiddentextbox" + numTextBox);
@@ -196,6 +212,7 @@ public class MainPageServlet extends HttpServlet {
             }
 
             session.setAttribute("shortText", shortTextBoxArray);
+            session.setAttribute("longText", longTextBoxArray);
             session.setAttribute("numTextBox", numTextBox);
             session.setAttribute("numParagraph", paragraph);
             session.setAttribute("checkBoxValue", checkBoxArray);
