@@ -100,6 +100,7 @@ $(document).ready(function(){
 
 
 
+
             for(var i=0; i<mainElement.length; i++){
                 elementObj = new Object();
                 elementObj.type = mainElement[i];
@@ -108,8 +109,18 @@ $(document).ready(function(){
             }
             for(var i=0; i<addElement.length; i++){
                 elementObj = new Object();
+                alert(addElement[i]);
+
+
+              elementObj.value = "null";
+                if(addElement[i].indexOf("pAddQuestion")!= -1){
+                     var indexNum = addElement[i].substring(12,13);
+                     alert(indexNum);
+                     alert( $("#longtext"+ indexNum).val());
+                     //elementObj.value = $("#longtext"+ indexNum).val();
+                }
+
                 elementObj.type = addElement[i];
-                //element.Obj.value = "testValue";
                 addElementArray.push(elementObj);
             }
 
@@ -144,6 +155,20 @@ $(document).ready(function(){
         $("#questionorder").val($("#questionDiv").sortable('toArray'));
         $("#main_order").val(strElements);
         $("#add_order").val(str2Elements);
+
+
+        var request1  = new XMLHttpRequest();
+        request1.open("POST", "QuestionnaireCreation", false);
+        //Send the proper header information along with the request;
+        alert(200);
+        var parameterString = "JSONText=Jonathanwashere&test=" + myJSONText ;
+        alert(300);
+        request1.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        request1.setRequestHeader("Content-length", parameterString.length);
+        request1.setRequestHeader("Connection", "close");
+        //request.onreadystatechange = alert(500);
+        request1.send(parameterString);
+        alert(400);
 
 
 

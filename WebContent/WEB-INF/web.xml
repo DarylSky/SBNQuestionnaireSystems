@@ -19,4 +19,14 @@
     <servlet-name>MainPageServlet</servlet-name>
     <url-pattern>/MainPageServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>QuestionnaireCreation</display-name>
+    <servlet-name>QuestionnaireCreation</servlet-name>
+    <servlet-class>com.mycompany.servlet.QuestionnaireCreation</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>QuestionnaireCreation</servlet-name>
+    <url-pattern>/QuestionnaireCreation</url-pattern>
+  </servlet-mapping>
 </web-app>
