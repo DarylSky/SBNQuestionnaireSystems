@@ -62,7 +62,7 @@ ul.tabs li a.active {
        background-position: bottom;
 }
 
-#content_2,#content_3 {
+#content_2,#content_3,#content_4 {
        display: none;
 }
 
