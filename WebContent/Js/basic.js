@@ -43,7 +43,7 @@ $(document).ready(function(){
 
     //Create question button
 
-    $("#submit").click(function() {
+    $("#preview").click(function() {
 
         ////////////////////////
         var order = new Array();
@@ -65,11 +65,8 @@ $(document).ready(function(){
             mainRadioArray.push(innermainRadio);
             intQCountRadio++;
         }
-        for(var i=0; i<mainRadioArray.length;i++){
-            alert(mainRadioArray[i]);
-        }
 
-       //get the values of the question itself
+        //get the values of the question itself
         while(intQCountQuestion < strQuestions.length){
             intQCountQuestion++;
             var mainQuestion = $("#mainQuestionid"+intQCountQuestion).val();
@@ -83,11 +80,12 @@ $(document).ready(function(){
             order.push(qNum);
 
             questionObj = new Object();
+            questionObj.questionID = qNum;
             questionObj.questionTitle = mainQuestionArray[intQCount];
             questionObj.mainElement = new Array();
             questionObj.addElement = new Array();
             questionObj.displayOrder = intQCount;
-            questionObj.questionID = qNum;
+
 
 
             mainElementArray = new Array();
@@ -109,15 +107,14 @@ $(document).ready(function(){
             }
             for(var i=0; i<addElement.length; i++){
                 elementObj = new Object();
-                alert(addElement[i]);
 
 
-              elementObj.value = "null";
+                elementObj.value = "null";
                 if(addElement[i].indexOf("pAddQuestion")!= -1){
-                     var indexNum = addElement[i].substring(12,13);
-                     alert(indexNum);
-                     alert( $("#longtext"+ indexNum).val());
-                     //elementObj.value = $("#longtext"+ indexNum).val();
+                    var indexNum = addElement[i].substring(12,13);
+                    alert(indexNum);
+                    alert( $("#longtext"+ indexNum).val());
+                    //elementObj.value = $("#longtext"+ indexNum).val();
                 }
 
                 elementObj.type = addElement[i];
@@ -139,10 +136,14 @@ $(document).ready(function(){
         var myJSONText = JSON.stringify(questionnaire);
         //console.log(myJSONText);
 
-        alert(myJSONText);
+/*        var mySplitResult = myJSONText.split("questionID");
 
+        for(i = 0; i < mySplitResult.length; i++){
+            document.write("<br /> Element " + i + " = " + mySplitResult[i]);
+        }
+*/
         ////////////////////////////////////////////////////////////////////
-       var strElements = "";
+        var strElements = "";
         var str2Elements = "";
         intCount = 0;
 
@@ -160,15 +161,12 @@ $(document).ready(function(){
         var request1  = new XMLHttpRequest();
         request1.open("POST", "QuestionnaireCreation", false);
         //Send the proper header information along with the request;
-        alert(200);
-        var parameterString = "JSONText=Jonathanwashere&test=" + myJSONText ;
-        alert(300);
+        var parameterString = "JSONText=test=" + myJSONText ;
         request1.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         request1.setRequestHeader("Content-length", parameterString.length);
         request1.setRequestHeader("Connection", "close");
-        //request.onreadystatechange = alert(500);
         request1.send(parameterString);
-        alert(400);
+
 
 
 
@@ -303,7 +301,7 @@ $(document).ready(function(){
 
             $("#" + ztemp).sortable();
 
-           //end here
+            //end here
 
 
         });
@@ -409,7 +407,7 @@ $(document).ready(function(){
 
                 function checkRegexp(o, regexp, n) {
                     if (!(regexp.test(o.val()))) {
-                       o.addClass("ui-state-error");
+                        o.addClass("ui-state-error");
                         updateTips(n);
                         return false;
                     } else {
@@ -500,7 +498,7 @@ $(document).ready(function(){
             textunit.disabled=true;
             paragraph.disabled=true;
             checkbox.disabled=true;
-           dropdown.disabled=true;
+            dropdown.disabled=true;
             radio.disabled=true;
             datepicker.disabled=true;
 
@@ -623,7 +621,7 @@ $(document).ready(function(){
 
         $("#"+p).live("click", function(e) {
 
-           /*var x = $(fieldWrapper).attr("id");
+            /*var x = $(fieldWrapper).attr("id");
             shorttexttemp = x;
 
             alert(atemp);*/
@@ -1009,7 +1007,7 @@ $(document).ready(function(){
                     }, 500);
                 }
 
-               function checkLength(o, n, min, max) {
+                function checkLength(o, n, min, max) {
                     if (o.val().length > max || o.val().length < min) {
                         o.addClass("ui-state-error");
                         updateTips("Length of " + n + " must be between " + min + " and " + max + ".");
@@ -1070,7 +1068,7 @@ $(document).ready(function(){
         fieldWrapper.append(third);
         fieldWrapper.append(fourth);
 
-       $("#"+p).live("click", function(e) {
+        $("#"+p).live("click", function(e) {
 
             /*var x = $(fieldWrapper).attr("id");
             shorttexttemp = x;
@@ -1166,7 +1164,7 @@ $(document).ready(function(){
 
         });
         foo.append(fieldWrapper);
-       fieldWrapper.append(first);
+        fieldWrapper.append(first);
         fieldWrapper.append(second);
         fieldWrapper.append(third);
 
@@ -1395,7 +1393,7 @@ $(document).ready(function(){
                             autoOpen : false,
                             height : 300,
                             width : 350,
-                           modal : true,
+                            modal : true,
                             buttons : {
                                 "Save" : function() {
 
@@ -1885,7 +1883,7 @@ $(document).ready(function(){
                             autoOpen : false,
                             height : 300,
                             width : 350,
-                           modal : true,
+                            modal : true,
                             buttons : {
                                 "Save" : function() {
 
@@ -2018,7 +2016,7 @@ $(document).ready(function(){
                             autoOpen : false,
                             height : 300,
                             width : 350,
-                           modal : true,
+                            modal : true,
                             buttons : {
                                 "Save" : function() {
 
@@ -2053,7 +2051,7 @@ $(document).ready(function(){
         fieldWrapper.append(third);
         fieldWrapper.append(fourth);
 
-       $("#"+p).live("click", function(e) {
+        $("#"+p).live("click", function(e) {
 
             /*var x = $(fieldWrapper).attr("id");
             shorttexttemp = x;
@@ -2169,7 +2167,7 @@ $(document).ready(function(){
                             autoOpen : false,
                             height : 300,
                             width : 350,
-                           modal : true,
+                            modal : true,
                             buttons : {
                                 "Save" : function() {
 

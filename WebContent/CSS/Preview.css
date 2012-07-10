@@ -186,14 +186,23 @@ table.tab.active {
     background: blue;
 }
 
-.questionDisplay{
-    
+.questionDisplay {
     background-color: #EAEDF0;
     border: 2px solid #C4C4C3;
 }
 
 #questionnairediv {
     border: 2px #ddd;
+    font-size: 16px;
+    font-style: bold;
+    color: #504A4B;
+    background-color: #EAEDF0;
+    border: 2px solid #C4C4C3;
+    width: 915px;
+}
+
+#questionsdiv {
+    border: 1px #ddd;
     font-size: 16px;
     font-style: bold;
     color: #504A4B;
