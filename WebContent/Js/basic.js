@@ -1,4 +1,6 @@
 
+//Proof of concept only///
+
 $(function() {
     $( "#datepicker" ).datepicker();
 });
@@ -39,34 +41,22 @@ $(document).ready(function(){
     mainRadioTesting="";
 
 
-
-
     //Create question button
-
     $("#preview").click(function() {
 
         ////////////////////////
         var order = new Array();
         strQuestions = $("#questionDiv").sortable('toArray');
 
-        intQCount = 0;
-        intQCountQuestion = 0;
-        intQCountRadio = 1;
+        var intQCount = 0;
+        var intQCountQuestion = 0;
         questionnaire = new Object();
         questionArray = new Array();
         mainQuestionArray = new Array();
         mainRadioArray = new Array();
 
-        // get the values of the radio buttons
-        while($("#radiotextnumber"+intQCountRadio).val()!=null){
-            var mainRadio =  $("#radiotextnumber"+intQCountRadio).val();
-            var innermainRadio = $("#innerradiotextnumber"+intQCountRadio).val();
-            mainRadioArray.push(mainRadio);
-            mainRadioArray.push(innermainRadio);
-            intQCountRadio++;
-        }
 
-        //get the values of the question itself
+       //get the values of the question itself
         while(intQCountQuestion < strQuestions.length){
             intQCountQuestion++;
             var mainQuestion = $("#mainQuestionid"+intQCountQuestion).val();
@@ -74,74 +64,227 @@ $(document).ready(function(){
 
         }
 
+        //Looping through each Question
         while(intQCount < strQuestions.length){
             var question = strQuestions[intQCount];
             var qNum = question.substring(8,9);
             order.push(qNum);
 
             questionObj = new Object();
-            questionObj.questionID = qNum;
             questionObj.questionTitle = mainQuestionArray[intQCount];
             questionObj.mainElement = new Array();
             questionObj.addElement = new Array();
             questionObj.displayOrder = intQCount;
-
+            questionObj.questionID = qNum;
 
 
             mainElementArray = new Array();
             addElementArray = new Array();
-
+            // To insert elements into the boxes on the main page *not impt*
             var mainElement = $("#" + "sortable"+qNum).sortable('toArray');
             var addElement = $("#" + "sortable2"+qNum).sortable('toArray');
 
 
-
-
-
-
+            /////////////// MAIN ELEMENTS ////////////////////////////
             for(var i=0; i<mainElement.length; i++){
                 elementObj = new Object();
                 elementObj.type = mainElement[i];
                 elementObj.value = "null";
+
+                ///////Main Text With Unit/////// Working
+                if(mainElement[i].indexOf("pMainTextunit")!=-1){
+                     var valuesArray = new Array();
+                     var indexNum = mainElement[i].substring(13,mainElement[i].length);
+                     var ddlArray = document.getElementById("textwithunitdropdown"+indexNum);
+                     if(ddlArray.options.length != 0){
+                           for(var j=0; j< ddlArray.options.length; j++){
+                                  var value = ddlArray.options[j].value;
+                                  //alert(value);
+                                  valuesArray.push(value);
+                           }
+                     } else {
+                           alert("enter a value");
+                     }
+                     elementObj.value = valuesArray;
+                };
+                ///// Main Text With Unit/////
+
+                ///////Main Dropdown   /////// Working
+                if(mainElement[i].indexOf("pMainDropdown")!=-1){
+                     var valuesArray = new Array();
+                     var indexNum = mainElement[i].substring(13,mainElement[i].length);
+                     var ddlArray = document.getElementById("ddlList"+indexNum);
+                     if(ddlArray.options.length != 0){
+                           for(var j=0; j< ddlArray.options.length; j++){
+                                  var value = ddlArray.options[j].value;
+                                  //alert(value);
+                                  valuesArray.push(value);
+                           }
+                     } else {
+                           alert("enter a value");
+                     }
+                     elementObj.value = valuesArray;
+                };
+                ///// Main Dropdown //////////
+
+                ///// Main Radio Button ///// Working
+                if(mainElement[i].indexOf("pMainRadio")!=-1){
+
+                     var count = 1;
+                     var valuesArray = new Array();
+                     var indexNum = mainElement[i].substring(10,mainElement[i].length);
+                     var firstRadioValue = $("#radiotextnumber"+ indexNum).val();
+
+                     valuesArray.push(firstRadioValue);
+
+                     while(count < 100){
+                           if($("#radiotextnumber"+ indexNum +"-"+count).val()!= null){
+                           valuesArray.push($("#radiotextnumber"+ indexNum +"-" + count).val());
+
+                           }
+
+                           count++;
+                     }
+                     elementObj.value = valuesArray;
+                };
+              ////End  Main Radio button /////
+
+                ///// Main checkbox /////
+                if(mainElement[i].indexOf("pMainCheck")!=-1){
+
+                     var count = 1;
+                     var valuesArray = new Array();
+                     var indexNum = mainElement[i].substring(10,mainElement[i].length);
+                     var firstCheckboxValue = $("#checktextnumber"+ indexNum).val();
+
+                     valuesArray.push(firstCheckboxValue);
+
+                     while(count < 100){
+                           if($("#checktextnumber"+ indexNum +"-"+count).val()!= null){
+                           valuesArray.push($("#checktextnumber"+ indexNum +"-" + count).val());
+                           }
+                           count++;
+                     }
+                     elementObj.value = valuesArray;
+                };
+              ////End  Main checkbox /////
+
                 mainElementArray.push(elementObj);
             }
+
+            ///////////////End of  MAIN ELEMENTS /////////////////////////
+
+            ///////////START -  Additional Elements ////////////////////////
+
             for(var i=0; i<addElement.length; i++){
                 elementObj = new Object();
-
-
-                elementObj.value = "null";
-                if(addElement[i].indexOf("pAddQuestion")!= -1){
-                    var indexNum = addElement[i].substring(12,13);
-                    alert(indexNum);
-                    alert( $("#longtext"+ indexNum).val());
-                    //elementObj.value = $("#longtext"+ indexNum).val();
-                }
-
+                //alert(addElement[i]);
                 elementObj.type = addElement[i];
-                addElementArray.push(elementObj);
-            }
+                elementObj.value = "null";
 
+                //////// Start Additional Question ///////////////////
+                if(addElement[i].indexOf("pAddQuestion")!= -1){
+                     var indexNum = addElement[i].substring(12,addElement[i].length);
+                     elementObj.value = $("#longtext"+ indexNum).val();
+                }
+                //////// End Additional Question ///////////////////
+
+                ///////// Start of Additional Text with Unit ////////////
+              if(addElement[i].indexOf("pAddTextunit")!=-1){
+                     var valuesArray = new Array();
+                     var indexNum = addElement[i].substring(12,addElement[i].length);
+                     var ddlArray = document.getElementById("additional_textunitdropdown"+indexNum);
+                     if(ddlArray.options.length != 0){
+                           for(var j=0; j< ddlArray.options.length; j++){
+                                  var value = ddlArray.options[j].value;
+                                  //alert(value);
+                                  valuesArray.push(value);
+                           }
+                     } else {
+                           alert("enter a value");
+                     }
+                     elementObj.value = valuesArray;
+                }
+              ///////// End of Additional Text with Unit /////////////////
+
+                ///// add checkbox /////
+                if(addElement[i].indexOf("pAddCheckbox")!=-1){
+
+                     var count = 1;
+                     var valuesArray = new Array();
+                     var indexNum = addElement[i].substring(12,addElement[i].length);
+                     var firstCheckboxValue = $("#additional_checkbox_number"+ indexNum).val();
+
+                     valuesArray.push(firstCheckboxValue);
+
+                     while(count < 100){
+                           if($("#additional_checkbox_number"+ indexNum +"-"+count).val()!= null){
+                           valuesArray.push($("#additional_checkbox_number"+ indexNum +"-" + count).val());
+                           }
+                           count++;
+                     }
+                     elementObj.value = valuesArray;
+                };
+              //// End of add checkbox /////
+
+                ///////Add Dropdown   /////// Working
+                if(addElement[i].indexOf("pAddDropdown")!=-1){
+                     var valuesArray = new Array();
+                     var indexNum = addElement[i].substring(12,addElement[i].length);
+                     var ddlArray = document.getElementById("ddlList"+indexNum);
+                     if(ddlArray.options.length != 0){
+                           for(var j=0; j< ddlArray.options.length; j++){
+                                  var value = ddlArray.options[j].value;
+                                  //alert(value);
+                                  valuesArray.push(value);
+                           }
+                     } else {
+                           alert("enter a value");
+                     }
+                     elementObj.value = valuesArray;
+                };
+                ///// End add Dropdown //////////
+
+            ///// Start - Add Radio Button ///// Working
+                if(addElement[i].indexOf("pAddRadio")!=-1){
+
+                     var count = 1;
+                     var valuesArray = new Array();
+                     var indexNum = addElement[i].substring(9, addElement[i].length);
+                     var firstRadioValue = $("#additional_radio_text_number"+ indexNum).val();
+
+                     valuesArray.push(firstRadioValue);
+
+                     while(count < 100){
+                           if($("#additional_radio_text_number"+ indexNum +"-"+count).val()!= null){
+                           valuesArray.push($("#additional_radio_text_number"+ indexNum +"-" + count).val());
+                           }
+                           count++;
+                     }
+                     elementObj.value = valuesArray;
+                };
+              ////End  Add Radio button /////
+
+
+              addElementArray.push(elementObj);
+            }
+            /////////// End of Additional Elements ////////////////////////
 
             questionObj.mainElement = mainElementArray;
             questionObj.addElement = addElementArray;
-
             questionArray.push(questionObj);
-
             intQCount++;
         }
 
+        //Adding questions to the Questionnaire.
         questionnaire.questions = questionArray;
-        questionnaire.id = 0;
 
         var myJSONText = JSON.stringify(questionnaire);
+        myJSONText = myJSONText + ";";
         //console.log(myJSONText);
 
-/*        var mySplitResult = myJSONText.split("questionID");
+        alert(myJSONText);
 
-        for(i = 0; i < mySplitResult.length; i++){
-            document.write("<br /> Element " + i + " = " + mySplitResult[i]);
-        }
-*/
         ////////////////////////////////////////////////////////////////////
         var strElements = "";
         var str2Elements = "";
@@ -153,21 +296,24 @@ $(document).ready(function(){
             str2Elements += $("#" + "sortable2"+count).sortable('toArray')+"&";
         }
 
-        $("#questionorder").val($("#questionDiv").sortable('toArray'));
-        $("#main_order").val(strElements);
-        $("#add_order").val(str2Elements);
-
-
-        var request1  = new XMLHttpRequest();
+/*        var request1  = new XMLHttpRequest();
         request1.open("POST", "QuestionnaireCreation", false);
         //Send the proper header information along with the request;
-        var parameterString = "JSONText=test=" + myJSONText ;
+        var parameterString = "JSONText="+myJSONText ;
         request1.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         request1.setRequestHeader("Content-length", parameterString.length);
         request1.setRequestHeader("Connection", "close");
-        request1.send(parameterString);
+        //request.onreadystatechange = alert(500);
+        request1.send(parameterString);*/
 
-
+        var myJSONText = JSON.stringify(questionnaire);
+        var foo = $("#"+temp);
+        var form = $("<form method=\"get\" action=QuestionnaireCreation target=\"_blank\"/>");
+        var hidden = $("<input type=hidden name=JSONText value="+myJSONText+">");
+        var submit = $("<input type=submit>");
+        foo.append(form);
+        form.append(hidden);
+        form.append(submit);
 
 
     });
@@ -301,7 +447,7 @@ $(document).ready(function(){
 
             $("#" + ztemp).sortable();
 
-            //end here
+           //end here
 
 
         });
@@ -407,7 +553,7 @@ $(document).ready(function(){
 
                 function checkRegexp(o, regexp, n) {
                     if (!(regexp.test(o.val()))) {
-                        o.addClass("ui-state-error");
+                       o.addClass("ui-state-error");
                         updateTips(n);
                         return false;
                     } else {
@@ -477,6 +623,8 @@ $(document).ready(function(){
         type="text";
         type2="radio";
         intradio++;
+        var intRadioCurrent = intradio;
+        var intRadioSibling = 1;
         imageradionumber ="imageradionumber"+intradio;
         radiotextnumber="radiotextnumber" + intradio;
         radiobuttonnumber = "radiobuttonnumber" +intradio;
@@ -489,7 +637,7 @@ $(document).ready(function(){
         var fieldWrapper = $("<p id='"+p+"' class=\"object\"/>");
         //var first =$("<span class=\"ui-icon ui-icon-arrowthick-2-n-s\"/>");
         var input = $(" <input name="+radiotextnumber+" type=text id="+radiotextnumber+" />");
-        var radio =$("<b>Answer: </b><input type=radio id="+radiobuttonnumber+" value="+$(input).val()+"/>");
+        var radio =$("<b>Answer: </b><input type=radio id="+radiobuttonnumber+" value="+$(input).val()+" />");
         var count = $("#" + temp).children(".object").length;
         if (count > 0){
 
@@ -498,7 +646,7 @@ $(document).ready(function(){
             textunit.disabled=true;
             paragraph.disabled=true;
             checkbox.disabled=true;
-            dropdown.disabled=true;
+           dropdown.disabled=true;
             radio.disabled=true;
             datepicker.disabled=true;
 
@@ -519,14 +667,10 @@ $(document).ready(function(){
         });
         var third = $("<img src=Images/MainPage/TextAnswerField/plus_icon.png height=15px width=15px/>");
         third.click(function() {
-
-            intradio++;
-            innerradiotextnumber = "innerradiotextnumber" + intradio;
-
+            innerradiotextnumber = "radiotextnumber" +intRadioCurrent + "-"+ intRadioSibling;
+            intRadioSibling ++;
             fieldWrapper.append("<br/>");
-            fieldWrapper.append("<input type=radio disabled=disabled id="+  innerradiotextnumber+"/> <input name="+innerradiotextnumber+" type=text id="+  innerradiotextnumber+"/>");
-
-
+            fieldWrapper.append("<input type=radio disabled=disabled id="+  innerradiotextnumber+"/> <input name="+innerradiotextnumber+" type=text id="+  innerradiotextnumber+" />");
 
 
         });
@@ -621,7 +765,7 @@ $(document).ready(function(){
 
         $("#"+p).live("click", function(e) {
 
-            /*var x = $(fieldWrapper).attr("id");
+           /*var x = $(fieldWrapper).attr("id");
             shorttexttemp = x;
 
             alert(atemp);*/
@@ -778,6 +922,8 @@ $(document).ready(function(){
         type="text";
         type2="checkbox";
         intcheck++;
+        var intCheckCount = intcheck;
+        var intCountSibling = 1;
         imagecheckbox ="imagechecknumber"+intcheck;
         checktextbox="checktextnumber" + intcheck;
         checkbuttonbox = "checkbuttonnumber" +intcheck;
@@ -793,7 +939,7 @@ $(document).ready(function(){
         var count = $("#" + temp).children(".object").length;
         if (count > 0){
 
-            answerField.disabled=true;
+           answerField.disabled=true;
             text.disabled=true;
             textunit.disabled=true;
             paragraph.disabled=true;
@@ -820,9 +966,13 @@ $(document).ready(function(){
         });
         var third = $("<img src=Images/MainPage/TextAnswerField/plus_icon.png height=15px width=15px />");
         third.click(function() {
-            var id = $(input).attr("id");
+
+              //alert(intCountSibling);
+            innerchecktextnumber = "checktextnumber" +intCheckCount + "-"+ intCountSibling;
+            intCountSibling ++;
+            //alert(intCountSibling);
             fieldWrapper.append("<br/>");
-            fieldWrapper.append("<input type=checkbox disabled=disabled id="+  checkbuttonbox+"/> <input input name="+id+" type=text id="+  checktextbox+"/>");
+            fieldWrapper.append("<input type=checkbox disabled=disabled id="+  innerchecktextnumber+"/> <input input name="+innerchecktextnumber+" type=text id="+  innerchecktextnumber+" />");
 
 
         });
@@ -930,6 +1080,7 @@ $(document).ready(function(){
 
     });
 
+
     $('#textunit').click(function() {
         type="width:100px";
         type2="text";
@@ -947,7 +1098,7 @@ $(document).ready(function(){
         var first =$("<span><b>Answer: </b><input name="+ textwithunit+" type=text disabled=disabled style=\"background:grey\" id=" + textwithunit+">");
         var second = $("<img src=Images/MainPage/TextAnswerField/plus_icon.png height=15px width=15px/>");
         var select = $("<select style=width:100px id="+  textwithunitdropdown+"/>");
-        var text=$("<input type=text id=autocomplete/>");
+        var text=$("<input type=text id=textunit/>");
         var hiddentext = $("<input type=hidden name="+hiddentextwithunit+" value=textunit>");
         $(text).autocomplete({
             source: ["mm", "cm", "m", "km", "mg", "g", "kg", "Metric Ton",
@@ -1007,7 +1158,7 @@ $(document).ready(function(){
                     }, 500);
                 }
 
-                function checkLength(o, n, min, max) {
+               function checkLength(o, n, min, max) {
                     if (o.val().length > max || o.val().length < min) {
                         o.addClass("ui-state-error");
                         updateTips("Length of " + n + " must be between " + min + " and " + max + ".");
@@ -1068,7 +1219,7 @@ $(document).ready(function(){
         fieldWrapper.append(third);
         fieldWrapper.append(fourth);
 
-        $("#"+p).live("click", function(e) {
+       $("#"+p).live("click", function(e) {
 
             /*var x = $(fieldWrapper).attr("id");
             shorttexttemp = x;
@@ -1164,7 +1315,7 @@ $(document).ready(function(){
 
         });
         foo.append(fieldWrapper);
-        fieldWrapper.append(first);
+       fieldWrapper.append(first);
         fieldWrapper.append(second);
         fieldWrapper.append(third);
 
@@ -1179,17 +1330,18 @@ $(document).ready(function(){
         guidanceHeader="guidanceHeaderdropdown"+ intdropdown;
         p="pMainDropdown" + intdropdown;
         guidanceid="guidanceiddropdown" + intdropdown;
+        ddlList = "ddlList" + intdropdown;
 
         var foo = $("#"+temp);
         var fieldWrapper = $("<p id='"+p+"'  class=\"object\"/>");
         var first =$("<span class=\"ui-icon ui-icon-arrowthick-2-n-s\">");
-        var second = $("<img src=Images/MainPage/TextAnswerField/plus_icon.png height=15px width=15px/>");
         var answer = $("<b>Answer: </b>");
-        var select = $("<select style=width:100px id=\"ddlList\"/>");
+        var select = $("<select style=width:100px id= '"+ddlList+"' />");
         var text=$("<input type=text/>");
 
 
         fieldWrapper.append(text);
+        var second = $("<img src=Images/MainPage/TextAnswerField/plus_icon.png height=15px width=15px/>");
         second.click(function() {
             select.append('<option value=' + $(text).val()+'>'+ $(text).val() +'</option>');
             $(text).attr("value", "");
@@ -1272,7 +1424,7 @@ $(document).ready(function(){
                             autoOpen : false,
                             height : 300,
                             width : 350,
-                            modal : true,
+                           modal : true,
                             buttons : {
                                 "Save" : function() {
 
@@ -1345,7 +1497,7 @@ $(document).ready(function(){
         var fieldWrapper = $("<p id='"+p+"' />");
         var first =$("<span id='"+span+"'/>");
         var question = $("<b>Additional Question: </b>");
-        var longtext = $("<input name="+ longbox +" type=text size=100 id="+ longbox+"/>");
+        var longtext = $("<input name="+ longbox +" type=text size=100 id="+ longbox+" />");
         var second = $("<img src=Images/MainPage/TextAnswerField/delete_icon.png height=10px width=10px id="+longimagenumber +"/>");
         second.click(function() {
             $(this).parent().remove();
@@ -1393,7 +1545,7 @@ $(document).ready(function(){
                             autoOpen : false,
                             height : 300,
                             width : 350,
-                            modal : true,
+                           modal : true,
                             buttons : {
                                 "Save" : function() {
 
@@ -1529,7 +1681,7 @@ $(document).ready(function(){
                 "</fieldset></form>";
             });
 
-        });
+       });
 
         foo.append(fieldWrapper);
         fieldWrapper.append(first);
@@ -1561,6 +1713,8 @@ $(document).ready(function(){
         type="text";
         type2="radio";
         intaddradio++;
+        var intRadioCurrent = intaddradio;
+        var intRadioSibling = 1;
         imageradionumber ="additional_radio_image"+intaddradio;
         radiotextnumber="additional_radio_text_number" + intaddradio;
         radiobuttonnumber = "additional_radiobuttonnumber" +intaddradio;
@@ -1574,15 +1728,19 @@ $(document).ready(function(){
         //var first =$("<span class=\"ui-icon ui-icon-arrowthick-2-n-s\"/>");
         var input = $(" <input name="+radiotextnumber+" type=text id="+radiotextnumber+" />");
         var radio =$("<b>Answer: </b><input type=radio id="+radiobuttonnumber+" value="+$(input).val()+"/>");
+
         var second = $("<img src=Images/MainPage/TextAnswerField/delete_icon.png height=10px width=10px id="+ imageradionumber +"/>");
         second.click(function() {
             $(this).parent().remove();
         });
+
         var third = $("<img src=Images/MainPage/TextAnswerField/plus_icon.png height=15px width=15px/>");
         third.click(function() {
-            var id = $(input).attr("id");
+
+            innerradiotextnumber = "additional_radio_text_number" +intRadioCurrent + "-"+ intRadioSibling;
+            intRadioSibling ++;
             fieldWrapper.append("<br/>");
-            fieldWrapper.append("<input type=radio disabled=disabled id="+  radiobuttonnumber+"/> <input name="+id+" type=text id="+  radiotextnumber+"/>");
+            fieldWrapper.append("<input type=radio disabled=disabled id="+  innerradiotextnumber+"/> <input name="+innerradiotextnumber+" type=text id="+  innerradiotextnumber+" />");
 
 
         });
@@ -1802,12 +1960,14 @@ $(document).ready(function(){
 
         });
 
-    });
+   });
 
     $('#additional_checkbox').click(function() {
         type="text";
         type2="checkbox";
         intaddcheck++;
+        var intCheckCount = intaddcheck;
+        var intCountSibling = 1;
         imagecheckbox ="additional_checkbox_image"+intaddcheck;
         checktextbox="additional_checkbox_number" + intaddcheck;
         checkbuttonbox = "additional_checkbox_button" +intaddcheck;
@@ -1820,14 +1980,26 @@ $(document).ready(function(){
         var input = $(" <input name="+checktextbox+ " type=text id="+checktextbox+" />");
         var first =$(" <b>Answer: </b><input type=checkbox  id="+  checkbuttonbox+" value="+$(input).val()+"/>");
         var second = $("<img src=Images/MainPage/TextAnswerField/delete_icon.png height=10px width=10px id="+ imagecheckbox +"/>");
+
+
+
         second.click(function() {
             $(this).parent().remove();
         });
         var third = $("<img src=Images/MainPage/TextAnswerField/plus_icon.png height=15px width=15px />");
         third.click(function() {
-            var id = $(input).attr("id");
+/*            var id = $(input).attr("id");
             fieldWrapper.append("<br/>");
             fieldWrapper.append("<input type=checkbox disabled=disabled id="+  checkbuttonbox+"/> <input input name="+id+" type=text id="+  checktextbox+"/>");
+*/
+              //alert(intCountSibling);
+
+
+              innerchecktextnumber = "additional_checkbox_number" +intCheckCount + "-"+ intCountSibling;
+              intCountSibling ++;
+              //alert(intCountSibling);
+              fieldWrapper.append("<br/>");
+              fieldWrapper.append("<input type=checkbox disabled=disabled id="+  innerchecktextnumber+"/> <input input name="+innerchecktextnumber+" type=text id="+  innerchecktextnumber+" />");
 
 
         });
@@ -1883,8 +2055,8 @@ $(document).ready(function(){
                             autoOpen : false,
                             height : 300,
                             width : 350,
-                            modal : true,
-                            buttons : {
+                           modal : true,
+                           buttons : {
                                 "Save" : function() {
 
                                     $(this).dialog("close");
@@ -1952,7 +2124,7 @@ $(document).ready(function(){
         var first =$("<span><b>Answer: </b><input name="+ textwithunit+" type=text disabled=disabled style=\"background:grey\" id=" + textwithunit+">");
         var second = $("<img src=Images/MainPage/TextAnswerField/plus_icon.png height=15px width=15px/>");
         var select = $("<select style=width:100px id="+  textwithunitdropdown+"/>");
-        var text=$("<input type=text id=autocomplete/>");
+        var text=$("<input type=text id=aTextunit/>");
         var hiddentext = $("<input type=hidden name="+hiddentextwithunit+" value=textunit>");
         $(text).autocomplete({
             source: ["mm", "cm", "m", "km", "mg", "g", "kg", "Metric Ton",
@@ -2016,8 +2188,8 @@ $(document).ready(function(){
                             autoOpen : false,
                             height : 300,
                             width : 350,
-                            modal : true,
-                            buttons : {
+                           modal : true,
+                           buttons : {
                                 "Save" : function() {
 
                                     $(this).dialog("close");
@@ -2051,7 +2223,7 @@ $(document).ready(function(){
         fieldWrapper.append(third);
         fieldWrapper.append(fourth);
 
-        $("#"+p).live("click", function(e) {
+       $("#"+p).live("click", function(e) {
 
             /*var x = $(fieldWrapper).attr("id");
             shorttexttemp = x;
@@ -2099,13 +2271,14 @@ $(document).ready(function(){
         guidanceHeader="guidance_header_additional_dropdown"+ intadddropdown;
         p="pAddDropdown" + intadddropdown;
         guidanceid="additional_dropdown_guidance_id" + intadddropdown;
+        ddlList = "ddlList" + intadddropdown;
 
         var foo = $("#"+ztemp);
         var fieldWrapper = $("<p id='"+p+"'/>");
         var first =$("<span class=\"ui-icon ui-icon-arrowthick-2-n-s\">");
         var second = $("<img src=Images/MainPage/TextAnswerField/plus_icon.png height=15px width=15px/>");
         var answer = $("<b>Answer: </b>");
-        var select = $("<select style=width:100px id=\"ddlList\"/>");
+        var select = $("<select style=width:100px id= '"+ddlList+"' />");
         var text=$("<input type=text/>");
 
 
@@ -2167,7 +2340,7 @@ $(document).ready(function(){
                             autoOpen : false,
                             height : 300,
                             width : 350,
-                            modal : true,
+                           modal : true,
                             buttons : {
                                 "Save" : function() {
 
@@ -2225,4 +2398,5 @@ $(document).ready(function(){
     //End here
 
 });
+
 

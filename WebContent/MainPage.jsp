@@ -174,6 +174,7 @@ div#users-contain table td,div#users-contain table th {
               </table>
               <table>
                      <tr>
+                     
                            <td><img src="Images/MainPage/InfoBanner.jpg" width="1010"
                                   height="185" /> <br /> <br />
                                   <div class="clear"></div>
@@ -190,11 +191,7 @@ div#users-contain table td,div#users-contain table th {
                                          %>
 
                                   </div> <br />
-                                  <div id="outerQuestionDiv">
-                                         <input type="text" name="questionorder" id="questionorder"
-                                                size="90" /> <input type="text" name="main_order"
-                                                id="main_order" size="90" /> <input type="text" name="add_order"
-                                                id="add_order" size="90" />
+                                  <div id="outerQuestionDiv">                                                
                                          <div id="questionDiv">
                                                 <p class="question_description">
                                                        <b>Objects will be inserted here</b>

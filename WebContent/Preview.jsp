@@ -11,6 +11,7 @@
 <script src="Js/jquery-ui-1.8.20.custom.js"></script>
 <script src="Js/basic.js"></script>
 <script src="Js/JqueryUI/jquery.ui.datepicker.js"></script>
+<script src="Js/Preview.js"></script>
 
 </head>
 <body>
@@ -28,21 +29,31 @@
     <div id="questionnairediv">
       <b>Questionnaire Title: </b>
       <%
-                String title = request.getParameter("title");
-                out.println(title);
-            %>
+          String title = request.getParameter("title");
+          out.println(title);
+      %>
       &nbsp; &nbsp; &nbsp;<b>Category: </b>
       <%
-                String category = request.getParameter("category");
-                out.println(category);
-            %>
+          String category = request.getParameter("category");
+          out.println(category);
+      %>
 
     </div>
 
     <div class="clear"></div>
-    <div id="questionsdiv"></div>
+    <div id="questionsdiv">
+
+      <table>
+        <tr>
+          <td id="questionNo"></td>
+        </tr>
+        <tr>
+          <td id="questionContent"></td>
+        </tr>
+      </table>
+
+    </div>
 
   </div>
-
 </body>
 </html>
