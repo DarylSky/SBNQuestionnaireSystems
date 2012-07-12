@@ -16,6 +16,7 @@ $(document).ready(function() {
         var questionID=(question.questionID);
 
         $("#questionNo").append(questionID);
+        $("#questionNo").append(".");
 
         var questionTitle = (question.questionTitle);
         $("#questionNo").append(questionTitle);
@@ -23,7 +24,7 @@ $(document).ready(function() {
 
         for(var i=0;i<question.mainElement.length;i++){
             var mainElements = (question.mainElement[i].type);
-            var dropdownvalue = (question.mainElement[i].value);
+           // var dropdownvalue = (question.mainElement[i].value);
             var mainElementsSubstring = mainElements.substring(0, mainElements.length-1);
 
             if (mainElementsSubstring == ("pMainText")){
@@ -51,7 +52,7 @@ $(document).ready(function() {
             else if (mainElementsSubstring == ("pMainDropdown")){
 
                 $("#questionContent").append("<b>Answer: </b><select style=width:150px />");
-                $("#questionContent").append(dropdownvalue);
+                //$("#questionContent").append(dropdownvalue);
                 /*var value=values.split(",");
                 for(var j=0;j<value.length;j++){
                     dropdownvalue=value[j];

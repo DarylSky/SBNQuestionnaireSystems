@@ -281,6 +281,7 @@ $(document).ready(function(){
 
         var myJSONText = JSON.stringify(questionnaire);
         myJSONText = myJSONText + ";";
+        $('#hiddenJSONtext').val(myJSONText);
         //console.log(myJSONText);
 
         alert(myJSONText);
@@ -307,6 +308,7 @@ $(document).ready(function(){
         request1.send(parameterString);*/
 
         var myJSONText = JSON.stringify(questionnaire);
+
         var foo = $("#"+temp);
         var form = $("<form method=\"get\" action=QuestionnaireCreation target=\"_blank\"/>");
         var hidden = $("<input type=hidden name=JSONText value="+myJSONText+">");
@@ -314,7 +316,6 @@ $(document).ready(function(){
         foo.append(form);
         form.append(hidden);
         form.append(submit);
-
 
     });
 
