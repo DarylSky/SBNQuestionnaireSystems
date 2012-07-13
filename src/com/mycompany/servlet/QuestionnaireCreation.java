@@ -29,9 +29,9 @@ public class QuestionnaireCreation extends HttpServlet {
     @Override
     protected void doGet(final HttpServletRequest request, final HttpServletResponse response) throws ServletException, IOException {
         // TODO Auto-generated method stub
-        final PrintWriter out = response.getWriter();
-        final String text = request.getParameter("JSONText");
-
+        PrintWriter out = response.getWriter();
+        String text = request.getParameter("JSONText");
+        out.println(text);
         response.sendRedirect("Preview.jsp?JSONText=" + text);
 
     }

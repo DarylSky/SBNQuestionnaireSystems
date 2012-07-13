@@ -11,80 +11,200 @@ $(document).ready(function() {
 
     for ( var u = 0; u < json_parsed.questions.length; u++) {
         var question = json_parsed.questions[u];
-        //document.write(question.id); //Questionnaire ID
-        //document.write(question.displayOrder);
         var questionID=(question.questionID);
 
-        $("#questionNo").append(questionID);
-        $("#questionNo").append(".");
+        $("#questionContent").append("<p id=\"nextQuestion\"><b>Next Question</b></p>");
+
+        $("#questionContent").append("<p id=\"question\"></p>");
+        $("#questionContent").append(questionID);
+        $("#questionContent").append(".");
 
         var questionTitle = (question.questionTitle);
-        $("#questionNo").append(questionTitle);
-        $("#questionNo").append("<br />");
+        $("#questionContent").append(questionTitle);
+        $("#questionContent").append("<br />");
+        $("#questionContent").append("<br />");
+
+        ////////////////////////////mainElements////////////////////////////////////////
 
         for(var i=0;i<question.mainElement.length;i++){
             var mainElements = (question.mainElement[i].type);
-           // var dropdownvalue = (question.mainElement[i].value);
             var mainElementsSubstring = mainElements.substring(0, mainElements.length-1);
+
+
 
             if (mainElementsSubstring == ("pMainText")){
 
-                $("#questionContent").append("<b>Answer: </b><input type=text />");
+                $("#questionContent").append("<input type=text size=\"100\" />");
                 $("#questionContent").append("<br />");
                 $("#questionContent").append("<br />");
             }
 
             else if (mainElementsSubstring == ("pMainParagragh")){
 
-                $("#questionContent").append("<b>Answer: </b><textarea rows=4 columns=20 />");
+                $("#questionContent").append("<textarea rows=4 columns=20 />");
                 $("#questionContent").append("<br />");
                 $("#questionContent").append("<br />");
+
             }
 
 
             else if (mainElementsSubstring == ("pMainTextunit")){
 
-                $("#questionContent").append("<b>Answer: </b><input type=text /><select style=width:100px />");
+                var questionContent =  $("#questionContent");
+                var textbox = $("<input type=\"text\">");
+                var select = $("<select id=\"select\" style=\"width:150px;\"></select>");
+                questionContent.append(textbox);
+                questionContent.append(select);
+
+                for(var x=0; x<question.mainElement[i].value.length;x++){
+                    var textunit = (question.mainElement[i].value[x]);
+                    select.append("<option>"+textunit+"</option>");
+                }
+
                 $("#questionContent").append("<br />");
                 $("#questionContent").append("<br />");
             }
 
             else if (mainElementsSubstring == ("pMainDropdown")){
 
-                $("#questionContent").append("<b>Answer: </b><select style=width:150px />");
-                //$("#questionContent").append(dropdownvalue);
-                /*var value=values.split(",");
-                for(var j=0;j<value.length;j++){
-                    dropdownvalue=value[j];
-                    $("#questionContent").append(dropdownvalue);
-                }*/
+                var questionContent =  $("#questionContent");
+                var select = $("<select id=\"select\" style=\"width:150px;\"></select>");
+                questionContent.append(select);
+
+                for(var x=0; x<question.mainElement[i].value.length;x++){
+                    var dropdown = (question.mainElement[i].value[x]);
+                    select.append("<option>"+dropdown+"</option>");
+                }
+
                 $("#questionContent").append("<br />");
                 $("#questionContent").append("<br />");
             }
 
             else if (mainElementsSubstring == ("pMainCheck")){
 
-                $("#questionContent").append("<b>Answer: </b><input type=checkbox />");
-                $("#questionContent").append("<br />");
+                for(var x=0; x<question.mainElement[i].value.length;x++){
+                    var checkboxvalue = (question.mainElement[i].value[x]);
+                    var questionContent =  $("#questionContent");
+                    var check = $("<input type=checkbox /><b>"+checkboxvalue+"</b>");
+                    questionContent.append(check);
+                    questionContent.append("<br />");
+                }
+
                 $("#questionContent").append("<br />");
             }
 
             else if (mainElementsSubstring == ("pMainRadio")){
 
+                for(var x=0; x<question.mainElement[i].value.length;x++){
+                    var radiobuttonvalue = (question.mainElement[i].value[x]);
+                    var questionContent =  $("#questionContent");
+                    var radio = $("<input type=radio /><b>"+radiobuttonvalue+"</b>");
+                    questionContent.append(radio);
+                    questionContent.append("<br />");
+                }
 
-                //var value=question.mainElement[i].value;
-                $("#questionContent").append("<b>Answer: </b><input type=radio value="+value+"/>");
-                //$("#questionContent").append(value);
+                $("#questionContent").append("<br />");
+            }
+
+        }
+
+        /////////////////////Additional//////////////////////////////////////
+
+        $("#questionContent").append("<p class=\"padditional\"><b>Additional Information: </b></p>");
+
+        for(var i=0;i<question.addElement.length;i++){
+            var addElements = (question.addElement[i].type);
+            var addElementsSubstring = addElements.substring(0, addElements.length-1);
+
+            if (addElementsSubstring == ("pAddQuestion")){
+
+
+                var questionTitle = (question.addElement[i].value);
+                $("#questionContent").append(questionTitle);
+                $("#questionContent").append("<br />");
+                $("#questionContent").append("<br />");
+
+            }
+
+            else if (addElementsSubstring == ("pAddText")){
+
+                $("#questionContent").append("<input type=text size=\"100\" />");
+                $("#questionContent").append("<br />");
+                $("#questionContent").append("<br />");
+
+            }
+
+            else if (addElementsSubstring == ("pAddParagraph")){
+
+                $("#questionContent").append("<textarea rows=4 columns=20 />");
+                $("#questionContent").append("<br />");
+                $("#questionContent").append("<br />");
+
+            }
+
+
+            else if (addElementsSubstring == ("pAddTextunit")){
+
+                var questionContent =  $("#questionContent");
+                var textbox = $("<input type=\"text\">");
+                var select = $("<select id=\"select\" style=\"width:150px;\"></select>");
+                questionContent.append(textbox);
+                questionContent.append(select);
+
+                for(var x=0; x<question.addElement[i].value.length;x++){
+                    var textunit = (question.addElement[i].value[x]);
+                    select.append("<option>"+textunit+"</option>");
+                }
+
+                $("#questionContent").append("<br />");
+                $("#questionContent").append("<br />");
+            }
+
+            else if (addElementsSubstring == ("pAddDropdown")){
+
+                var questionContent =  $("#questionContent");
+                var select = $("<select id=\"select\" style=\"width:150px;\"></select>");
+                questionContent.append(select);
+
+                for(var x=0; x<question.addElement[i].value.length;x++){
+                    var dropdown = (question.addElement[i].value[x]);
+                    select.append("<option>"+dropdown+"</option>");
+                }
+
+                $("#questionContent").append("<br />");
+                $("#questionContent").append("<br />");
+            }
+
+            else if (addElementsSubstring == ("pAddCheckbox")){
+
+                for(var x=0; x<question.addElement[i].value.length;x++){
+                    var checkboxvalue = (question.addElement[i].value[x]);
+                    var questionContent =  $("#questionContent");
+                    var check = $("<input type=checkbox /><b>"+checkboxvalue+"</b>");
+                    questionContent.append(check);
+                    questionContent.append("<br />");
+                }
+
+                $("#questionContent").append("<br />");
+                $("#questionContent").append("<br />");
+            }
+
+            else if (addElementsSubstring == ("pAddRadio")){
+
+                for(var x=0; x<question.addElement[i].value.length;x++){
+                    var radiobuttonvalue = (question.addElement[i].value[x]);
+                    var questionContent =  $("#questionContent");
+                    var radio = $("<input type=radio /><b>"+radiobuttonvalue+"</b>");
+                    questionContent.append(radio);
+                    questionContent.append("<br />");
+                }
+
                 $("#questionContent").append("<br />");
                 $("#questionContent").append("<br />");
             }
 
         }
-/*        for(var i=0;i<question.addElement.length;i++){
-            document.write(question.addElement[i].type);
-            document.write(question.addElement[i].value);
-        }*/
-        //document.write(question.displayOrder);
+
     }
 
 

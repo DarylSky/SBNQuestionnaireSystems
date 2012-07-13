@@ -284,7 +284,7 @@ $(document).ready(function(){
         $('#hiddenJSONtext').val(myJSONText);
         //console.log(myJSONText);
 
-        alert(myJSONText);
+        //alert(myJSONText);
 
         ////////////////////////////////////////////////////////////////////
         var strElements = "";
@@ -1107,7 +1107,8 @@ $(document).ready(function(){
                      "km/h","Newton","Watt","KiloWatt","Ampere"]
         });
         second.click(function() {
-            select.append('<option value=' + $(text).val()+'>'+ $(text).val() +'</option>');
+              textValue = $(text).val().replace(/\s/g, '&nbsp;');
+            select.append('<option value=' + textValue+'>'+ $(text).val() +'</option>');
             $(text).attr("value", "");
         });
         var third = $("<img src=Images/MainPage/TextAnswerField/minus_icon.png height=15px width=15px/>");
@@ -1344,7 +1345,8 @@ $(document).ready(function(){
         fieldWrapper.append(text);
         var second = $("<img src=Images/MainPage/TextAnswerField/plus_icon.png height=15px width=15px/>");
         second.click(function() {
-            select.append('<option value=' + $(text).val()+'>'+ $(text).val() +'</option>');
+              textValue = $(text).val().replace(/\s/g, '&nbsp;');
+            select.append('<option value=' + textValue+'>'+ $(text).val() +'</option>');
             $(text).attr("value", "");
         });
         var third = $("<img src=Images/MainPage/TextAnswerField/minus_icon.png height=15px width=15px/>");
@@ -2080,7 +2082,7 @@ $(document).ready(function(){
                 "</fieldset></form>";
             });
 
-        });
+       });
 
         foo.append(fieldWrapper);
         fieldWrapper.append(first);
@@ -2133,7 +2135,8 @@ $(document).ready(function(){
                      "km/h","Newton","Watt","KiloWatt","Ampere"]
         });
         second.click(function() {
-            select.append('<option value=' + $(text).val()+'>'+ $(text).val() +'</option>');
+              textValue = $(text).val().replace(/\s/g, '&nbsp;');
+            select.append('<option value=' + textValue+'>'+ $(text).val() +'</option>');
             $(text).attr("value", "");
         });
         var third = $("<img src=Images/MainPage/TextAnswerField/minus_icon.png height=15px width=15px/>");
@@ -2220,7 +2223,7 @@ $(document).ready(function(){
         fieldWrapper.append(select);
         fieldWrapper.append(text);
         fieldWrapper.append(hiddentext);
-        fieldWrapper.append(second);
+       fieldWrapper.append(second);
         fieldWrapper.append(third);
         fieldWrapper.append(fourth);
 
@@ -2285,7 +2288,8 @@ $(document).ready(function(){
 
         fieldWrapper.append(text);
         second.click(function() {
-            select.append('<option value=' + $(text).val()+'>'+ $(text).val() +'</option>');
+              textValue = $(text).val().replace(/\s/g, '&nbsp;');
+            select.append('<option value=' + textValue+'>'+ $(text).val() +'</option>');
             $(text).attr("value", "");
         });
         var third = $("<img src=Images/MainPage/TextAnswerField/minus_icon.png height=15px width=15px/>");
@@ -2399,5 +2403,6 @@ $(document).ready(function(){
     //End here
 
 });
+
 
 

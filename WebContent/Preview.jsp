@@ -29,29 +29,39 @@
     <div id="questionnairediv">
       <b>Questionnaire Title: </b>
       <%
-          String title = request.getParameter("title");
-          out.println(title);
+          // String title = request.getParameter("title");
+          //out.println(title);
       %>
       &nbsp; &nbsp; &nbsp;<b>Category: </b>
       <%
-          String category = request.getParameter("category");
-          out.println(category);
+          // String category = request.getParameter("category");
+          //out.println(category);
       %>
 
     </div>
+    <br />
 
     <div class="clear"></div>
     <div id="questionsdiv">
-
       <table>
         <tr>
-          <td id="questionNo"></td>
-        </tr>
-        <tr>
-          <td id="questionContent"></td>
+          <td>
+            <div id="questionContent"></div>
+          </td>
         </tr>
       </table>
 
+    </div>
+    <div id="sap_reasearch_icon">
+    <br />
+      <div style="width: 908px;">
+        <p class="sap_research_icon2">
+          <b>RESEARCH</b>
+        </p>
+        <p class="sap_research_icon1">
+          <b>SAP</b>
+        </p>
+      </div>
     </div>
 
   </div>

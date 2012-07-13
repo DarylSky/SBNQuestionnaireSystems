@@ -210,3 +210,48 @@ table.tab.active {
     border: 2px solid #C4C4C3;
     width: 915px;
 }
+
+.padditional {
+    font-size: 12px;
+    background-color: white;
+    color: black;
+    border: 1px solid #aaaaaa;
+    font-family: arial;
+    width: 908px;
+}
+
+.padditional:hover {
+    background-color: white;
+    cursor: default;
+}
+
+#nextQuestion {
+    width: 908px;
+    background-color: #F0AB00;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    border: 1px solid #C4C4C3;
+}
+
+#nextQuestion:hover {
+    
+    cursor:default;
+}
+
+#sap_reasearch_icon {
+       width: 920px;
+       height: 60px;
+       text-align: right;
+       background-color: #F8F8F8;
+}
+
+.sap_research_icon1 {
+       color: orange;
+       float: right;
+}
+
+.sap_research_icon2 {
+       color: black;
+       float: right;
+}
