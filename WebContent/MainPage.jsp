@@ -148,7 +148,9 @@ div#users-contain table td,div#users-contain table th {
       <tr>
         <td>
           <div class="logo" style="background-color: white; width: 400px;">
-            <img src="Images/HomePage/logo.jpg" alt="">
+          <a href="HomePage.jsp">
+            <img src="Images/HomePage/logo.jpg" alt="" height="86px" width="390px">
+            </a>
           </div>
         </td>
         <td>
@@ -175,32 +177,27 @@ div#users-contain table td,div#users-contain table th {
         </td>
       </tr>
     </table>
-    <!-- 
-    <form method="get" action=QuestionnaireCreation target="blank">
-      <input id="hiddenJSONtext" type="text" name="hiddenJSONtext" value="Hello" /> -->
     <table>
       <tr>
-
         <td>
           <img src="Images/MainPage/InfoBanner.jpg" width="1010" height="185" /> <br /> <br />
           <div class="clear"></div>
           <div id="questionnairediv">
             <b>Questionnaire Title: </b>
             <%
-                  String title = request.getParameter("title");
-                  out.println(title);
-              %>
+                String title = request.getParameter("title");
+            			out.println(title);
+            %>
             &nbsp; &nbsp; &nbsp;<b>Category: </b>
             <%
-                  String category = request.getParameter("category");
-                  out.println(category);
-              %>
+                String category = request.getParameter("category");
+            			out.println(category);
+            %>
 
           </div>
           <br />
           <div id="outerQuestionDiv">
             <div id="questionDiv">
-<!--               <input id="preview" type="submit" class="toolbox_button" style="height: 20px;" value="Preview" /> -->
               <p class="question_description">
                 <b>Objects will be inserted here</b>
               </p>
@@ -223,6 +220,13 @@ div#users-contain table td,div#users-contain table th {
         <td class="questionnaire_tools_div">
           <div class="toolbox_title">
             <b>ToolBox:</b>
+          </div>
+          <div>
+            <form method="get" action="QuestionnaireCreation" target="blank">
+              <input type="hidden" id="JSONText" name="JSONText" value="" /> 
+              <input type="submit" id="preview" class="toolbox_button" style="height: 27px;" value=" Preview">
+            </form> 
+            <button id="submit" class="toolbox_button" style="height: 27px;">Submit</button>
           </div>
           <div class="menuAcdn" animation="true" expand="single">
             <ul>
@@ -264,8 +268,6 @@ div#users-contain table td,div#users-contain table th {
               </li>
 
             </ul>
-            <button id="preview" class="toolbox_button" style="height: 20px;">Preview</button> 
-            <button id="submit" class="toolbox_button" style="height: 20px;">Submit</button>
           </div>
         </td>
         <td class="questionnaire_tools_div2">
@@ -275,7 +277,6 @@ div#users-contain table td,div#users-contain table th {
             </a>
           </p>
         </td>
-
       </tr>
     </table>
 
@@ -287,8 +288,6 @@ div#users-contain table td,div#users-contain table th {
                 event.preventDefault();
             });
         </script>
-
-
 </body>
 </html>
 

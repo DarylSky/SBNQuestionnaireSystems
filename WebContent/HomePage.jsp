@@ -124,7 +124,7 @@ ddaccordion.init({
       <div class="container_24">
         <div class="logo">
           <a href="index.html">
-            <img src="Images/HomePage/logo.jpg" alt="">
+            <img src="Images/HomePage/logo.jpg" alt="" height="86px" width="390px" style=" padding-top: 20px;">
           </a>
         </div>
         <nav>

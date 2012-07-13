@@ -193,7 +193,7 @@ div.menuAcdn {
        /* Note about height: Change it to "height:auto;" if flexible height is prefered. 
     It is recommended to specify a fixed height as it is more user-friendly. 
     If the height specified is insufficient than needed, it will be automatically converted to "height:auto". */
-       height: 360px;
+        height: 157px; 
        width: 180px;
        position: absolute;
 }
@@ -301,7 +301,6 @@ div.menuAcdn,div.menuAcdn ul {
        display: block;
        font-size: 0px;
        line-height: 0px;
-       bottom: 0px;
 }
 
 div.menuAcdn li {
@@ -354,12 +353,12 @@ div.menuAcdn div.arrowImage {
 
 .questionnaire_tools_div {
        position: fixed;
-       top: 173px;
+       top: 148px;
 }
 
 .questionnaire_tools_div2 {
        position: fixed;
-       top: 162px;
+       top: 137px;
        padding-left: 182px;
 }
 
@@ -377,6 +376,7 @@ div.menuAcdn div.arrowImage {
        padding: 14px;
        left: 5px;
        padding-top: 70px;
+       padding-left: 20px;
        font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -397,6 +397,8 @@ div.menuAcdn div.arrowImage {
        width: 180px;
        background-color: #EEE;
        border: 1px solid #C4C4C3;
+       padding-right: 106px;
+       font: normal 12px Verdana;
 }
 
 .toolbox_button:hover {

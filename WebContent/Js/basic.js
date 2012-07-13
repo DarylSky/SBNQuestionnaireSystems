@@ -60,6 +60,9 @@ $(document).ready(function(){
         while(intQCountQuestion < strQuestions.length){
             intQCountQuestion++;
             var mainQuestion = $("#mainQuestionid"+intQCountQuestion).val();
+            if(mainQuestion !=null){
+                mainQuestion = mainQuestion.replace(/\s/g, '&nbsp;');
+            }
             mainQuestionArray.push(mainQuestion);
 
         }
@@ -186,6 +189,7 @@ $(document).ready(function(){
                 if(addElement[i].indexOf("pAddQuestion")!= -1){
                      var indexNum = addElement[i].substring(12,addElement[i].length);
                      elementObj.value = $("#longtext"+ indexNum).val();
+                     elementObj.value = elementObj.value.replace(/\s/g, '&nbsp;');
                 }
                 //////// End Additional Question ///////////////////
 
@@ -308,14 +312,16 @@ $(document).ready(function(){
         request1.send(parameterString);*/
 
         var myJSONText = JSON.stringify(questionnaire);
+        document.getElementById('JSONText').value = myJSONText;
 
-        var foo = $("#"+temp);
+/*        var foo = $("#"+temp);
         var form = $("<form method=\"get\" action=QuestionnaireCreation target=\"_blank\"/>");
-        var hidden = $("<input type=hidden name=JSONText value="+myJSONText+">");
+        var hidden = $("<input type=text name=JSONText value="+myJSONText+">");
         var submit = $("<input type=submit>");
         foo.append(form);
         form.append(hidden);
-        form.append(submit);
+        form.append(submit);*/
+
 
     });
 
@@ -340,7 +346,7 @@ $(document).ready(function(){
         var header =$("<th width=960/>");
         var input = $("<p class=flip id= '"+flip+"'>Question "+intquestionPanel+"</p>");
         var header2 = $("<th>");
-        var collapse = $("<img src=\"Images/MainPage/minimize.gif\" href=\"#\" class=\"plusBtn\" id='"+plusBtn+"' value=\"-\" /><img src=Images/MainPage/TextAnswerField/delete_icon.png height=15px width=15px class=\"remove\" id=\"remove\"/>");
+        var collapse = $("<img src=\"Images/MainPage/minimize.gif\" href=\"#\" class=\"plusBtn\" id='"+plusBtn+"' /><img src=Images/MainPage/TextAnswerField/delete_icon.png height=15px width=15px class=\"remove\" id=\"remove\"/>");
         var element = $("<tr width=\"960\" id=\"tableslide\"/>");
         var tabledata = $("<td/>");
         //var form = $("<form method=\"get\" action=\"MainPageServlet\" target=\"_blank\"/>");
@@ -385,7 +391,6 @@ $(document).ready(function(){
 
         var x = $(div).attr("id");
         temp = x;
-
 
         var y = $(table).attr("id");
         atemp = y;
@@ -454,6 +459,7 @@ $(document).ready(function(){
         });
 
         $("#"+plusBtn).click(function(){
+            //$(this).slideToggle("slow");
             $("#"+temp).slideToggle("slow");
             $("#"+ztemp).slideToggle("slow");
             $(padditional).slideToggle("slow");
@@ -461,7 +467,10 @@ $(document).ready(function(){
 
         $('.remove').click(function() {
 
-            $("#" + atemp).remove();
+
+            $(this).parent().parent().parent().remove();
+
+/*            $("#" + atemp).remove();*/
             $(br).remove();
 
         });

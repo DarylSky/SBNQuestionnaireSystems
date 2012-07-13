@@ -23,7 +23,7 @@
   <div id="mainPanel" style="padding-left: 325px; width: 1010px;">
 
     <div class="logo" style="background-color: white; width: 400px;">
-      <img src="Images/HomePage/logo.jpg" alt="">
+      <img src="Images/HomePage/logo.jpg" alt="" height="86px" width="390px">
     </div>
     <br />
     <div id="questionnairediv">
