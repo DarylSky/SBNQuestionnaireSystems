@@ -5,6 +5,20 @@ $(function() {
     $( "#datepicker" ).datepicker();
 });
 
+function dialog_box()
+{
+var r=confirm("Changes will not be saved, are you sure?");
+if (r==true)
+  {
+
+    window.location.href('HomePage.jsp');
+
+  }
+else
+  {
+
+  }
+}
 
 $(document).ready(function(){
 
@@ -30,6 +44,7 @@ $(document).ready(function(){
     intadddatepicker=0;
     intadddropdown=0;
 
+
     //Global_Var
     temp="";
     ztemp="";
@@ -41,7 +56,7 @@ $(document).ready(function(){
     mainRadioTesting="";
 
 
-    //Create question button
+    //Create  button
     $("#preview").click(function() {
 
         ////////////////////////
@@ -87,7 +102,6 @@ $(document).ready(function(){
             var mainElement = $("#" + "sortable"+qNum).sortable('toArray');
             var addElement = $("#" + "sortable2"+qNum).sortable('toArray');
 
-
             /////////////// MAIN ELEMENTS ////////////////////////////
             for(var i=0; i<mainElement.length; i++){
                 elementObj = new Object();
@@ -106,7 +120,7 @@ $(document).ready(function(){
                                   valuesArray.push(value);
                            }
                      } else {
-                           alert("enter a value");
+
                      }
                      elementObj.value = valuesArray;
                 };
@@ -124,7 +138,7 @@ $(document).ready(function(){
                                   valuesArray.push(value);
                            }
                      } else {
-                           alert("enter a value");
+
                      }
                      elementObj.value = valuesArray;
                 };
@@ -205,7 +219,7 @@ $(document).ready(function(){
                                   valuesArray.push(value);
                            }
                      } else {
-                           alert("enter a value");
+
                      }
                      elementObj.value = valuesArray;
                 }
@@ -243,7 +257,7 @@ $(document).ready(function(){
                                   valuesArray.push(value);
                            }
                      } else {
-                           alert("enter a value");
+
                      }
                      elementObj.value = valuesArray;
                 };
@@ -324,6 +338,8 @@ $(document).ready(function(){
 
 
     });
+
+    $("#submit").
 
     $('#question').click(function(){
 
@@ -467,8 +483,8 @@ $(document).ready(function(){
 
         $('.remove').click(function() {
 
-
-            $(this).parent().parent().parent().remove();
+            //$(this).parent().remove();
+            $(this).parent().parent().parent().parent().parent().remove();
 
 /*            $("#" + atemp).remove();*/
             $(br).remove();

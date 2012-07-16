@@ -123,18 +123,18 @@ ddaccordion.init({
     <div class="header-bg">
       <div class="container_24">
         <div class="logo">
-          <a href="index.html">
-            <img src="Images/HomePage/logo.jpg" alt="" height="86px" width="390px" style=" padding-top: 20px;">
+          <a href="HomePage.jsp">
+            <img src="Images/HomePage/logo.jpg" alt="" height="86px" border="0" width="390px" style=" padding-top: 20px;">
           </a>
         </div>
         <nav>
           <ul>
-            <li><a href="index.html" class="current">Home</a></li>
-            <li><a href="index-1.html">About Us</a></li>
-            <li><a href="index-2.html">Preview</a></li>
-            <li><a href="index-3.html">Clients</a></li>
-            <li><a href="index-4.html">FAQ</a></li>
-            <li><a href="index-5.html">Contacts</a></li>
+            <li><a href="HomePage.jsp" class="current">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Preview</a></li>
+            <li><a href="#">Clients</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Contacts</a></li>
           </ul>
         </nav>
         <a href="#" class="main-banner">

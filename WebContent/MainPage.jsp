@@ -132,6 +132,7 @@ div#users-contain table td,div#users-contain table th {
         });
 
     });
+    
 </script>
 
 </head>
@@ -148,14 +149,12 @@ div#users-contain table td,div#users-contain table th {
       <tr>
         <td>
           <div class="logo" style="background-color: white; width: 400px;">
-          <a href="HomePage.jsp">
-            <img src="Images/HomePage/logo.jpg" alt="" height="86px" width="390px">
-            </a>
+            <img src="Images/HomePage/logo.jpg" onclick="dialog_box()" alt="" height="86px" width="390px" border="0">
           </div>
         </td>
         <td>
           <div class="mainNav">
-            <a href="HomePage.jsp" class="mainNav">
+            <a href="#" onclick="dialog_box()" class="mainNav">
               <b>Home</b>
             </a>
             <a href="#" class="mainNav">
