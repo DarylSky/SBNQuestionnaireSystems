@@ -339,7 +339,22 @@ $(document).ready(function(){
 
     });
 
-    $("#submit").
+    $("#submit").click(function(){
+
+        var r=confirm("Click OK to proceed");
+        if (r==true)
+          {
+
+            alert("Questionnaire created successfully");
+            window.location.href('HomePage.jsp');
+
+          }
+        else
+          {
+
+          }
+
+    });
 
     $('#question').click(function(){
 
