@@ -49,7 +49,7 @@ $(document).ready(function() {
         } else {
             $('input[type="submit"]').removeAttr('disabled');
         }
-    });
+   });
 
 });
 
@@ -101,7 +101,7 @@ ddaccordion.init({
 }
 
 .applemenu div.selected a,.applemenu div.silverheader a:hover {
-    background-image: url(Images/HomePage/silvergradientover.gif);
+    background-image: url(Images/HomePage/orange_background.jpg);
     color: white;
 }
 
@@ -124,7 +124,7 @@ ddaccordion.init({
       <div class="container_24">
         <div class="logo">
           <a href="HomePage.jsp">
-            <img src="Images/HomePage/logo.jpg" alt="" height="86px" border="0" width="390px" style=" padding-top: 20px;">
+            <img src="Images/HomePage/logo.jpg" alt="" height="86px" border="0" width="390px" style="padding-top: 20px;">
           </a>
         </div>
         <nav>
@@ -187,39 +187,27 @@ ddaccordion.init({
                     <div id="content_2" class="content">
                       <div class="applemenu">
 
-                        <div class="silverheader">
-                          <a href="http://www.dynamicdrive.com">Sustainability Issue</a>
-                        </div>
 
-                        <div class="submenu">
-                          <% ArrayList<Questionnaire> Sustainabilityqs =QuestionnaireController.getQuestionnaire();
-                          for(int i=0;i<Sustainabilityqs.size();i++){
-                                                                    Questionnaire Sustainabilityq=Sustainabilityqs.get(i);
-                                                                   if (Sustainabilityq.getCategory().equals("sustainability")){
-                                                                    out.println("<li>" + "<a>" + Sustainabilityq.getTitle()+ "<br/>" + "<small>"+ "DATE CREATED: " + Sustainabilityq.getDateCreated() + "<br/>" 
-                                                                    + "Last Modified By " + " testing users"+ "<br/>" 
-                                                                           + "ON " + Sustainabilityq.getDateLastModified() + "</small>" +
-                                                                    "</a>" + "</li>");
-                                                                } }
+                        <% ArrayList<Questionnaire> allCategories =QuestionnaireController.getQuestionnaireByCategoryAll();                                                                         
+                                                                                     for(int i=0;i<allCategories.size();i++){
+                                                                    Questionnaire allCategoriesQuestionnaire=allCategories.get(i);
+
+                                                                    //ArrayList<Questionnaire> CategoriesSustainability =QuestionnaireController.getQuestionnaireByCategorySustainability();
+                                                                   //for(int a=0; a<CategoriesSustainability.size();a++){
+                                                                    //Questionnaire SustainabilityCategories=CategoriesSustainability.get(i);
+                                                                    out.println("<div class=\"silverheader\">" + "<a href= \"\">" + allCategoriesQuestionnaire.getCategory() + "</a>" + "</div>"
+                                                                                                              
+                                                                     /*     + "<div class=\"submenu\">" 
+                                                                           + "<a>" + SustainabilityCategories.getTitle()+ "<br/>" + "<small>"+ "DATE CREATED: " + SustainabilityCategories.getDateCreated() + "<br/>" 
+                                                                            + "Last Modified By " + " testing users"+ "<br/>" 
+                                                                            + "ON " + SustainabilityCategories.getDateLastModified() + "</small>"
+                                                                                                                                  +"</a>" 
+                                                                                                                                  + "<br />" + "</div>"*/
+                                                                                                                                  
+                                                                           
+                                                                           ); 
+                                                                                                                     }//} 
                                                                 %>
-
-                        </div>
-
-                        <div class="silverheader">
-                          <a>Community</a>
-                        </div>
-
-                        <div class="submenu">
-                          Some random content here<br />
-                        </div>
-
-                        <div class="silverheader">
-                          <a>Customer Feedback</a>
-                        </div>
-                        <div class="submenu">
-                          Some random content here<br />
-                        </div>
-
 
                       </div>
                     </div>
@@ -374,6 +362,8 @@ ddaccordion.init({
     </script>
 </body>
 </html>
+
+
 
 
 

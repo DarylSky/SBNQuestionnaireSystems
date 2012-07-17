@@ -1,5 +1,13 @@
 $(document).ready(function() {
 
+    $("#submit_button").click(function(){
+
+        alert("Questionnaire created successfully");
+        window.location.href="HomePage.jsp";
+
+    });
+
+
     //var JSONObject = JSON.stringify(eval("(" + JSON + ")"));
     var jsontag = location.search;
     //alert(JSONObject);
@@ -7,7 +15,7 @@ $(document).ready(function() {
     var jsonsplit = jsontag.split("=");
     var jsonvalue = jsonsplit[1];
 
-    var json_parsed = jQuery.parseJSON(jsonvalue);
+    var json_parsed = $.parseJSON(jsonvalue);
 
     for ( var u = 0; u < json_parsed.questions.length; u++) {
         var question = json_parsed.questions[u];

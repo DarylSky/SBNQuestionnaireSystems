@@ -255,3 +255,12 @@ table.tab.active {
        color: black;
        float: right;
 }
+
+.toolbox_button {
+       height: 200px;
+       width: 180px;
+       background-color: #EEE;
+       border: 1px solid #C4C4C3;
+       padding-right: 49px;
+       font: normal 12px Verdana;
+}

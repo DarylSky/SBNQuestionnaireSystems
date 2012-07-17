@@ -21,6 +21,16 @@ public class QuestionnaireController extends HttpServlet {
         return questionnaires;
     }
 
+    public static ArrayList<Questionnaire> getQuestionnaireByCategorySustainability() {
+        ArrayList<Questionnaire> questionnaires = QuestionnaireDataManager.getQuestionnaireByCategorySustainability(1);
+        return questionnaires;
+    }
+
+    public static ArrayList<Questionnaire> getQuestionnaireByCategoryAll() {
+        ArrayList<Questionnaire> questionnaires = QuestionnaireDataManager.getQuestionnaireByCategoryAll(1);
+        return questionnaires;
+    }
+
     public QuestionnaireController() {
         super();
 

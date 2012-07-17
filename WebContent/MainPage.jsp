@@ -132,7 +132,6 @@ div#users-contain table td,div#users-contain table th {
         });
 
     });
-    
 </script>
 
 </head>
@@ -218,14 +217,22 @@ div#users-contain table td,div#users-contain table th {
         </td>
         <td class="questionnaire_tools_div">
           <div class="toolbox_title">
-            <b>ToolBox:</b>
+            <table>
+              <tr>
+                <td>
+                  <b style="padding-right: 100px;">ToolBox:</b>
+                </td>
+                <td></td>
+              </tr>
+            </table>
           </div>
           <div>
             <form method="get" action="QuestionnaireCreation" target="blank">
-              <input type="hidden" id="JSONText" name="JSONText" value="" /> 
-              <input type="submit" id="preview" class="toolbox_button" style="height: 27px;" value=" Preview">
-            </form> 
-            <button id="submit" class="toolbox_button" style="height: 27px;">Submit</button>
+              <input type="hidden" id="JSONText" name="JSONText" value="" /> <input type="submit" id="preview" class="toolbox_button" style="height: 27px;" value=" Preview">
+            </form>
+            <form method="get" action="SubmitPage">
+              <input type="hidden" id="JSONText2" name="JSONText2" value="" /> <input type="submit" id="submit" class="toolbox_button" style="height: 27px;" value=" Submit">
+            </form>
           </div>
           <div class="menuAcdn" animation="true" expand="single">
             <ul>
