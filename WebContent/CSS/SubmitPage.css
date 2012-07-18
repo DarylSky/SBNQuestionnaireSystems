@@ -259,7 +259,7 @@ table.tab.active {
 .toolbox_button {
        height: 200px;
        width: 180px;
-       background-color: #EEE;
+       background-color: #EAEDF0;
        border: 1px solid #C4C4C3;
        padding-right: 49px;
        font: normal 12px Verdana;

@@ -39,9 +39,6 @@
                 //out.println(category);
             %>
           </td>
-          <td>
-            <img src="Images/SubmitPage/submit_button.png" id="submit_button" height="20px" width="20px" title="Submit" />
-          </td>
         </tr>
       </table>
     </div>
@@ -56,8 +53,8 @@
           </td>
         </tr>
       </table>
-
     </div>
+    <span style="padding-right:859px;"></span><input type="submit" id="submit_button" style="height:20px; width:20px;" class="toolbox_button" value="Submit" />
     <div id="sap_reasearch_icon">
       <br />
       <div style="width: 908px;">

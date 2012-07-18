@@ -7,7 +7,7 @@ $(document).ready(function() {
     var jsonsplit = jsontag.split("=");
     var jsonvalue = jsonsplit[1];
 
-    var json_parsed = jQuery.parseJSON(jsonvalue);
+    var json_parsed = $.parseJSON(jsonvalue);
 
     for ( var u = 0; u < json_parsed.questions.length; u++) {
         var question = json_parsed.questions[u];

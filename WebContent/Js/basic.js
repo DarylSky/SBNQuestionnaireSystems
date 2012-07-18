@@ -1,24 +1,80 @@
 
 //Proof of concept only///
 
+/*window.history.forward(1);
+document.attachEvent("onkeydown", my_onkeydown_handler);
+function my_onkeydown_handler()
+{
+    switch (event.keyCode)
+    {
+
+    case 116 : // 'F5'
+        event.returnValue = false;
+        event.keyCode = 0;
+        window.status = "We have disabled F5";
+        break;
+    }
+}*/
+
 $(function() {
     $( "#datepicker" ).datepicker();
 });
 
+
 function dialog_box()
 {
-var r=confirm("Changes will not be saved, are you sure?");
-if (r==true)
-  {
+    var r=confirm("Changes will not be saved, are you sure?");
+    if (r==true)
+    {
 
-    window.location.href('HomePage.jsp');
+        window.location.href('HomePage.jsp');
 
-  }
-else
-  {
+    }
+    else
+    {
 
-  }
+    }
 }
+
+$(document).ready(function() {
+
+    $(".menuAcdn").click(function(event) {
+        event.preventDefault();
+    });
+
+    $(function() {
+
+        $("#questionDiv").sortable();
+
+    });
+
+    $(function() {
+        $("#datepicker").datepicker();
+    });
+
+    // hide #back-top first
+    $("#back-top").hide();
+
+    // fade in #back-top
+    $(function() {
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 100) {
+                $('#back-top').fadeIn();
+            } else {
+                $('#back-top').fadeOut();
+            }
+        });
+
+        // scroll body to 0px on click
+        $('#back-top a').click(function() {
+            $('body,html').animate({
+                scrollTop : 0
+            }, 800);
+            return false;
+        });
+    });
+
+});
 
 $(document).ready(function(){
 
@@ -71,7 +127,7 @@ $(document).ready(function(){
         mainRadioArray = new Array();
 
 
-       //get the values of the question itself
+        //get the values of the question itself
         while(intQCountQuestion < strQuestions.length){
             intQCountQuestion++;
             var mainQuestion = $("#mainQuestionid"+intQCountQuestion).val();
@@ -110,81 +166,87 @@ $(document).ready(function(){
 
                 ///////Main Text With Unit/////// Working
                 if(mainElement[i].indexOf("pMainTextunit")!=-1){
-                     var valuesArray = new Array();
-                     var indexNum = mainElement[i].substring(13,mainElement[i].length);
-                     var ddlArray = document.getElementById("textwithunitdropdown"+indexNum);
-                     if(ddlArray.options.length != 0){
-                           for(var j=0; j< ddlArray.options.length; j++){
-                                  var value = ddlArray.options[j].value;
-                                  //alert(value);
-                                  valuesArray.push(value);
-                           }
-                     } else {
+                    var valuesArray = new Array();
+                    var indexNum = mainElement[i].substring(13,mainElement[i].length);
+                    var ddlArray = document.getElementById("textwithunitdropdown"+indexNum);
+                    if(ddlArray.options.length != 0){
+                        for(var j=0; j< ddlArray.options.length; j++){
+                            var value = ddlArray.options[j].value;
+                            //alert(value);
+                            valuesArray.push(value);
+                        }
+                    } else {
 
-                     }
-                     elementObj.value = valuesArray;
+                    }
+                    elementObj.value = valuesArray;
                 };
                 ///// Main Text With Unit/////
 
                 ///////Main Dropdown   /////// Working
                 if(mainElement[i].indexOf("pMainDropdown")!=-1){
-                     var valuesArray = new Array();
-                     var indexNum = mainElement[i].substring(13,mainElement[i].length);
-                     var ddlArray = document.getElementById("ddlList"+indexNum);
-                     if(ddlArray.options.length != 0){
-                           for(var j=0; j< ddlArray.options.length; j++){
-                                  var value = ddlArray.options[j].value;
-                                  //alert(value);
-                                  valuesArray.push(value);
-                           }
-                     } else {
+                    var valuesArray = new Array();
+                    var indexNum = mainElement[i].substring(13,mainElement[i].length);
+                    var ddlArray = document.getElementById("ddlList"+indexNum);
+                    if(ddlArray.options.length != 0){
+                        for(var j=0; j< ddlArray.options.length; j++){
+                            var value = ddlArray.options[j].value;
+                            //alert(value);
+                            valuesArray.push(value);
+                        }
+                    } else {
 
-                     }
-                     elementObj.value = valuesArray;
+                    }
+                    elementObj.value = valuesArray;
                 };
                 ///// Main Dropdown //////////
 
                 ///// Main Radio Button ///// Working
                 if(mainElement[i].indexOf("pMainRadio")!=-1){
 
-                     var count = 1;
-                     var valuesArray = new Array();
-                     var indexNum = mainElement[i].substring(10,mainElement[i].length);
-                     var firstRadioValue = $("#radiotextnumber"+ indexNum).val();
+                    var count = 1;
+                    var valuesArray = new Array();
+                    var indexNum = mainElement[i].substring(10,mainElement[i].length);
+                    var firstRadioValue = $("#radiotextnumber"+ indexNum).val();
+                    if(firstRadioValue !=null){
+                        firstRadioValue = firstRadioValue.replace(/\s/g, '&nbsp;');
+                    }
 
-                     valuesArray.push(firstRadioValue);
+                    valuesArray.push(firstRadioValue);
 
-                     while(count < 100){
-                           if($("#radiotextnumber"+ indexNum +"-"+count).val()!= null){
-                           valuesArray.push($("#radiotextnumber"+ indexNum +"-" + count).val());
+                    while(count < 100){
+                        if($("#radiotextnumber"+ indexNum +"-"+count).val()!= null){
+                            valuesArray.push($("#radiotextnumber"+ indexNum +"-" + count).val());
 
-                           }
+                        }
 
-                           count++;
-                     }
-                     elementObj.value = valuesArray;
+                        count++;
+                    }
+                    elementObj.value = valuesArray;
                 };
-              ////End  Main Radio button /////
+                ////End  Main Radio button /////
 
                 ///// Main checkbox /////
                 if(mainElement[i].indexOf("pMainCheck")!=-1){
 
-                     var count = 1;
-                     var valuesArray = new Array();
-                     var indexNum = mainElement[i].substring(10,mainElement[i].length);
-                     var firstCheckboxValue = $("#checktextnumber"+ indexNum).val();
+                    var count = 1;
+                    var valuesArray = new Array();
+                    var indexNum = mainElement[i].substring(10,mainElement[i].length);
+                    var firstCheckboxValue = $("#checktextnumber"+ indexNum).val();
+                    if(firstCheckboxValue !=null){
+                        firstCheckboxValue = firstCheckboxValue.replace(/\s/g, '&nbsp;');
+                    }
 
-                     valuesArray.push(firstCheckboxValue);
+                    valuesArray.push(firstCheckboxValue);
 
-                     while(count < 100){
-                           if($("#checktextnumber"+ indexNum +"-"+count).val()!= null){
-                           valuesArray.push($("#checktextnumber"+ indexNum +"-" + count).val());
-                           }
-                           count++;
-                     }
-                     elementObj.value = valuesArray;
+                    while(count < 100){
+                        if($("#checktextnumber"+ indexNum +"-"+count).val()!= null){
+                            valuesArray.push($("#checktextnumber"+ indexNum +"-" + count).val());
+                        }
+                        count++;
+                    }
+                    elementObj.value = valuesArray;
                 };
-              ////End  Main checkbox /////
+                ////End  Main checkbox /////
 
                 mainElementArray.push(elementObj);
             }
@@ -201,90 +263,96 @@ $(document).ready(function(){
 
                 //////// Start Additional Question ///////////////////
                 if(addElement[i].indexOf("pAddQuestion")!= -1){
-                     var indexNum = addElement[i].substring(12,addElement[i].length);
-                     elementObj.value = $("#longtext"+ indexNum).val();
-                     elementObj.value = elementObj.value.replace(/\s/g, '&nbsp;');
+                    var indexNum = addElement[i].substring(12,addElement[i].length);
+                    elementObj.value = $("#longtext"+ indexNum).val();
+                    elementObj.value = elementObj.value.replace(/\s/g, '&nbsp;');
                 }
                 //////// End Additional Question ///////////////////
 
                 ///////// Start of Additional Text with Unit ////////////
-              if(addElement[i].indexOf("pAddTextunit")!=-1){
-                     var valuesArray = new Array();
-                     var indexNum = addElement[i].substring(12,addElement[i].length);
-                     var ddlArray = document.getElementById("additional_textunitdropdown"+indexNum);
-                     if(ddlArray.options.length != 0){
-                           for(var j=0; j< ddlArray.options.length; j++){
-                                  var value = ddlArray.options[j].value;
-                                  //alert(value);
-                                  valuesArray.push(value);
-                           }
-                     } else {
+                if(addElement[i].indexOf("pAddTextunit")!=-1){
+                    var valuesArray = new Array();
+                    var indexNum = addElement[i].substring(12,addElement[i].length);
+                    var ddlArray = document.getElementById("additional_textunitdropdown"+indexNum);
+                    if(ddlArray.options.length != 0){
+                        for(var j=0; j< ddlArray.options.length; j++){
+                            var value = ddlArray.options[j].value;
+                            //alert(value);
+                            valuesArray.push(value);
+                        }
+                    } else {
 
-                     }
-                     elementObj.value = valuesArray;
+                    }
+                    elementObj.value = valuesArray;
                 }
-              ///////// End of Additional Text with Unit /////////////////
+                ///////// End of Additional Text with Unit /////////////////
 
                 ///// add checkbox /////
                 if(addElement[i].indexOf("pAddCheckbox")!=-1){
 
-                     var count = 1;
-                     var valuesArray = new Array();
-                     var indexNum = addElement[i].substring(12,addElement[i].length);
-                     var firstCheckboxValue = $("#additional_checkbox_number"+ indexNum).val();
+                    var count = 1;
+                    var valuesArray = new Array();
+                    var indexNum = addElement[i].substring(12,addElement[i].length);
+                    var firstCheckboxValue = $("#additional_checkbox_number"+ indexNum).val();
+                    if(firstCheckboxValue !=null){
+                        firstCheckboxValue = firstCheckboxValue.replace(/\s/g, '&nbsp;');
+                    }
 
-                     valuesArray.push(firstCheckboxValue);
+                    valuesArray.push(firstCheckboxValue);
 
-                     while(count < 100){
-                           if($("#additional_checkbox_number"+ indexNum +"-"+count).val()!= null){
-                           valuesArray.push($("#additional_checkbox_number"+ indexNum +"-" + count).val());
-                           }
-                           count++;
-                     }
-                     elementObj.value = valuesArray;
+                    while(count < 100){
+                        if($("#additional_checkbox_number"+ indexNum +"-"+count).val()!= null){
+                            valuesArray.push($("#additional_checkbox_number"+ indexNum +"-" + count).val());
+                        }
+                        count++;
+                    }
+                    elementObj.value = valuesArray;
                 };
-              //// End of add checkbox /////
+                //// End of add checkbox /////
 
                 ///////Add Dropdown   /////// Working
                 if(addElement[i].indexOf("pAddDropdown")!=-1){
-                     var valuesArray = new Array();
-                     var indexNum = addElement[i].substring(12,addElement[i].length);
-                     var ddlArray = document.getElementById("ddlList"+indexNum);
-                     if(ddlArray.options.length != 0){
-                           for(var j=0; j< ddlArray.options.length; j++){
-                                  var value = ddlArray.options[j].value;
-                                  //alert(value);
-                                  valuesArray.push(value);
-                           }
-                     } else {
+                    var valuesArray = new Array();
+                    var indexNum = addElement[i].substring(12,addElement[i].length);
+                    var ddlArray = document.getElementById("ddlList"+indexNum);
+                    if(ddlArray.options.length != 0){
+                        for(var j=0; j< ddlArray.options.length; j++){
+                            var value = ddlArray.options[j].value;
+                            //alert(value);
+                            valuesArray.push(value);
+                        }
+                    } else {
 
-                     }
-                     elementObj.value = valuesArray;
+                    }
+                    elementObj.value = valuesArray;
                 };
                 ///// End add Dropdown //////////
 
-            ///// Start - Add Radio Button ///// Working
+                ///// Start - Add Radio Button ///// Working
                 if(addElement[i].indexOf("pAddRadio")!=-1){
 
-                     var count = 1;
-                     var valuesArray = new Array();
-                     var indexNum = addElement[i].substring(9, addElement[i].length);
-                     var firstRadioValue = $("#additional_radio_text_number"+ indexNum).val();
+                    var count = 1;
+                    var valuesArray = new Array();
+                    var indexNum = addElement[i].substring(9, addElement[i].length);
+                    var firstRadioValue = $("#additional_radio_text_number"+ indexNum).val();
+                    if(firstRadioValue !=null){
+                        firstRadioValue = firstRadioValue.replace(/\s/g, '&nbsp;');
+                    }
 
-                     valuesArray.push(firstRadioValue);
+                    valuesArray.push(firstRadioValue);
 
-                     while(count < 100){
-                           if($("#additional_radio_text_number"+ indexNum +"-"+count).val()!= null){
-                           valuesArray.push($("#additional_radio_text_number"+ indexNum +"-" + count).val());
-                           }
-                           count++;
-                     }
-                     elementObj.value = valuesArray;
+                    while(count < 100){
+                        if($("#additional_radio_text_number"+ indexNum +"-"+count).val()!= null){
+                            valuesArray.push($("#additional_radio_text_number"+ indexNum +"-" + count).val());
+                        }
+                        count++;
+                    }
+                    elementObj.value = valuesArray;
                 };
-              ////End  Add Radio button /////
+                ////End  Add Radio button /////
 
 
-              addElementArray.push(elementObj);
+                addElementArray.push(elementObj);
             }
             /////////// End of Additional Elements ////////////////////////
 
@@ -315,7 +383,7 @@ $(document).ready(function(){
             str2Elements += $("#" + "sortable2"+count).sortable('toArray')+"&";
         }
 
-/*        var request1  = new XMLHttpRequest();
+        /*        var request1  = new XMLHttpRequest();
         request1.open("POST", "QuestionnaireCreation", false);
         //Send the proper header information along with the request;
         var parameterString = "JSONText="+myJSONText ;
@@ -328,7 +396,7 @@ $(document).ready(function(){
         var myJSONText = JSON.stringify(questionnaire);
         document.getElementById('JSONText').value = myJSONText;
 
-/*        var foo = $("#"+temp);
+        /*        var foo = $("#"+temp);
         var form = $("<form method=\"get\" action=QuestionnaireCreation target=\"_blank\"/>");
         var hidden = $("<input type=text name=JSONText value="+myJSONText+">");
         var submit = $("<input type=submit>");
@@ -343,7 +411,7 @@ $(document).ready(function(){
 
         var r=confirm("Click OK to proceed");
         if (r==true)
-          {
+        {
 
             ////////////////////////
             var order = new Array();
@@ -357,7 +425,7 @@ $(document).ready(function(){
             mainRadioArray = new Array();
 
 
-           //get the values of the question itself
+            //get the values of the question itself
             while(intQCountQuestion < strQuestions.length){
                 intQCountQuestion++;
                 var mainQuestion = $("#mainQuestionid"+intQCountQuestion).val();
@@ -396,81 +464,81 @@ $(document).ready(function(){
 
                     ///////Main Text With Unit/////// Working
                     if(mainElement[i].indexOf("pMainTextunit")!=-1){
-                         var valuesArray = new Array();
-                         var indexNum = mainElement[i].substring(13,mainElement[i].length);
-                         var ddlArray = document.getElementById("textwithunitdropdown"+indexNum);
-                         if(ddlArray.options.length != 0){
-                               for(var j=0; j< ddlArray.options.length; j++){
-                                      var value = ddlArray.options[j].value;
-                                      //alert(value);
-                                      valuesArray.push(value);
-                               }
-                         } else {
+                        var valuesArray = new Array();
+                        var indexNum = mainElement[i].substring(13,mainElement[i].length);
+                        var ddlArray = document.getElementById("textwithunitdropdown"+indexNum);
+                        if(ddlArray.options.length != 0){
+                            for(var j=0; j< ddlArray.options.length; j++){
+                                var value = ddlArray.options[j].value;
+                                //alert(value);
+                                valuesArray.push(value);
+                            }
+                        } else {
 
-                         }
-                         elementObj.value = valuesArray;
+                        }
+                        elementObj.value = valuesArray;
                     };
                     ///// Main Text With Unit/////
 
                     ///////Main Dropdown   /////// Working
                     if(mainElement[i].indexOf("pMainDropdown")!=-1){
-                         var valuesArray = new Array();
-                         var indexNum = mainElement[i].substring(13,mainElement[i].length);
-                         var ddlArray = document.getElementById("ddlList"+indexNum);
-                         if(ddlArray.options.length != 0){
-                               for(var j=0; j< ddlArray.options.length; j++){
-                                      var value = ddlArray.options[j].value;
-                                      //alert(value);
-                                      valuesArray.push(value);
-                               }
-                         } else {
+                        var valuesArray = new Array();
+                        var indexNum = mainElement[i].substring(13,mainElement[i].length);
+                        var ddlArray = document.getElementById("ddlList"+indexNum);
+                        if(ddlArray.options.length != 0){
+                            for(var j=0; j< ddlArray.options.length; j++){
+                                var value = ddlArray.options[j].value;
+                                //alert(value);
+                                valuesArray.push(value);
+                            }
+                        } else {
 
-                         }
-                         elementObj.value = valuesArray;
+                        }
+                        elementObj.value = valuesArray;
                     };
                     ///// Main Dropdown //////////
 
                     ///// Main Radio Button ///// Working
                     if(mainElement[i].indexOf("pMainRadio")!=-1){
 
-                         var count = 1;
-                         var valuesArray = new Array();
-                         var indexNum = mainElement[i].substring(10,mainElement[i].length);
-                         var firstRadioValue = $("#radiotextnumber"+ indexNum).val();
+                        var count = 1;
+                        var valuesArray = new Array();
+                        var indexNum = mainElement[i].substring(10,mainElement[i].length);
+                        var firstRadioValue = $("#radiotextnumber"+ indexNum).val();
 
-                         valuesArray.push(firstRadioValue);
+                        valuesArray.push(firstRadioValue);
 
-                         while(count < 100){
-                               if($("#radiotextnumber"+ indexNum +"-"+count).val()!= null){
-                               valuesArray.push($("#radiotextnumber"+ indexNum +"-" + count).val());
+                        while(count < 100){
+                            if($("#radiotextnumber"+ indexNum +"-"+count).val()!= null){
+                                valuesArray.push($("#radiotextnumber"+ indexNum +"-" + count).val());
 
-                               }
+                            }
 
-                               count++;
-                         }
-                         elementObj.value = valuesArray;
+                            count++;
+                        }
+                        elementObj.value = valuesArray;
                     };
-                  ////End  Main Radio button /////
+                    ////End  Main Radio button /////
 
                     ///// Main checkbox /////
                     if(mainElement[i].indexOf("pMainCheck")!=-1){
 
-                         var count = 1;
-                         var valuesArray = new Array();
-                         var indexNum = mainElement[i].substring(10,mainElement[i].length);
-                         var firstCheckboxValue = $("#checktextnumber"+ indexNum).val();
+                        var count = 1;
+                        var valuesArray = new Array();
+                        var indexNum = mainElement[i].substring(10,mainElement[i].length);
+                        var firstCheckboxValue = $("#checktextnumber"+ indexNum).val();
 
-                         valuesArray.push(firstCheckboxValue);
+                        valuesArray.push(firstCheckboxValue);
 
-                         while(count < 100){
-                               if($("#checktextnumber"+ indexNum +"-"+count).val()!= null){
-                               valuesArray.push($("#checktextnumber"+ indexNum +"-" + count).val());
-                               }
-                               count++;
-                         }
-                         elementObj.value = valuesArray;
+                        while(count < 100){
+                            if($("#checktextnumber"+ indexNum +"-"+count).val()!= null){
+                                valuesArray.push($("#checktextnumber"+ indexNum +"-" + count).val());
+                            }
+                            count++;
+                        }
+                        elementObj.value = valuesArray;
                     };
-                  ////End  Main checkbox /////
+                    ////End  Main checkbox /////
 
                     mainElementArray.push(elementObj);
                 }
@@ -487,90 +555,90 @@ $(document).ready(function(){
 
                     //////// Start Additional Question ///////////////////
                     if(addElement[i].indexOf("pAddQuestion")!= -1){
-                         var indexNum = addElement[i].substring(12,addElement[i].length);
-                         elementObj.value = $("#longtext"+ indexNum).val();
-                         elementObj.value = elementObj.value.replace(/\s/g, '&nbsp;');
+                        var indexNum = addElement[i].substring(12,addElement[i].length);
+                        elementObj.value = $("#longtext"+ indexNum).val();
+                        elementObj.value = elementObj.value.replace(/\s/g, '&nbsp;');
                     }
                     //////// End Additional Question ///////////////////
 
                     ///////// Start of Additional Text with Unit ////////////
-                  if(addElement[i].indexOf("pAddTextunit")!=-1){
-                         var valuesArray = new Array();
-                         var indexNum = addElement[i].substring(12,addElement[i].length);
-                         var ddlArray = document.getElementById("additional_textunitdropdown"+indexNum);
-                         if(ddlArray.options.length != 0){
-                               for(var j=0; j< ddlArray.options.length; j++){
-                                      var value = ddlArray.options[j].value;
-                                      //alert(value);
-                                      valuesArray.push(value);
-                               }
-                         } else {
+                    if(addElement[i].indexOf("pAddTextunit")!=-1){
+                        var valuesArray = new Array();
+                        var indexNum = addElement[i].substring(12,addElement[i].length);
+                        var ddlArray = document.getElementById("additional_textunitdropdown"+indexNum);
+                        if(ddlArray.options.length != 0){
+                            for(var j=0; j< ddlArray.options.length; j++){
+                                var value = ddlArray.options[j].value;
+                                //alert(value);
+                                valuesArray.push(value);
+                            }
+                        } else {
 
-                         }
-                         elementObj.value = valuesArray;
+                        }
+                        elementObj.value = valuesArray;
                     }
-                  ///////// End of Additional Text with Unit /////////////////
+                    ///////// End of Additional Text with Unit /////////////////
 
                     ///// add checkbox /////
                     if(addElement[i].indexOf("pAddCheckbox")!=-1){
 
-                         var count = 1;
-                         var valuesArray = new Array();
-                         var indexNum = addElement[i].substring(12,addElement[i].length);
-                         var firstCheckboxValue = $("#additional_checkbox_number"+ indexNum).val();
+                        var count = 1;
+                        var valuesArray = new Array();
+                        var indexNum = addElement[i].substring(12,addElement[i].length);
+                        var firstCheckboxValue = $("#additional_checkbox_number"+ indexNum).val();
 
-                         valuesArray.push(firstCheckboxValue);
+                        valuesArray.push(firstCheckboxValue);
 
-                         while(count < 100){
-                               if($("#additional_checkbox_number"+ indexNum +"-"+count).val()!= null){
-                               valuesArray.push($("#additional_checkbox_number"+ indexNum +"-" + count).val());
-                               }
-                               count++;
-                         }
-                         elementObj.value = valuesArray;
+                        while(count < 100){
+                            if($("#additional_checkbox_number"+ indexNum +"-"+count).val()!= null){
+                                valuesArray.push($("#additional_checkbox_number"+ indexNum +"-" + count).val());
+                            }
+                            count++;
+                        }
+                        elementObj.value = valuesArray;
                     };
-                  //// End of add checkbox /////
+                    //// End of add checkbox /////
 
                     ///////Add Dropdown   /////// Working
                     if(addElement[i].indexOf("pAddDropdown")!=-1){
-                         var valuesArray = new Array();
-                         var indexNum = addElement[i].substring(12,addElement[i].length);
-                         var ddlArray = document.getElementById("ddlList"+indexNum);
-                         if(ddlArray.options.length != 0){
-                               for(var j=0; j< ddlArray.options.length; j++){
-                                      var value = ddlArray.options[j].value;
-                                      //alert(value);
-                                      valuesArray.push(value);
-                               }
-                         } else {
+                        var valuesArray = new Array();
+                        var indexNum = addElement[i].substring(12,addElement[i].length);
+                        var ddlArray = document.getElementById("ddlList"+indexNum);
+                        if(ddlArray.options.length != 0){
+                            for(var j=0; j< ddlArray.options.length; j++){
+                                var value = ddlArray.options[j].value;
+                                //alert(value);
+                                valuesArray.push(value);
+                            }
+                        } else {
 
-                         }
-                         elementObj.value = valuesArray;
+                        }
+                        elementObj.value = valuesArray;
                     };
                     ///// End add Dropdown //////////
 
-                ///// Start - Add Radio Button ///// Working
+                    ///// Start - Add Radio Button ///// Working
                     if(addElement[i].indexOf("pAddRadio")!=-1){
 
-                         var count = 1;
-                         var valuesArray = new Array();
-                         var indexNum = addElement[i].substring(9, addElement[i].length);
-                         var firstRadioValue = $("#additional_radio_text_number"+ indexNum).val();
+                        var count = 1;
+                        var valuesArray = new Array();
+                        var indexNum = addElement[i].substring(9, addElement[i].length);
+                        var firstRadioValue = $("#additional_radio_text_number"+ indexNum).val();
 
-                         valuesArray.push(firstRadioValue);
+                        valuesArray.push(firstRadioValue);
 
-                         while(count < 100){
-                               if($("#additional_radio_text_number"+ indexNum +"-"+count).val()!= null){
-                               valuesArray.push($("#additional_radio_text_number"+ indexNum +"-" + count).val());
-                               }
-                               count++;
-                         }
-                         elementObj.value = valuesArray;
+                        while(count < 100){
+                            if($("#additional_radio_text_number"+ indexNum +"-"+count).val()!= null){
+                                valuesArray.push($("#additional_radio_text_number"+ indexNum +"-" + count).val());
+                            }
+                            count++;
+                        }
+                        elementObj.value = valuesArray;
                     };
-                  ////End  Add Radio button /////
+                    ////End  Add Radio button /////
 
 
-                  addElementArray.push(elementObj);
+                    addElementArray.push(elementObj);
                 }
                 /////////// End of Additional Elements ////////////////////////
 
@@ -583,7 +651,7 @@ $(document).ready(function(){
             //Adding questions to the Questionnaire.
             questionnaire.questions = questionArray;
 
-/*            var myJSONText = JSON.stringify(questionnaire);
+            /*            var myJSONText = JSON.stringify(questionnaire);
             myJSONText = myJSONText + ";";
             $('#hiddenJSONtext').val(myJSONText);*/
             //console.log(myJSONText);
@@ -601,7 +669,7 @@ $(document).ready(function(){
                 str2Elements += $("#" + "sortable2"+count).sortable('toArray')+"&";
             }
 
-    /*        var request1  = new XMLHttpRequest();
+            /*        var request1  = new XMLHttpRequest();
             request1.open("POST", "QuestionnaireCreation", false);
             //Send the proper header information along with the request;
             var parameterString = "JSONText="+myJSONText ;
@@ -615,7 +683,7 @@ $(document).ready(function(){
             //console.log(myJSONText);
             document.getElementById('JSONText2').value = myJSONText;
 
-    /*        var foo = $("#"+temp);
+            /*        var foo = $("#"+temp);
             var form = $("<form method=\"get\" action=QuestionnaireCreation target=\"_blank\"/>");
             var hidden = $("<input type=text name=JSONText value="+myJSONText+">");
             var submit = $("<input type=submit>");
@@ -623,12 +691,12 @@ $(document).ready(function(){
             form.append(hidden);
             form.append(submit);*/
 
-          }
+        }
         else
-          {
+        {
 
             return false;
-          }
+        }
 
     });
 
@@ -762,7 +830,7 @@ $(document).ready(function(){
 
             $("#" + ztemp).sortable();
 
-           //end here
+            //end here
 
 
         });
@@ -779,7 +847,7 @@ $(document).ready(function(){
             //$(this).parent().remove();
             $(this).parent().parent().parent().parent().parent().remove();
 
-/*            $("#" + atemp).remove();*/
+            /*            $("#" + atemp).remove();*/
             $(br).remove();
 
         });
@@ -872,7 +940,7 @@ $(document).ready(function(){
 
                 function checkRegexp(o, regexp, n) {
                     if (!(regexp.test(o.val()))) {
-                       o.addClass("ui-state-error");
+                        o.addClass("ui-state-error");
                         updateTips(n);
                         return false;
                     } else {
@@ -965,7 +1033,7 @@ $(document).ready(function(){
             textunit.disabled=true;
             paragraph.disabled=true;
             checkbox.disabled=true;
-           dropdown.disabled=true;
+            dropdown.disabled=true;
             radio.disabled=true;
             datepicker.disabled=true;
 
@@ -1084,7 +1152,7 @@ $(document).ready(function(){
 
         $("#"+p).live("click", function(e) {
 
-           /*var x = $(fieldWrapper).attr("id");
+            /*var x = $(fieldWrapper).attr("id");
             shorttexttemp = x;
 
             alert(atemp);*/
@@ -1258,7 +1326,7 @@ $(document).ready(function(){
         var count = $("#" + temp).children(".object").length;
         if (count > 0){
 
-           answerField.disabled=true;
+            answerField.disabled=true;
             text.disabled=true;
             textunit.disabled=true;
             paragraph.disabled=true;
@@ -1286,7 +1354,7 @@ $(document).ready(function(){
         var third = $("<img src=Images/MainPage/TextAnswerField/plus_icon.png height=15px width=15px />");
         third.click(function() {
 
-              //alert(intCountSibling);
+            //alert(intCountSibling);
             innerchecktextnumber = "checktextnumber" +intCheckCount + "-"+ intCountSibling;
             intCountSibling ++;
             //alert(intCountSibling);
@@ -1425,7 +1493,7 @@ $(document).ready(function(){
                      "km/h","Newton","Watt","KiloWatt","Ampere"]
         });
         second.click(function() {
-              textValue = $(text).val().replace(/\s/g, '&nbsp;');
+            textValue = $(text).val().replace(/\s/g, '&nbsp;');
             select.append('<option value=' + textValue+'>'+ $(text).val() +'</option>');
             $(text).attr("value", "");
         });
@@ -1478,7 +1546,7 @@ $(document).ready(function(){
                     }, 500);
                 }
 
-               function checkLength(o, n, min, max) {
+                function checkLength(o, n, min, max) {
                     if (o.val().length > max || o.val().length < min) {
                         o.addClass("ui-state-error");
                         updateTips("Length of " + n + " must be between " + min + " and " + max + ".");
@@ -1539,7 +1607,7 @@ $(document).ready(function(){
         fieldWrapper.append(third);
         fieldWrapper.append(fourth);
 
-       $("#"+p).live("click", function(e) {
+        $("#"+p).live("click", function(e) {
 
             /*var x = $(fieldWrapper).attr("id");
             shorttexttemp = x;
@@ -1635,7 +1703,7 @@ $(document).ready(function(){
 
         });
         foo.append(fieldWrapper);
-       fieldWrapper.append(first);
+        fieldWrapper.append(first);
         fieldWrapper.append(second);
         fieldWrapper.append(third);
 
@@ -1663,7 +1731,7 @@ $(document).ready(function(){
         fieldWrapper.append(text);
         var second = $("<img src=Images/MainPage/TextAnswerField/plus_icon.png height=15px width=15px/>");
         second.click(function() {
-              textValue = $(text).val().replace(/\s/g, '&nbsp;');
+            textValue = $(text).val().replace(/\s/g, '&nbsp;');
             select.append('<option value=' + textValue+'>'+ $(text).val() +'</option>');
             $(text).attr("value", "");
         });
@@ -1745,7 +1813,7 @@ $(document).ready(function(){
                             autoOpen : false,
                             height : 300,
                             width : 350,
-                           modal : true,
+                            modal : true,
                             buttons : {
                                 "Save" : function() {
 
@@ -1866,7 +1934,7 @@ $(document).ready(function(){
                             autoOpen : false,
                             height : 300,
                             width : 350,
-                           modal : true,
+                            modal : true,
                             buttons : {
                                 "Save" : function() {
 
@@ -2002,7 +2070,7 @@ $(document).ready(function(){
                 "</fieldset></form>";
             });
 
-       });
+        });
 
         foo.append(fieldWrapper);
         fieldWrapper.append(first);
@@ -2281,7 +2349,7 @@ $(document).ready(function(){
 
         });
 
-   });
+    });
 
     $('#additional_checkbox').click(function() {
         type="text";
@@ -2309,18 +2377,18 @@ $(document).ready(function(){
         });
         var third = $("<img src=Images/MainPage/TextAnswerField/plus_icon.png height=15px width=15px />");
         third.click(function() {
-/*            var id = $(input).attr("id");
+            /*            var id = $(input).attr("id");
             fieldWrapper.append("<br/>");
             fieldWrapper.append("<input type=checkbox disabled=disabled id="+  checkbuttonbox+"/> <input input name="+id+" type=text id="+  checktextbox+"/>");
-*/
-              //alert(intCountSibling);
+             */
+            //alert(intCountSibling);
 
 
-              innerchecktextnumber = "additional_checkbox_number" +intCheckCount + "-"+ intCountSibling;
-              intCountSibling ++;
-              //alert(intCountSibling);
-              fieldWrapper.append("<br/>");
-              fieldWrapper.append("<input type=checkbox disabled=disabled id="+  innerchecktextnumber+"/> <input input name="+innerchecktextnumber+" type=text id="+  innerchecktextnumber+" />");
+            innerchecktextnumber = "additional_checkbox_number" +intCheckCount + "-"+ intCountSibling;
+            intCountSibling ++;
+            //alert(intCountSibling);
+            fieldWrapper.append("<br/>");
+            fieldWrapper.append("<input type=checkbox disabled=disabled id="+  innerchecktextnumber+"/> <input input name="+innerchecktextnumber+" type=text id="+  innerchecktextnumber+" />");
 
 
         });
@@ -2376,8 +2444,8 @@ $(document).ready(function(){
                             autoOpen : false,
                             height : 300,
                             width : 350,
-                           modal : true,
-                           buttons : {
+                            modal : true,
+                            buttons : {
                                 "Save" : function() {
 
                                     $(this).dialog("close");
@@ -2400,7 +2468,7 @@ $(document).ready(function(){
                 "</fieldset></form>";
             });
 
-       });
+        });
 
         foo.append(fieldWrapper);
         fieldWrapper.append(first);
@@ -2453,7 +2521,7 @@ $(document).ready(function(){
                      "km/h","Newton","Watt","KiloWatt","Ampere"]
         });
         second.click(function() {
-              textValue = $(text).val().replace(/\s/g, '&nbsp;');
+            textValue = $(text).val().replace(/\s/g, '&nbsp;');
             select.append('<option value=' + textValue+'>'+ $(text).val() +'</option>');
             $(text).attr("value", "");
         });
@@ -2510,8 +2578,8 @@ $(document).ready(function(){
                             autoOpen : false,
                             height : 300,
                             width : 350,
-                           modal : true,
-                           buttons : {
+                            modal : true,
+                            buttons : {
                                 "Save" : function() {
 
                                     $(this).dialog("close");
@@ -2541,11 +2609,11 @@ $(document).ready(function(){
         fieldWrapper.append(select);
         fieldWrapper.append(text);
         fieldWrapper.append(hiddentext);
-       fieldWrapper.append(second);
+        fieldWrapper.append(second);
         fieldWrapper.append(third);
         fieldWrapper.append(fourth);
 
-       $("#"+p).live("click", function(e) {
+        $("#"+p).live("click", function(e) {
 
             /*var x = $(fieldWrapper).attr("id");
             shorttexttemp = x;
@@ -2606,7 +2674,7 @@ $(document).ready(function(){
 
         fieldWrapper.append(text);
         second.click(function() {
-              textValue = $(text).val().replace(/\s/g, '&nbsp;');
+            textValue = $(text).val().replace(/\s/g, '&nbsp;');
             select.append('<option value=' + textValue+'>'+ $(text).val() +'</option>');
             $(text).attr("value", "");
         });
@@ -2663,7 +2731,7 @@ $(document).ready(function(){
                             autoOpen : false,
                             height : 300,
                             width : 350,
-                           modal : true,
+                            modal : true,
                             buttons : {
                                 "Save" : function() {
 
