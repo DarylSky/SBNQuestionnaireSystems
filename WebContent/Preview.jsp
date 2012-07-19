@@ -27,17 +27,6 @@
     </div>
     <br />
     <div id="questionnairediv">
-      <b>Questionnaire Title: </b>
-      <%
-          // String title = request.getParameter("title");
-          //out.println(title);
-      %>
-      &nbsp; &nbsp; &nbsp;<b>Category: </b>
-      <%
-          // String category = request.getParameter("category");
-          //out.println(category);
-      %>
-
     </div>
     <br />
 

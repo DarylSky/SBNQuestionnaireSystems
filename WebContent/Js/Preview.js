@@ -9,8 +9,22 @@ $(document).ready(function() {
 
     var json_parsed = $.parseJSON(jsonvalue);
 
+    var title=json_parsed.title;
+    var titleSpace=title.replace("+"," ");
+    $("#questionnairediv").append("<b>Questionnaire Title: </b>");
+    $("#questionnairediv").append(titleSpace);
+    $("#questionnairediv").append("<span style=\"padding-right: 30px;\" />");
+
+    var category = json_parsed.category;
+    var categorySpace = category.replace("+", " ");
+    $("#questionnairediv").append("<b>Category: </b>");
+    $("#questionnairediv").append(categorySpace);
+
     for ( var u = 0; u < json_parsed.questions.length; u++) {
         var question = json_parsed.questions[u];
+
+
+
         var questionID=(question.questionID);
 
         $("#questionContent").append("<div style=\"border: 2px solid whiteSmoke;\"></div>");
@@ -24,6 +38,8 @@ $(document).ready(function() {
         $("#questionContent").append("<br />");
         $("#questionContent").append("<br />");
 
+
+        var x=0;
         ////////////////////////////mainElements////////////////////////////////////////
 
         for(var i=0;i<question.mainElement.length;i++){
@@ -95,10 +111,11 @@ $(document).ready(function() {
 
             else if (mainElementsSubstring == ("pMainRadio")){
 
+                var mainRadio = "mainRadio" + x++;
                 for(var x=0; x<question.mainElement[i].value.length;x++){
                     var radiobuttonvalue = (question.mainElement[i].value[x]);
                     var questionContent =  $("#questionContent");
-                    var radio = $("<input type=radio /><b>"+radiobuttonvalue+"</b>");
+                    var radio = $("<input type=radio name="+mainRadio+" /><b>"+radiobuttonvalue+"</b>");
                     questionContent.append(radio);
                     questionContent.append("<br />");
                 }
@@ -108,6 +125,7 @@ $(document).ready(function() {
 
         }
 
+        var y=0;
         /////////////////////Additional//////////////////////////////////////
 
         $("#questionContent").append("<p class=\"padditional\"><b>Additional Information: </b></p>");
@@ -191,11 +209,15 @@ $(document).ready(function() {
 
             else if (addElementsSubstring == ("pAddRadio")){
 
+                var additionalRadio = "additionalRadio" + y++;
                 for(var x=0; x<question.addElement[i].value.length;x++){
                     var radiobuttonvalue = (question.addElement[i].value[x]);
                     var questionContent =  $("#questionContent");
-                    var radio = $("<input type=radio /><b>"+radiobuttonvalue+"</b>");
+                    var radio = $("<input type=\"radio\" name="+additionalRadio+" />");
+                    var b = $("<b>"+radiobuttonvalue+"</b>");
+
                     questionContent.append(radio);
+                    questionContent.append(b);
                     questionContent.append("<br />");
                 }
 

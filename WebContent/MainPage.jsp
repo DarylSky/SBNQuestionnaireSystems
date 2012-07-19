@@ -99,11 +99,11 @@ div#users-contain table td,div#users-contain table th {
 
 <body>
   <div class="top_decoration_line">
-    <img src="Images/MainPage/topdecorationline.png" height="10px" width="1579px" />
+    <img src="Images/MainPage/topdecorationline.png" height="10px" width="1572px" />
   </div>
 
   <br />
-  <div id="mainPanel" class="mainPanel" style="background-color: white; width: 1010px;">
+  <div id="mainPanel" class="mainPanel" style="background-color: white; width: 1005px;">
 
     <table>
       <tr>
