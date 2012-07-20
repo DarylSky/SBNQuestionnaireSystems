@@ -206,7 +206,6 @@ div#users-contain table td,div#users-contain table th {
                   <li id="checkbox"><a href="#" style="text-decoration: none">Check Box</a></li>
                   <li id="dropdown"><a href="#" style="text-decoration: none">Drop Down List</a></li>
                   <li id="radio"><a href="#" style="text-decoration: none">Radio Button</a></li>
-                  <li id="datepicker"><a href="#" style="text-decoration: none">Date Time</a></li>
                 </ul>
               </li>
               <li id="additional">Additional Information
@@ -218,7 +217,6 @@ div#users-contain table td,div#users-contain table th {
                   <li id="additional_checkbox"><a href="#" style="text-decoration: none">Check Box</a></li>
                   <li id="additional_dropdown"><a href="#" style="text-decoration: none">Drop Down List</a></li>
                   <li id="additional_radio"><a href="#" style="text-decoration: none">Radio Button</a></li>
-                  <li id="additional_datepicker"><a href="#" style="text-decoration: none">Date Time</a></li>
                 </ul>
               </li>
               <li id="guidance">Guidance

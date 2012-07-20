@@ -146,7 +146,7 @@ $(document).ready(function(){
         strQuestions = $("#questionDiv").sortable('toArray');
 
         var intQCount = 0;
-        var intQCountQuestion = 0;
+        //var intQCountQuestion = 0;
         questionnaire = new Object();
         questionArray = new Array();
         mainQuestionArray = new Array();
@@ -154,7 +154,7 @@ $(document).ready(function(){
 
 
         //get the values of the question itself
-        while(intQCountQuestion < strQuestions.length){
+/*        while(intQCountQuestion < strQuestions.length){
             intQCountQuestion++;
             var mainQuestion = $("#mainQuestionid"+intQCountQuestion).val();
             if(mainQuestion !=null){
@@ -162,16 +162,24 @@ $(document).ready(function(){
             }
             mainQuestionArray.push(mainQuestion);
 
-        }
+        }*/
 
         //Looping through each Question
         while(intQCount < strQuestions.length){
             var question = strQuestions[intQCount];
-            var qNum = question.substring(8,9);
+            //alert(question);
+            var qNum = question.substring(8);
             order.push(qNum);
 
             questionObj = new Object();
-            questionObj.questionTitle = mainQuestionArray[intQCount];
+            //assigning question title value
+            var mainQuestion = $("#mainQuestionid"+qNum).val();
+            if(mainQuestion !=null){
+                mainQuestion = mainQuestion.replace(/\s/g, '&nbsp;');
+            }
+
+
+            questionObj.questionTitle = mainQuestion;
             questionObj.mainElement = new Array();
             questionObj.addElement = new Array();
             questionObj.displayOrder = intQCount;
@@ -424,6 +432,7 @@ $(document).ready(function(){
         var myJSONText = JSON.stringify(questionnaire);
 
         //alert(myJSONText);
+        //alert(myJSONText);
         document.getElementById('JSONText').value = myJSONText;
 
         /*        var foo = $("#"+temp);
@@ -448,7 +457,7 @@ $(document).ready(function(){
             strQuestions = $("#questionDiv").sortable('toArray');
 
             var intQCount = 0;
-            var intQCountQuestion = 0;
+            //var intQCountQuestion = 0;
             questionnaire = new Object();
             questionArray = new Array();
             mainQuestionArray = new Array();
@@ -456,7 +465,7 @@ $(document).ready(function(){
 
 
             //get the values of the question itself
-            while(intQCountQuestion < strQuestions.length){
+/*            while(intQCountQuestion < strQuestions.length){
                 intQCountQuestion++;
                 var mainQuestion = $("#mainQuestionid"+intQCountQuestion).val();
                 if(mainQuestion !=null){
@@ -464,7 +473,7 @@ $(document).ready(function(){
                 }
                 mainQuestionArray.push(mainQuestion);
 
-            }
+            }*/
 
             //Looping through each Question
             while(intQCount < strQuestions.length){
@@ -473,7 +482,13 @@ $(document).ready(function(){
                 order.push(qNum);
 
                 questionObj = new Object();
-                questionObj.questionTitle = mainQuestionArray[intQCount];
+                //assigning question title value
+                var mainQuestion = $("#mainQuestionid"+qNum).val();
+                if(mainQuestion !=null){
+                    mainQuestion = mainQuestion.replace(/\s/g, '&nbsp;');
+                }
+
+                questionObj.questionTitle = mainQuestion;
                 questionObj.mainElement = new Array();
                 questionObj.addElement = new Array();
                 questionObj.displayOrder = intQCount;
@@ -1126,9 +1141,7 @@ $(document).ready(function(){
             innerradiotextnumber = "radiotextnumber" +intRadioCurrent + "-"+ intRadioSibling;
             intRadioSibling ++;
             fieldWrapper.append("<br/>");
-            fieldWrapper.append("<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +
-            		"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +
-            		"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span/><input type=radio disabled=disabled id="+  innerradiotextnumber+"/> <input name="+innerradiotextnumber+" size=\"60\" type=text id="+  innerradiotextnumber+" />");
+            fieldWrapper.append("<span style=\"padding-left: 121px;\"><span/><input type=radio disabled=disabled id="+  innerradiotextnumber+"/> <input name="+innerradiotextnumber+" size=\"60\" type=text id="+  innerradiotextnumber+" />");
 
 
         });
@@ -1137,6 +1150,7 @@ $(document).ready(function(){
         fourth.click(function(e) {
 
             $(second).next('br').remove('br');
+            $(second).next('span').remove('span');
             $(second).next('img').remove('img');
             $(second).next('input').remove('input');
             $(second).next('input').remove('input');
@@ -1430,9 +1444,7 @@ $(document).ready(function(){
             intCountSibling ++;
             //alert(intCountSibling);
             fieldWrapper.append("<br/>");
-            fieldWrapper.append("<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +
-                    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +
-                    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span/><input type=checkbox disabled=disabled id="+  innerchecktextnumber+"/> <input input name="+innerchecktextnumber+" size=\"60\" type=text id="+  innerchecktextnumber+" />");
+            fieldWrapper.append("<span style=\"padding-left: 121px;\"><span/><input type=checkbox disabled=disabled id="+  innerchecktextnumber+"/> <input input name="+innerchecktextnumber+" size=\"60\" type=text id="+  innerchecktextnumber+" />");
 
 
         });
@@ -1441,6 +1453,7 @@ $(document).ready(function(){
         fourth.click(function(e) {
 
             $(second).next('br').remove('br');
+            $(second).next('span').remove('span');
             $(second).next('input').remove('input');
             $(second).next('input').remove('input');
 
@@ -2203,9 +2216,7 @@ $(document).ready(function(){
             innerradiotextnumber = "additional_radio_text_number" +intRadioCurrent + "-"+ intRadioSibling;
             intRadioSibling ++;
             fieldWrapper.append("<br/>");
-            fieldWrapper.append("<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +
-                    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +
-                    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span/><input type=radio disabled=disabled id="+  innerradiotextnumber+"/> <input name="+innerradiotextnumber+" type=text id="+  innerradiotextnumber+"  size=\"60\" />");
+            fieldWrapper.append("<span style=\"padding-left: 121px;\"><span/><input type=radio disabled=disabled id="+  innerradiotextnumber+"/> <input name="+innerradiotextnumber+" type=text id="+  innerradiotextnumber+"  size=\"60\" />");
 
 
         });
@@ -2214,6 +2225,7 @@ $(document).ready(function(){
         fourth.click(function(e) {
 
             $(second).next('br').remove('br');
+            $(second).next('span').remove('span');
             $(second).next('img').remove('img');
             $(second).next('input').remove('input');
             $(second).next('input').remove('input');
@@ -2464,9 +2476,7 @@ $(document).ready(function(){
             intCountSibling ++;
             //alert(intCountSibling);
             fieldWrapper.append("<br/>");
-            fieldWrapper.append("<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +
-                    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +
-                    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span/><input type=checkbox disabled=disabled id="+  innerchecktextnumber+"/> <input input name="+innerchecktextnumber+" type=text id="+  innerchecktextnumber+" size=\"60\" />");
+            fieldWrapper.append("<span style=\"padding-left: 121px;\"><span/><input type=checkbox disabled=disabled id="+  innerchecktextnumber+"/> <input input name="+innerchecktextnumber+" type=text id="+  innerchecktextnumber+" size=\"60\" />");
 
 
         });
@@ -2475,6 +2485,7 @@ $(document).ready(function(){
         fourth.click(function(e) {
 
             $(second).next('br').remove('br');
+            $(second).next('span').remove('span');
             $(second).next('input').remove('input');
             $(second).next('input').remove('input');
 
