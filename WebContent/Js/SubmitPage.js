@@ -10,6 +10,7 @@ $(document).ready(function() {
 
     //var JSONObject = JSON.stringify(eval("(" + JSON + ")"));
     var jsontag = location.search;
+    jsontag=jsontag.split('%22').join("\"");
     //alert(JSONObject);
 
     var jsonsplit = jsontag.split("=");
@@ -17,14 +18,27 @@ $(document).ready(function() {
 
     var json_parsed = $.parseJSON(jsonvalue);
 
+    var title=json_parsed.title;
+    var titleSpace=title.replace("+"," ");
+    $("#questionnairediv").append("<b>Questionnaire Title: </b>");
+    $("#questionnairediv").append(titleSpace);
+    $("#questionnairediv").append("<span style=\"padding-right: 30px;\" />");
+
+    var category = json_parsed.category;
+    var categorySpace = category.replace("+", " ");
+    $("#questionnairediv").append("<b>Category: </b>");
+    $("#questionnairediv").append(categorySpace);
+
+
     for ( var u = 0; u < json_parsed.questions.length; u++) {
         var question = json_parsed.questions[u];
-        var questionID=(question.questionID);
+        var questionNumber = u + 1;
+        //var questionID=(question.questionID);
 
         $("#questionContent").append("<div style=\"border: 2px solid whiteSmoke;\"></div>");
 
         $("#questionContent").append("<p id=\"question\"></p>");
-        $("#questionContent").append(questionID);
+        $("#questionContent").append(questionNumber);
         $("#questionContent").append(".");
 
         var questionTitle = (question.questionTitle);

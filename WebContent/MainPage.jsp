@@ -145,12 +145,12 @@ div#users-contain table td,div#users-contain table th {
             <b>Questionnaire Title: </b>
             <%
                 String title = request.getParameter("title");
-            			out.println(title);
+                out.println(title);
             %>
             &nbsp; &nbsp; &nbsp;<b>Category: </b>
             <%
                 String category = request.getParameter("category");
-            			out.println(category);
+                out.println(category);
             %>
 
           </div>
@@ -189,7 +189,7 @@ div#users-contain table td,div#users-contain table th {
           </div>
           <div>
             <form method="get" action="QuestionnaireCreation" target="blank">
-              <input type="hidden" id="JSONText" name="JSONText" value="" /> <input type="submit" id="preview" class="toolbox_button" style="height: 27px;" value=" Preview">
+              <input type="hidden" id="JSONText" name="JSONText" value="" /> <input type="submit" id="preview" class="toolbox_button" style="height: 27px;" value="   Preview">
             </form>
             <form method="get" action="SubmitPage">
               <input type="hidden" id="JSONText2" name="JSONText2" value="" /> <input type="submit" id="submit" class="toolbox_button" style="height: 27px;" value=" Submit">
@@ -233,17 +233,12 @@ div#users-contain table td,div#users-contain table th {
                   <li id="attachmentUser"><a href="#" style="text-decoration: none">For Questionnaire User</a></li>
                 </ul>
               </li>
+              <li id="back-top"><a href="#top">Scroll to the top<img src="Images/MainPage/up-arrow.png" style="padding-left:7px;" height="15px" width="15px" border="0px" /></a></li>
 
             </ul>
           </div>
         </td>
-        <td class="questionnaire_tools_div2">
-          <p id="back-top">
-            <a href="#top">
-              <span></span>
-            </a>
-          </p>
-        </td>
+
       </tr>
     </table>
 

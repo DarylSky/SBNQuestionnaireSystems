@@ -25,22 +25,6 @@
     </div>
     <br />
     <div id="questionnairediv">
-      <table>
-        <tr>
-          <td>
-            <b>Questionnaire Title: </b>
-            <%
-                // String title = request.getParameter("title");
-                //out.println(title);
-            %>
-            &nbsp; &nbsp; &nbsp;<b style="padding-right: 655px;">Category: </b>
-            <%
-                // String category = request.getParameter("category");
-                //out.println(category);
-            %>
-          </td>
-        </tr>
-      </table>
     </div>
     <br />
 

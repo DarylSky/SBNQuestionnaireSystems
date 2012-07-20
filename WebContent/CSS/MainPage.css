@@ -353,13 +353,12 @@ div.menuAcdn div.arrowImage {
 
 .questionnaire_tools_div {
        position: fixed;
-       top: 148px;
+       top: 150px;
 }
 
 .questionnaire_tools_div2 {
        position: fixed;
        top: 137px;
-       padding-left: 182px;
 }
 
 .toolbox_title {
@@ -367,7 +366,7 @@ div.menuAcdn div.arrowImage {
        height: 14px;
        width: 180px;
        color: white;
-       padding-bottom: 8px;
+       padding-bottom: 6px;
 }
 /* end of toolbox kit */
 .mainNav {
@@ -381,7 +380,7 @@ div.menuAcdn div.arrowImage {
        font-family: Arial, Helvetica, sans-serif;
 }
 
-.padditional {
+.padditional, .maininformation {
        font-size: 12px;
        background-color: white;
        color: black;

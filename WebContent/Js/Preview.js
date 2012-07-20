@@ -2,10 +2,14 @@ $(document).ready(function() {
 
     //var JSONObject = JSON.stringify(eval("(" + JSON + ")"));
     var jsontag = location.search;
+    jsontag=jsontag.split('%22').join("\"");
+    //alert(window.location.search);
     //alert(JSONObject);
 
     var jsonsplit = jsontag.split("=");
     var jsonvalue = jsonsplit[1];
+
+//    .replace(/\%22/,'');
 
     var json_parsed = $.parseJSON(jsonvalue);
 
@@ -24,13 +28,13 @@ $(document).ready(function() {
         var question = json_parsed.questions[u];
 
 
-
-        var questionID=(question.questionID);
+        var questionNumber = u + 1;
+        //var questionID=(question.questionID);
 
         $("#questionContent").append("<div style=\"border: 2px solid whiteSmoke;\"></div>");
 
         $("#questionContent").append("<p id=\"question\"></p>");
-        $("#questionContent").append(questionID);
+        $("#questionContent").append(questionNumber);
         $("#questionContent").append(".");
 
         var questionTitle = (question.questionTitle);
@@ -228,7 +232,5 @@ $(document).ready(function() {
         }
 
     }
-
-
 
 });
