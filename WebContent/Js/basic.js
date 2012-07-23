@@ -23,7 +23,7 @@ function dialog_box()
     if (r==true)
     {
 
-        window.location.href('HomePage.jsp');
+        location.href = "HomePage.jsp";
 
     }
     else
