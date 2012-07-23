@@ -16,10 +16,6 @@ function my_onkeydown_handler()
     }
 }*/
 
-$(function() {
-    $( "#datepicker" ).datepicker();
-});
-
 
 function dialog_box()
 {
@@ -62,12 +58,12 @@ $(document).ready(function() {
         });
 
     });
-
+/*
 
     $(function() {
         $("#datepicker").datepicker();
     });
-
+*/
     // hide #back-top first
     $("#back-top").hide();
 
@@ -843,7 +839,6 @@ $(document).ready(function(){
              checkbox.disabled=false;
              dropdown.disabled=false;
              radio.disabled=false;
-             datepicker.disabled=false;
 
          }
 
@@ -874,7 +869,6 @@ $(document).ready(function(){
                  checkbox.disabled=false;
                  dropdown.disabled=false;
                  radio.disabled=false;
-                 datepicker.disabled=false;
 
              }
 
@@ -976,7 +970,6 @@ $(document).ready(function(){
             checkbox.disabled=true;
             dropdown.disabled=true;
             radio.disabled=true;
-            datepicker.disabled=true;
 
         }
 
@@ -992,7 +985,6 @@ $(document).ready(function(){
             checkbox.disabled=false;
             dropdown.disabled=false;
             radio.disabled=false;
-            datepicker.disabled=false;
 
         });
 
@@ -1107,7 +1099,7 @@ $(document).ready(function(){
         var foo = $("#"+temp);
         var fieldWrapper = $("<p id='"+p+"' class=\"object\"/>");
         //var first =$("<span class=\"ui-icon ui-icon-arrowthick-2-n-s\"/>");
-        var input = $(" <input name="+radiotextnumber+" type=text id="+radiotextnumber+" size=\"60\" />");
+        var input = $(" <input name="+radiotextnumber+" type=text id="+radiotextnumber+" size=\"60\" x-webkit-speech />");
         var radio =$("<b style=\"padding-right:74px; \">Answer: </b><input type=radio disabled=disabled id="+radiobuttonnumber+" value="+$(input).val()+" />");
         var count = $("#" + temp).children(".object").length;
         if (count > 0){
@@ -1119,7 +1111,6 @@ $(document).ready(function(){
             checkbox.disabled=true;
             dropdown.disabled=true;
             radio.disabled=true;
-            datepicker.disabled=true;
 
         }
         var second = $("<img src=Images/MainPage/TextAnswerField/delete_icon.png height=10px width=10px id="+ imageradionumber +"/>");
@@ -1133,7 +1124,6 @@ $(document).ready(function(){
             checkbox.disabled=false;
             dropdown.disabled=false;
             radio.disabled=false;
-            datepicker.disabled=false;
 
         });
         var third = $("<img src=Images/MainPage/TextAnswerField/plus_icon.png height=15px width=15px/>");
@@ -1141,7 +1131,7 @@ $(document).ready(function(){
             innerradiotextnumber = "radiotextnumber" +intRadioCurrent + "-"+ intRadioSibling;
             intRadioSibling ++;
             fieldWrapper.append("<br/>");
-            fieldWrapper.append("<span style=\"padding-left: 121px;\"><span/><input type=radio disabled=disabled id="+  innerradiotextnumber+"/> <input name="+innerradiotextnumber+" size=\"60\" type=text id="+  innerradiotextnumber+" />");
+            fieldWrapper.append("<span style=\"padding-left: 121px;\"><span/><input type=radio disabled=disabled id="+  innerradiotextnumber+"/> <input name="+innerradiotextnumber+" size=\"60\" type=text x-webkit-speech id="+  innerradiotextnumber+" />");
 
 
         });
@@ -1267,7 +1257,7 @@ $(document).ready(function(){
 
         var foo = $("#"+temp);
         var fieldWrapper = $("<p id='"+p+"' class=\"object\"/>");
-        var first =$("<span class=\"ui-icon ui-icon-arrowthick-2-n-s\"><b style=\"padding-right:75px; \">Answer: </b><textarea rows=4 columns=100  style=\"background:grey\" disabled=disabled id="+  paragraphnumber+"/>");
+        var first =$("<span><b style=\"padding-right: 74px;\">Answer: </b><textarea rows=4 columns=100  style=\"background:grey\" disabled=disabled id="+  paragraphnumber+"/>");
         var hiddenparagraph = $("<input type=hidden name="+hiddenparagraphnumber+" value=paragraph>");
         var count = $("#" + temp).children(".object").length;
         if (count > 0){
@@ -1279,7 +1269,6 @@ $(document).ready(function(){
             checkbox.disabled=true;
             dropdown.disabled=true;
             radio.disabled=true;
-            datepicker.disabled=true;
 
         }
 
@@ -1294,7 +1283,6 @@ $(document).ready(function(){
             checkbox.disabled=false;
             dropdown.disabled=false;
             radio.disabled=false;
-            datepicker.disabled=false;
 
         });
 
@@ -1405,7 +1393,7 @@ $(document).ready(function(){
 
         var foo = $("#"+temp);
         var fieldWrapper = $("<p id='"+p+"'  class=\"object\"/>");
-        var input = $(" <input name="+checktextbox+ " type=text id="+checktextbox+" size=\"60\" />");
+        var input = $(" <input name="+checktextbox+ " type=text id="+checktextbox+" size=\"60\" x-webkit-speech />");
         var first =$(" <b style=\"padding-right:74px; \">Answer: </b><input type=checkbox disabled=disabled id="+  checkbuttonbox+" value="+$(input).val()+"/>");
 
         var count = $("#" + temp).children(".object").length;
@@ -1418,7 +1406,6 @@ $(document).ready(function(){
             checkbox.disabled=true;
             dropdown.disabled=true;
             radio.disabled=true;
-            datepicker.disabled=true;
 
         }
 
@@ -1433,7 +1420,6 @@ $(document).ready(function(){
             checkbox.disabled=false;
             dropdown.disabled=false;
             radio.disabled=false;
-            datepicker.disabled=false;
 
         });
         var third = $("<img src=Images/MainPage/TextAnswerField/plus_icon.png height=15px width=15px />");
@@ -1444,7 +1430,7 @@ $(document).ready(function(){
             intCountSibling ++;
             //alert(intCountSibling);
             fieldWrapper.append("<br/>");
-            fieldWrapper.append("<span style=\"padding-left: 121px;\"><span/><input type=checkbox disabled=disabled id="+  innerchecktextnumber+"/> <input input name="+innerchecktextnumber+" size=\"60\" type=text id="+  innerchecktextnumber+" />");
+            fieldWrapper.append("<span style=\"padding-left: 121px;\"><span/><input type=checkbox disabled=disabled id="+  innerchecktextnumber+"/> <input input name="+innerchecktextnumber+" size=\"60\" type=text x-webkit-speech id="+  innerchecktextnumber+" />");
 
 
         });
@@ -1571,7 +1557,7 @@ $(document).ready(function(){
         var first =$("<span><b style=\"padding-right:74px; \">Answer: </b><input name="+ textwithunit+" type=text disabled=disabled style=\"background:grey\" id=" + textwithunit+">");
         var second = $("<img src=Images/MainPage/TextAnswerField/plus_icon.png height=15px width=15px/>");
         var select = $("<select style=width:100px id="+  textwithunitdropdown+"/>");
-        var text=$("<input type=text id=textunit/>");
+        var text=$("<input type=text id=textunit  x-webkit-speech/>");
         var hiddentext = $("<input type=hidden name="+hiddentextwithunit+" value=textunit>");
         $(text).autocomplete({
             source: ["mm", "cm", "m", "km", "mg", "g", "kg", "Metric Ton",
@@ -1599,7 +1585,6 @@ $(document).ready(function(){
             checkbox.disabled=true;
             dropdown.disabled=true;
             radio.disabled=true;
-            datepicker.disabled=true;
 
         }
         var fourth = $("<img src=Images/MainPage/TextAnswerField/delete_icon.png height=10px width=10px/>");
@@ -1612,7 +1597,6 @@ $(document).ready(function(){
             checkbox.disabled=false;
             dropdown.disabled=false;
             radio.disabled=false;
-            datepicker.disabled=false;
 
         });
 
@@ -1752,7 +1736,7 @@ $(document).ready(function(){
 
     });
 
-    $('#datepicker').click(function() {
+/*    $('#datepicker').click(function() {
 
         intdatepicker++;
 
@@ -1795,7 +1779,7 @@ $(document).ready(function(){
         fieldWrapper.append(third);
 
 
-    });
+    });*/
 
     $('#dropdown').click(function() {
         intdropdown++;
@@ -1812,7 +1796,7 @@ $(document).ready(function(){
         var first =$("<span class=\"ui-icon ui-icon-arrowthick-2-n-s\">");
         var answer = $("<b style=\"padding-right:74px; \">Answer: </b>");
         var select = $("<select style=width:100px id= '"+ddlList+"' />");
-        var text=$("<input type=text/>");
+        var text=$("<input type=text  x-webkit-speech/>");
 
 
         fieldWrapper.append(text);
@@ -1839,7 +1823,6 @@ $(document).ready(function(){
             checkbox.disabled=true;
             dropdown.disabled=true;
             radio.disabled=true;
-            datepicker.disabled=true;
 
         }
 
@@ -1854,7 +1837,6 @@ $(document).ready(function(){
             checkbox.disabled=false;
             dropdown.disabled=false;
             radio.disabled=false;
-            datepicker.disabled=false;
 
         });
 
@@ -1973,7 +1955,7 @@ $(document).ready(function(){
         var fieldWrapper = $("<p id='"+p+"' />");
         var first =$("<span id='"+span+"'/>");
         var question = $("<b style=\"padding-right:10px; \">Additional Question: </b>");
-        var longtext = $("<input name="+ longbox +" type=text size=100 id="+ longbox+" />");
+        var longtext = $("<input name="+ longbox +" type=text size=100 id="+ longbox+" x-webkit-speech />");
         var second = $("<img src=Images/MainPage/TextAnswerField/delete_icon.png height=10px width=10px id="+longimagenumber +"/>");
         second.click(function() {
             $(this).parent().remove();
@@ -2202,7 +2184,7 @@ $(document).ready(function(){
         var foo = $("#"+ztemp);
         var fieldWrapper = $("<p id='"+p+"'/>");
         //var first =$("<span class=\"ui-icon ui-icon-arrowthick-2-n-s\"/>");
-        var input = $(" <input name="+radiotextnumber+" type=text id="+radiotextnumber+" size=\"60\" />");
+        var input = $(" <input name="+radiotextnumber+" type=text id="+radiotextnumber+" size=\"60\" x-webkit-speech />");
         var radio =$("<b style=\"padding-right: 74px; \">Answer: </b><input type=radio disabled=disabled id="+radiobuttonnumber+" value="+$(input).val()+"/>");
 
         var second = $("<img src=Images/MainPage/TextAnswerField/delete_icon.png height=10px width=10px id="+ imageradionumber +"/>");
@@ -2216,7 +2198,7 @@ $(document).ready(function(){
             innerradiotextnumber = "additional_radio_text_number" +intRadioCurrent + "-"+ intRadioSibling;
             intRadioSibling ++;
             fieldWrapper.append("<br/>");
-            fieldWrapper.append("<span style=\"padding-left: 121px;\"><span/><input type=radio disabled=disabled id="+  innerradiotextnumber+"/> <input name="+innerradiotextnumber+" type=text id="+  innerradiotextnumber+"  size=\"60\" />");
+            fieldWrapper.append("<span style=\"padding-left: 121px;\"><span/><input type=radio disabled=disabled id="+  innerradiotextnumber+"/> <input x-webkit-speech name="+innerradiotextnumber+" type=text id="+  innerradiotextnumber+"  size=\"60\" />");
 
 
         });
@@ -2340,7 +2322,7 @@ $(document).ready(function(){
 
         var foo = $("#"+ztemp);
         var fieldWrapper = $("<p id='"+p+"'/>");
-        var first =$("<span class=\"ui-icon ui-icon-arrowthick-2-n-s\"><b style=\"padding-right: 74px; \">Answer: </b><textarea rows=4 columns=20  style=\"background:grey\" disabled=disabled id="+  paragraphnumber+"/>");
+        var first =$("<span><b style=\"padding-right: 74px; \">Answer: </b><textarea rows=4 columns=20  style=\"background:grey\" disabled=disabled id="+  paragraphnumber+"/>");
         var hiddenparagraph = $("<input type=hidden name="+hiddenparagraphnumber+" value=paragraph>");
         var second = $("<img src=Images/MainPage/TextAnswerField/delete_icon.png height=10px width=10px id="+ paragraphimagenumber +"/>");
         second.click(function() {
@@ -2454,7 +2436,7 @@ $(document).ready(function(){
 
         var foo = $("#"+ztemp);
         var fieldWrapper = $("<p id='"+p+"'/>");
-        var input = $(" <input name="+checktextbox+ " type=text id="+checktextbox+" size=\"60\" />");
+        var input = $(" <input name="+checktextbox+ " type=text id="+checktextbox+" size=\"60\" x-webkit-speech />");
         var first =$(" <b style=\"padding-right: 74px; \">Answer: </b><input type=checkbox disabled=disabled  id="+  checkbuttonbox+" value="+$(input).val()+"/>");
         var second = $("<img src=Images/MainPage/TextAnswerField/delete_icon.png height=10px width=10px id="+ imagecheckbox +"/>");
 
@@ -2476,7 +2458,7 @@ $(document).ready(function(){
             intCountSibling ++;
             //alert(intCountSibling);
             fieldWrapper.append("<br/>");
-            fieldWrapper.append("<span style=\"padding-left: 121px;\"><span/><input type=checkbox disabled=disabled id="+  innerchecktextnumber+"/> <input input name="+innerchecktextnumber+" type=text id="+  innerchecktextnumber+" size=\"60\" />");
+            fieldWrapper.append("<span style=\"padding-left: 121px;\"><span/><input type=checkbox disabled=disabled id="+  innerchecktextnumber+"/> <input input x-webkit-speech name="+innerchecktextnumber+" type=text id="+  innerchecktextnumber+" size=\"60\" />");
 
 
         });
@@ -2602,7 +2584,7 @@ $(document).ready(function(){
         var first =$("<span><b style=\"padding-right: 74px; \">Answer: </b><input name="+ textwithunit+" type=text disabled=disabled style=\"background:grey\" id=" + textwithunit+">");
         var second = $("<img src=Images/MainPage/TextAnswerField/plus_icon.png height=15px width=15px/>");
         var select = $("<select style=width:100px id="+  textwithunitdropdown+"/>");
-        var text=$("<input type=text id=aTextunit/>");
+        var text=$("<input type=text id=aTextunit x-webkit-speech/>");
         var hiddentext = $("<input type=hidden name="+hiddentextwithunit+" value=textunit>");
         $(text).autocomplete({
             source: ["mm", "cm", "m", "km", "mg", "g", "kg", "Metric Ton",
@@ -2721,7 +2703,7 @@ $(document).ready(function(){
 
     });
 
-    $('#additional_datepicker').click(function() {
+/*    $('#additional_datepicker').click(function() {
 
         intadddatepicker++;
         p = "pAddDatepicker" + intadddatepicker;
@@ -2740,7 +2722,7 @@ $(document).ready(function(){
         fieldWrapper.append(third);
 
 
-    });
+    });*/
 
     $('#additional_dropdown').click(function() {
         intadddropdown++;
@@ -2758,7 +2740,7 @@ $(document).ready(function(){
         var second = $("<img src=Images/MainPage/TextAnswerField/plus_icon.png height=15px width=15px/>");
         var answer = $("<b style=\"padding-right: 74px; \">Answer: </b>");
         var select = $("<select style=width:100px id= '"+ddlList+"' />");
-        var text=$("<input type=text/>");
+        var text=$("<input type=text x-webkit-speech/>");
 
 
         fieldWrapper.append(text);

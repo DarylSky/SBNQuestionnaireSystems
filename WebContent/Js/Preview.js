@@ -78,6 +78,7 @@ $(document).ready(function() {
 
                 for(var x=0; x<question.mainElement[i].value.length;x++){
                     var textunit = (question.mainElement[i].value[x]);
+                    textunit = textunit.split("%A0").join(" ");
                     select.append("<option>"+textunit+"</option>");
                 }
 
@@ -93,6 +94,7 @@ $(document).ready(function() {
 
                 for(var x=0; x<question.mainElement[i].value.length;x++){
                     var dropdown = (question.mainElement[i].value[x]);
+                    dropdown = dropdown.split("%A0").join(" ");
                     select.append("<option>"+dropdown+"</option>");
                 }
 
@@ -175,6 +177,7 @@ $(document).ready(function() {
 
                 for(var x=0; x<question.addElement[i].value.length;x++){
                     var textunit = (question.addElement[i].value[x]);
+                    textunit = textunit.split("%A0").join(" ");
                     select.append("<option>"+textunit+"</option>");
                 }
 
@@ -190,6 +193,7 @@ $(document).ready(function() {
 
                 for(var x=0; x<question.addElement[i].value.length;x++){
                     var dropdown = (question.addElement[i].value[x]);
+                    dropdown = dropdown.split("%A0").join(" ");
                     select.append("<option>"+dropdown+"</option>");
                 }
 
