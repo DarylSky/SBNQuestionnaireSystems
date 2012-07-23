@@ -197,12 +197,25 @@ ddaccordion.init({
                                                                     //Questionnaire SustainabilityCategories=CategoriesSustainability.get(i);
                                                                     out.println("<div class=\"silverheader\">" + "<a href= \"\">" + allCategoriesQuestionnaire.getCategory() + "</a>" + "</div>"
                                                                                                               
-                                                                     /*     + "<div class=\"submenu\">" 
+                                                                          + "<div class=\"submenu\">" /* 
                                                                            + "<a>" + SustainabilityCategories.getTitle()+ "<br/>" + "<small>"+ "DATE CREATED: " + SustainabilityCategories.getDateCreated() + "<br/>" 
                                                                             + "Last Modified By " + " testing users"+ "<br/>" 
                                                                             + "ON " + SustainabilityCategories.getDateLastModified() + "</small>"
                                                                                                                                   +"</a>" 
-                                                                                                                                  + "<br />" + "</div>"*/
+                                                                                                                                  + "<br />" */
+                                                                                                                                  + "<ul>"
+                                                                                                                                  + "<li><a href=\"\">"
+                                                                                                                                  + "Energy Consumption for Year 2011/2012 <br /> <small>Date Created: 03-06-2012 <br /> Last Modified By Frankie Goh on 05062012"
+                                                                                                                                  + "</small>"
+                                                                                                                                  + "</a></li>"
+                                                                                                                                  + "<li><a href=\"\">"
+                                                                                                                                  + "Amount of Computers sold in Year 2011/2012 <br /> <small>Date Created: 04-06-2012 <br /> Last Modified By Dustin Pang on 08062012"
+                                                                                                                                  + "</small>"
+                                                                                                                                  + "</a></li> "
+
+                                                                                                                                 
+                                                                          
+                                                                                                                                  + "</div>"
                                                                                                                                   
                                                                            
                                                                            ); 

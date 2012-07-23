@@ -106,6 +106,7 @@ $(document).ready(function() {
 
                 for(var x=0; x<question.mainElement[i].value.length;x++){
                     var checkboxvalue = (question.mainElement[i].value[x]);
+                    checkboxvalue = checkboxvalue.split("%20").join(" ");
                     var questionContent =  $("#questionContent");
                     var check = $("<input type=checkbox /><b>"+checkboxvalue+"</b>");
                     questionContent.append(check);
@@ -120,6 +121,7 @@ $(document).ready(function() {
                 var mainRadio = "mainRadio" + x++;
                 for(var x=0; x<question.mainElement[i].value.length;x++){
                     var radiobuttonvalue = (question.mainElement[i].value[x]);
+                    radiobuttonvalue = radiobuttonvalue.split("%20").join(" ");
                     var questionContent =  $("#questionContent");
                     var radio = $("<input type=radio name="+mainRadio+" /><b>"+radiobuttonvalue+"</b>");
                     questionContent.append(radio);
@@ -205,6 +207,7 @@ $(document).ready(function() {
 
                 for(var x=0; x<question.addElement[i].value.length;x++){
                     var checkboxvalue = (question.addElement[i].value[x]);
+                    checkboxvalue = checkboxvalue.split("%20").join(" ");
                     var questionContent =  $("#questionContent");
                     var check = $("<input type=checkbox /><b>"+checkboxvalue+"</b>");
                     questionContent.append(check);
@@ -220,6 +223,7 @@ $(document).ready(function() {
                 var additionalRadio = "additionalRadio" + y++;
                 for(var x=0; x<question.addElement[i].value.length;x++){
                     var radiobuttonvalue = (question.addElement[i].value[x]);
+                    radiobuttonvalue = radiobuttonvalue.split("%20").join(" ");
                     var questionContent =  $("#questionContent");
                     var radio = $("<input type=\"radio\" name="+additionalRadio+" />");
                     var b = $("<b>"+radiobuttonvalue+"</b>");
