@@ -7,10 +7,8 @@
 <title>Preview Page</title>
 
 <link rel="stylesheet" type="text/css" href="CSS/Preview.css" />
-<script src="Js/jquery-1.7.2.js"></script>
-<script src="Js/jquery-ui-1.8.20.custom.js"></script>
-<script src="Js/basic.js"></script>
-<script src="Js/JqueryUI/jquery.ui.datepicker.js"></script>
+<script src="Js/Jquery/jquery-1.7.2.js"></script>
+<script src="Js/Jquery/jquery-ui-1.8.20.custom.js"></script>
 <script src="Js/Preview.js"></script>
 
 </head>
@@ -26,8 +24,7 @@
       <img src="Images/HomePage/logo.jpg" alt="" height="86px" width="390px">
     </div>
     <br />
-    <div id="questionnairediv">
-    </div>
+    <div id="questionnairediv"></div>
     <br />
 
     <div class="clear"></div>
@@ -42,7 +39,7 @@
 
     </div>
     <div id="sap_reasearch_icon">
-    <br />
+      <br />
       <div style="width: 908px;">
         <p class="sap_research_icon2">
           <b>RESEARCH</b>

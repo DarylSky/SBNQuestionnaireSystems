@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<%@ page import="java.util.* , entity.*, dataManager.*, com.mycompany.servlet.*"%>
+<%@ page import="java.util.*,entity.*,dataManager.*,com.mycompany.servlet.*"%>
 <html lang="en">
 <head>
 <title>SBN Questionnaire</title>
@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="CSS/HomePage/reset.css" type="text/css" media="all">
 <link rel="stylesheet" href="CSS/HomePage/grid.css" type="text/css" media="all">
 <link rel="stylesheet" href="CSS/HomePage/homePageStyle.css" type="text/css" media="all">
+<link rel="stylesheet" href="CSS/HomePage/QuestionnaireCreatedTabs.css" type="text/css" media="all">
 <link rel="stylesheet" href="CSS/HomePage/QuestionnaireCreatedTabs.css" type="text/css" media="all">
 
 <script type="text/javascript" src="Js/HomePage/jquery-1.4.2.min.js"></script>
@@ -18,61 +19,61 @@
 <script type="text/javascript" src="Js/HomePage/html5.js"></script>
 <script type="text/javascript" src="Js/HomePage/HomePage.js"></script>
 <script type="text/javascript" src="Js/HomePage/jquery-1.2.3.min.js"></script>
-<link rel="stylesheet" href="CSS/HomePage/QuestionnaireCreatedTabs.css" type="text/css" media="all">
 <script type="text/javascript" src="Js/HomePage/jquery-1.2.3.min.js"></script>
 <script type="text/javascript" src="Js/HomePage/SubTabs/ddaccordion.js"></script>
 <script>
-$(document).ready(function() {
+$(
+    document).ready(function() {
 
-    // When a link is clicked
-    $("a.tab").click(function() {
+        // When a link is clicked
+        $("a.tab").click(function() {
 
-        // switch all tabs off
-        $(".active").removeClass("active");
+            // switch all tabs off
+            $(".active").removeClass("active");
 
-        // switch this tab on
-        $(this).addClass("active");
+            // switch this tab on
+            $(this).addClass("active");
 
-        // slide all content up
-         $(".content").slideUp(); 
+            // slide all content up
+            $(".content").slideUp();
 
-        // slide this content up
-        var content_show = $(this).attr("title");
-        $("#" + content_show).slideDown();
+            // slide this content up
+            var content_show = $(this).attr("title");
+            $("#" + content_show).slideDown();
+
+        });
+
+        $('input[type="submit"]').attr('disabled', 'disabled');
+        $('input[type="text"]').keyup(function() {
+            if ($('input[type="text"]').val() == "") {
+                $('input[type="submit"]').attr('disabled', 'disabled');
+            } else {
+                $('input[type="submit"]').removeAttr('disabled');
+            }
+        });
 
     });
 
-    $('input[type="submit"]').attr('disabled', 'disabled');
-    $('input[type="text"]').keyup(function() {
-        if ($('input[type="text"]').val() == "") {
-            $('input[type="submit"]').attr('disabled', 'disabled');
-        } else {
-            $('input[type="submit"]').removeAttr('disabled');
+    ddaccordion.init({
+        headerclass : "silverheader", //Shared CSS class name of headers group
+        contentclass : "submenu", //Shared CSS class name of contents group
+        revealtype : "mouseover", //Reveal content when user clicks or onmouseover the header? Valid value: "click", "clickgo", or "mouseover"
+        mouseoverdelay : 200, //if revealtype="mouseover", set delay in milliseconds before header expands onMouseover
+        collapseprev : true, //Collapse previous content (so only one open at any time)? true/false
+        defaultexpanded : [ 0 ], //index of content(s) open by default [index1, index2, etc] [] denotes no content
+        onemustopen : true, //Specify whether at least one header should be open always (so never all headers closed)
+        animatedefault : false, //Should contents open by default be animated into view?
+        persiststate : true, //persist state of opened contents within browser session?
+        toggleclass : [ "", "selected" ], //Two CSS classes to be applied to the header when it's collapsed and expanded, respectively ["class1", "class2"]
+        togglehtml : [ "", "", "" ], //Additional HTML added to the header when it's collapsed and expanded, respectively  ["position", "html1", "html2"] (see docs)
+        animatespeed : "fast", //speed of animation: integer in milliseconds (ie: 200), or keywords "fast", "normal", or "slow"
+        oninit : function(headers, expandedindices) { //custom code to run when headers have initalized
+            //do nothing
+        },
+        onopenclose : function(header, index, state, isuseractivated) { //custom code to run whenever a header is opened or closed
+            //do nothing
         }
-   });
-
-});
-
-ddaccordion.init({
-    headerclass : "silverheader", //Shared CSS class name of headers group
-    contentclass : "submenu", //Shared CSS class name of contents group
-    revealtype : "mouseover", //Reveal content when user clicks or onmouseover the header? Valid value: "click", "clickgo", or "mouseover"
-    mouseoverdelay : 200, //if revealtype="mouseover", set delay in milliseconds before header expands onMouseover
-    collapseprev : true, //Collapse previous content (so only one open at any time)? true/false
-    defaultexpanded : [ 0 ], //index of content(s) open by default [index1, index2, etc] [] denotes no content
-    onemustopen : true, //Specify whether at least one header should be open always (so never all headers closed)
-    animatedefault : false, //Should contents open by default be animated into view?
-    persiststate : true, //persist state of opened contents within browser session?
-    toggleclass : [ "", "selected" ], //Two CSS classes to be applied to the header when it's collapsed and expanded, respectively ["class1", "class2"]
-    togglehtml : [ "", "", "" ], //Additional HTML added to the header when it's collapsed and expanded, respectively  ["position", "html1", "html2"] (see docs)
-    animatespeed : "fast", //speed of animation: integer in milliseconds (ie: 200), or keywords "fast", "normal", or "slow"
-    oninit : function(headers, expandedindices) { //custom code to run when headers have initalized
-        //do nothing
-    },
-    onopenclose : function(header, index, state, isuseractivated) { //custom code to run whenever a header is opened or closed
-        //do nothing
-    }
-});
+    });
 </script>
 
 <style type="text/css">
@@ -290,7 +291,7 @@ ddaccordion.init({
                 <p>This system is unique as it is able to provide better solutions in an innovative way compared to third party survey applications. It is more customizable as users are now able
                   to manipulate all the components in the questionnaire panel by using the drag and drop function</p>
 
-                <form method=get action="MainPage.jsp" id="contacts-form">
+                <form method=get action="QuestionnaireCreation.jsp" id="contacts-form">
                   <fieldset>
                     <div class="grid_5 alpha">
 
@@ -371,8 +372,8 @@ ddaccordion.init({
     </div>
   </footer>
   <script type="text/javascript">
-        Cufon.now();
-    </script>
+            Cufon.now();
+        </script>
 </body>
 </html>
 

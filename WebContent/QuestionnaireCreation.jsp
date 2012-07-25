@@ -7,12 +7,17 @@
 
 <link rel="stylesheet" type="text/css" href="CSS/MainPage.css" />
 <link rel="stylesheet" type="text/css" href="CSS/JqueryCSS/jquery.ui.all.css" />
-<script src="Js/jquery-1.7.2.js"></script>
-<script src="Js/jquery-ui-1.8.20.custom.js"></script>
-<script src="Js/basic.js"></script>
-<script src="Js/menuAccordion.js"></script>
-<script src="Js/datetimepicker.js"></script>
-<script src="Js/jquery.bgiframe-2.1.2.js"></script>
+
+<script src="Js/Jquery/jquery-1.7.2.js"></script>
+<script src="Js/Jquery/jquery-ui-1.8.20.custom.js"></script>
+<script src="Js/QuestionnaireCreation/questionPanel.js"></script>
+<script src="Js/QuestionnaireCreation/main_Objects.js"></script>
+<script src="Js/QuestionnaireCreation/additional_Objects.js"></script>
+<script src="Js/QuestionnaireCreation/preview_Button.js"></script>
+<script src="Js/QuestionnaireCreation/submit_Button.js"></script>
+<script src="Js/QuestionnaireCreation/functions.js"></script>
+<script src="Js/Jquery/menuAccordion.js"></script>
+<script src="Js/Jquery/jquery.bgiframe-2.1.2.js"></script>
 <script src="Js/JqueryUI/jquery.ui.core.js"></script>
 <script src="Js/JqueryUI/jquery.ui.widget.js"></script>
 <script src="Js/JqueryUI/jquery.ui.mouse.js"></script>
@@ -22,11 +27,9 @@
 <script src="Js/JqueryUI/jquery.ui.resizable.js"></script>
 <script src="Js/JqueryUI/jquery.ui.dialog.js"></script>
 <script src="Js/JqueryUI/jquery.effects.core.js"></script>
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
-
-
-
 
 <style type="text/css">
 #draggable {
@@ -94,14 +97,12 @@ div#users-contain table td,div#users-contain table th {
     transition: 1s;
 }
 </style>
-
 </head>
 
 <body>
   <div class="top_decoration_line">
     <img src="Images/MainPage/topdecorationline.png" height="10px" width="1572px" />
   </div>
-
   <br />
   <div id="mainPanel" class="mainPanel" style="background-color: white; width: 1005px;">
 
@@ -231,7 +232,9 @@ div#users-contain table td,div#users-contain table th {
                   <li id="attachmentUser"><a href="#" style="text-decoration: none">For Questionnaire User</a></li>
                 </ul>
               </li>
-              <li id="back-top"><a href="#top">Scroll to the top<img src="Images/MainPage/up-arrow.png" style="padding-left:7px;" height="15px" width="15px" border="0px" /></a></li>
+              <li id="back-top"><a href="#top">
+                  Scroll to the top<img src="Images/MainPage/up-arrow.png" style="padding-left: 7px;" height="15px" width="15px" border="0px" />
+                </a></li>
 
             </ul>
           </div>
@@ -239,7 +242,6 @@ div#users-contain table td,div#users-contain table th {
 
       </tr>
     </table>
-
   </div>
   <div id="dialog-form" title="Guidance"></div>
 

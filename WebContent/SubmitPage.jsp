@@ -5,6 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Submit Page</title>
 <link rel="stylesheet" type="text/css" href="CSS/SubmitPage.css" />
+
 <script src="Js/jquery-1.7.2.js"></script>
 <script src="Js/jquery-ui-1.8.20.custom.js"></script>
 <script src="Js/basic.js"></script>
@@ -24,8 +25,7 @@
       <img src="Images/HomePage/logo.jpg" alt="" height="86px" width="390px">
     </div>
     <br />
-    <div id="questionnairediv">
-    </div>
+    <div id="questionnairediv"></div>
     <br />
 
     <div class="clear"></div>
@@ -38,7 +38,8 @@
         </tr>
       </table>
     </div>
-    <span style="padding-right:859px;"></span><input type="submit" id="submit_button" style="height:20px; width:20px;" class="toolbox_button" value="Submit" />
+    <span style="padding-right: 859px;"></span>
+    <input type="submit" id="submit_button" style="height: 20px; width: 20px;" class="toolbox_button" value="Submit" />
     <div id="sap_reasearch_icon">
       <br />
       <div style="width: 908px;">
